@@ -1,0 +1,7 @@
+<div class="categories-list flex-row ion-wrap ion-justify-content-center">
+  <mx-category-button *ngFor="let category of categories"
+                      [title]="category.title" [icon]="category.icon" [selected]="category.selected">
+  </mx-category-button>
+  <ng-content></ng-content>
+</div>
+

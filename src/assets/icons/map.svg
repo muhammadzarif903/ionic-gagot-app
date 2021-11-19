@@ -1,0 +1,30 @@
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>map (7)</title>
+  <defs>
+    <rect id="path-1" x="0" y="0" width="36" height="36" rx="18"></rect>
+    <filter x="-27.8%" y="-13.9%" width="155.6%" height="155.6%" filterUnits="objectBoundingBox" id="filter-2">
+      <feOffset dx="0" dy="5" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+      <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+      <feColorMatrix values="0 0 0 0 0.430480072   0 0 0 0 0.430480072   0 0 0 0 0.430480072  0 0 0 0.5 0" type="matrix"
+                     in="shadowBlurOuter1"></feColorMatrix>
+    </filter>
+  </defs>
+  <g id="All-Pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Home-1" transform="translate(-230.000000, -65.000000)" fill-rule="nonzero">
+      <g id="Nav-Bar-Copy" transform="translate(16.000000, 55.000000)">
+        <g id="map" transform="translate(204.000000, -0.000000)">
+          <g id="Rectangle">
+            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+            <use fill="#FDFDFD" xlink:href="#path-1"></use>
+          </g>
+          <g id="map-(7)" transform="translate(10.000000, 10.000000)" fill="#9B9C9D">
+            <path
+              d="M15.74,0.0928346146 C15.5778833,-0.0126837907 15.3733891,-0.0290257792 15.1965714,0.0494069643 L10.6417143,2.07393545 L5.55942858,0.0408357175 C5.41615848,-0.0164445386 5.25581279,-0.0133531064 5.11485715,0.0494069643 L0.339428576,2.17164767 C0.133003087,2.26335293 0,2.46804728 0,2.69392231 L0,15.4285094 C0,15.6219356 0.0978075776,15.8022437 0.259982703,15.9076668 C0.422157828,16.0130899 0.626657838,16.029315 0.803428576,15.950784 L5.35828572,13.9262555 L10.4405714,15.9593552 C10.5839473,16.0160528 10.744059,16.0129659 10.8851429,15.950784 L15.6605714,13.8285433 C15.8669969,13.736838 16,13.5321437 16,13.3062687 L16,0.571681602 C16,0.378362235 15.9020894,0.198193661 15.74,0.0928346146 Z M5.91828572,1.4156637 L10.0817143,3.08134266 L10.0817143,14.5845273 L5.91828572,12.9188483 L5.91828572,1.4156637 Z M1.14285715,3.065343 L4.77542858,1.45109152 L4.77542858,12.9365622 L1.14285715,14.5490994 L1.14285715,3.065343 Z M14.8571429,12.934848 L11.2245714,14.5490994 L11.2245714,3.065343 L14.8571429,1.45109152 L14.8571429,12.934848 Z"
+              id="Shape"></path>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

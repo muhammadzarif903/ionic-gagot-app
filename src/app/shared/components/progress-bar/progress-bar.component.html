@@ -1,0 +1,23 @@
+<div class="progress-bar-container {{config?.position}}">
+  <div class="progress-bar-line-and-steps-container">
+    <div class="progress-bar-step-container {{config?.position}}">
+      <mx-checkbox *ngFor="let step of steps; let index = i"
+                   [color]="iconColor(step)"
+                   [background]="backgroundColor(step)"></mx-checkbox>
+    </div>
+    <div class="progress-line">
+      <ion-progress-bar class="progress-bar-line"
+                        color="primary"
+                        [value]="value">
+      </ion-progress-bar>
+    </div>
+
+  </div>
+  <div [style.font-weight]="config?.fontWeight"
+       [style.font-size]="config?.fontSize"
+       class="progress-bar-step-title {{config?.titlePosition}}">
+    {{(activeStep || steps[0])?.title | translate}}
+  </div>
+</div>
+
+

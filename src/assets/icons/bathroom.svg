@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="19px" viewBox="0 0 30 19" version="1.1" xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>Bath icon</title>
+  <defs>
+    <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+      <stop stop-color="#F8F8F8" offset="0%"></stop>
+      <stop stop-color="#EEEEEF" offset="100%"></stop>
+    </linearGradient>
+    <rect id="path-2" x="0" y="0" width="343" height="331" rx="8"></rect>
+    <filter x="-4.1%" y="-4.2%" width="108.5%" height="108.8%" filterUnits="objectBoundingBox" id="filter-4">
+      <feOffset dx="5" dy="5" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+      <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+      <feColorMatrix values="0 0 0 0 0.431372549   0 0 0 0 0.431372549   0 0 0 0 0.431372549  0 0 0 0.497842002 0"
+                     type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+      <feOffset dx="-5" dy="-5" in="SourceAlpha" result="shadowOffsetOuter2"></feOffset>
+      <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter2" result="shadowBlurOuter2"></feGaussianBlur>
+      <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 1 0" type="matrix" in="shadowBlurOuter2"
+                     result="shadowMatrixOuter2"></feColorMatrix>
+      <feMerge>
+        <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+        <feMergeNode in="shadowMatrixOuter2"></feMergeNode>
+      </feMerge>
+    </filter>
+    <rect id="path-5" x="0" y="0" width="375" height="331" rx="8"></rect>
+    <filter x="-3.7%" y="-4.2%" width="107.7%" height="108.8%" filterUnits="objectBoundingBox" id="filter-7">
+      <feOffset dx="5" dy="5" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+      <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+      <feColorMatrix values="0 0 0 0 0.431372549   0 0 0 0 0.431372549   0 0 0 0 0.431372549  0 0 0 0.497842002 0"
+                     type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+      <feOffset dx="-5" dy="-5" in="SourceAlpha" result="shadowOffsetOuter2"></feOffset>
+      <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter2" result="shadowBlurOuter2"></feGaussianBlur>
+      <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 1 0" type="matrix" in="shadowBlurOuter2"
+                     result="shadowMatrixOuter2"></feColorMatrix>
+      <feMerge>
+        <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+        <feMergeNode in="shadowMatrixOuter2"></feMergeNode>
+      </feMerge>
+    </filter>
+  </defs>
+  <g id="All-Pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Home-2" transform="translate(-40.000000, -411.000000)">
+      <g id="item" transform="translate(16.000000, 112.000000)">
+        <g id="photo">
+          <mask id="mask-3" fill="white">
+            <use xlink:href="#path-2"></use>
+          </mask>
+          <g id="Rectangle">
+            <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-2"></use>
+            <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+          </g>
+        </g>
+        <g id="features" transform="translate(16.000000, 261.000000)">
+          <g id="Beds" transform="translate(31.000000, 34.000000)" fill="#323643" font-family="Helvetica" font-size="12"
+             font-weight="normal" line-spacing="20">
+            <text id="Text">
+              <tspan x="0" y="11">2 Bathooms</tspan>
+            </text>
+          </g>
+          <g id="Bath-icon" transform="translate(0.000000, 33.000000)" stroke="#9B9C9D" stroke-linecap="round"
+             stroke-linejoin="round" stroke-width="1.5">
+            <path
+              d="M17.9475083,8 L1,8 C1.1170603,11.1000156 3.70683888,15 6.88625454,15 L17.1137455,15 C20.2931611,15 22.8829397,11.1000156 23,8 L17.9475083,8"
+              id="Path"></path>
+            <line x1="24" y1="8" x2="25" y2="8" id="Path"></line>
+            <line x1="18" y1="15" x2="19" y2="17" id="Path"></line>
+            <rect id="Rectangle" x="14" y="8" width="4" height="4"></rect>
+            <line x1="15" y1="10" x2="18" y2="10" id="Path"></line>
+          </g>
+        </g>
+      </g>
+      <g id="item" transform="translate(0.000000, 112.000000)">
+        <g id="photo">
+          <mask id="mask-6" fill="white">
+            <use xlink:href="#path-5"></use>
+          </mask>
+          <g id="Rectangle">
+            <use fill="black" fill-opacity="1" filter="url(#filter-7)" xlink:href="#path-5"></use>
+            <use fill="#F5F5F5" fill-rule="evenodd" xlink:href="#path-5"></use>
+          </g>
+        </g>
+        <g id="features" transform="translate(41.492711, 267.000000)" stroke="#9B9C9D" stroke-linecap="round"
+           stroke-linejoin="round" stroke-width="1.5">
+          <g id="Bath-icon" transform="translate(0.000000, 33.000000)">
+            <path
+              d="M19.6219114,8 L1.09329446,8 C1.22127584,11.1000156 4.05266641,15 7.52870394,15 L18.7103631,15 C22.1864006,15 25.0177912,11.1000156 25.1457726,8 L19.6219114,8"
+              id="Path"></path>
+            <line x1="0" y1="8" x2="1.09329446" y2="8" id="Path"></line>
+            <line x1="26.2390671" y1="8" x2="27.3323615" y2="8" id="Path"></line>
+            <line x1="7.65306122" y1="15" x2="6.55976676" y2="17" id="Path"></line>
+            <line x1="19.6793003" y1="15" x2="20.7725948" y2="17" id="Path"></line>
+            <path
+              d="M5.4664723,2.84931507 L5.4664723,1.75342466 C5.4664723,0.784986301 4.48742711,0 3.27988338,0 C2.07233965,0 1.09329446,0.784986301 1.09329446,1.75342466 L1.09329446,8"
+              id="Path"></path>
+            <rect id="Rectangle" x="15.3061224" y="8" width="4.37317784" height="4"></rect>
+            <line x1="16.3994169" y1="10" x2="19.6793003" y2="10" id="Path"></line>
+            <line x1="3.27988338" y1="3" x2="6.55976676" y2="3" id="Path"></line>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>Shape</title>
+  <defs>
+    <rect id="path-1" x="0" y="0" width="36" height="36" rx="18"></rect>
+    <filter x="-27.8%" y="-13.9%" width="155.6%" height="155.6%" filterUnits="objectBoundingBox" id="filter-2">
+      <feOffset dx="0" dy="5" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+      <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+      <feColorMatrix values="0 0 0 0 0.430480072   0 0 0 0 0.430480072   0 0 0 0 0.430480072  0 0 0 0.5 0" type="matrix"
+                     in="shadowBlurOuter1"></feColorMatrix>
+    </filter>
+  </defs>
+  <g id="All-Pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Home-1" transform="translate(-282.000000, -65.000000)" fill-rule="nonzero">
+      <g id="Nav-Bar-Copy" transform="translate(16.000000, 55.000000)">
+        <g id="grid" transform="translate(256.000000, -0.000000)">
+          <g id="Rectangle">
+            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+            <use fill="#FDFDFD" xlink:href="#path-1"></use>
+          </g>
+          <path
+            d="M21.3126294,12.344899 L23.6563147,14.689798 L21.3126294,17.034697 L18.9689441,14.689798 L21.3126294,12.344899 Z M14.9689441,12.7426204 L14.9689441,16.0569653 L11.6563147,16.0569653 L11.6563147,12.7426204 L14.9689441,12.7426204 Z M23.2505176,21.0284827 L23.2505176,24.3428276 L19.9378882,24.3428276 L19.9378882,21.0284827 L23.2505176,21.0284827 Z M14.9689441,21.0284827 L14.9689441,24.3428276 L11.6563147,24.3428276 L11.6563147,21.0284827 L14.9689441,21.0284827 Z M21.3126294,10 L16.6252588,14.6815122 L21.3126294,19.3713102 L26,14.6815122 L21.3126294,10 Z M16.6252588,11.085448 L10,11.085448 L10,17.7141378 L16.6252588,17.7141378 L16.6252588,11.085448 Z M24.9068323,19.3713102 L18.2815735,19.3713102 L18.2815735,26 L24.9068323,26 L24.9068323,19.3713102 Z M16.6252588,19.3713102 L10,19.3713102 L10,26 L16.6252588,26 L16.6252588,19.3713102 Z"
+            id="Shape" fill="#9B9C9D"></path>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,10 @@
+<div class="category-container" [style.border-bottom-color]="selected ? color.primary: color.light">
+  <mx-checkbox *ngIf="selected" [size]="'large'" [background]="color.primary" [color]="color.light"></mx-checkbox>
+  <div class="category-icon-text-wrapper">
+    <ion-icon
+      [size]="size || 'large'"
+      [name]="icon"></ion-icon>
+    <mx-text [title]="title" [type]="textType.button"></mx-text>
+  </div>
+</div>
+

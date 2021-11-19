@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="15px" viewBox="0 0 16 15" version="1.1" xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>like icon</title>
+  <defs>
+    <rect id="path-1" x="0" y="0" width="375" height="118" rx="8"></rect>
+    <filter x="-4.0%" y="-12.7%" width="108.0%" height="125.4%" filterUnits="objectBoundingBox" id="filter-2">
+      <feOffset dx="5" dy="5" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+      <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+      <feColorMatrix values="0 0 0 0 0.431372549   0 0 0 0 0.431372549   0 0 0 0 0.431372549  0 0 0 0.5 0" type="matrix"
+                     in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+      <feOffset dx="-5" dy="-5" in="SourceAlpha" result="shadowOffsetOuter2"></feOffset>
+      <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter2" result="shadowBlurOuter2"></feGaussianBlur>
+      <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 1 0" type="matrix" in="shadowBlurOuter2"
+                     result="shadowMatrixOuter2"></feColorMatrix>
+      <feMerge>
+        <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+        <feMergeNode in="shadowMatrixOuter2"></feMergeNode>
+      </feMerge>
+    </filter>
+  </defs>
+  <g id="All-Pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Home-1" transform="translate(-343.000000, -194.000000)" fill-rule="nonzero">
+      <g id="1" transform="translate(0.000000, 112.000000)">
+        <g id="Rectangle">
+          <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+          <use fill="#EEEEEF" xlink:href="#path-1"></use>
+        </g>
+        <g id="like-icon" transform="translate(343.000000, 82.000000)" fill="#9B9C9D">
+          <path
+            d="M14.7307,1.393 C13.9025,0.495 12.766,0 11.5304,0 C10.6068,0 9.761,0.292 9.0164,0.868 C8.6406,1.158 8.3002,1.514 8,1.929 C7.7,1.514 7.3594,1.158 6.9835,0.868 C6.239,0.292 5.3932,0 4.4696,0 C3.234,0 2.0974,0.495 1.2692,1.393 C0.4508,2.281 0,3.494 0,4.808 C0,6.162 0.5043,7.4 1.5869,8.707 C2.5554,9.875 3.9474,11.062 5.5593,12.435 C6.1097,12.904 6.7336,13.436 7.3815,14.002 C7.5526,14.152 7.7722,14.235 8,14.235 C8.2277,14.235 8.4474,14.152 8.6183,14.003 C9.2661,13.436 9.8904,12.904 10.441,12.435 C12.0527,11.061 13.4447,9.875 14.4132,8.707 C15.4958,7.4 16,6.162 16,4.808 C16,3.494 15.5492,2.281 14.7307,1.393 Z"
+            id="Path"></path>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

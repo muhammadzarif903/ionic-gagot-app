@@ -1,0 +1,84 @@
+<svg width="21px" height="19px" viewBox="0 0 21 19" version="1.1" xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>House icon</title>
+  <defs>
+    <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+      <stop stop-color="#F8F8F8" offset="0%"></stop>
+      <stop stop-color="#EEEEEF" offset="100%"></stop>
+    </linearGradient>
+    <rect id="path-2" x="0" y="0" width="343" height="331" rx="8"></rect>
+    <filter x="-4.1%" y="-4.2%" width="108.5%" height="108.8%" filterUnits="objectBoundingBox" id="filter-4">
+      <feOffset dx="5" dy="5" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+      <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+      <feColorMatrix values="0 0 0 0 0.431372549   0 0 0 0 0.431372549   0 0 0 0 0.431372549  0 0 0 0.497842002 0"
+                     type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+      <feOffset dx="-5" dy="-5" in="SourceAlpha" result="shadowOffsetOuter2"></feOffset>
+      <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter2" result="shadowBlurOuter2"></feGaussianBlur>
+      <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 1 0" type="matrix" in="shadowBlurOuter2"
+                     result="shadowMatrixOuter2"></feColorMatrix>
+      <feMerge>
+        <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+        <feMergeNode in="shadowMatrixOuter2"></feMergeNode>
+      </feMerge>
+    </filter>
+    <rect id="path-5" x="0" y="0" width="375" height="331" rx="8"></rect>
+    <filter x="-3.7%" y="-4.2%" width="107.7%" height="108.8%" filterUnits="objectBoundingBox" id="filter-7">
+      <feOffset dx="5" dy="5" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+      <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+      <feColorMatrix values="0 0 0 0 0.431372549   0 0 0 0 0.431372549   0 0 0 0 0.431372549  0 0 0 0.497842002 0"
+                     type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+      <feOffset dx="-5" dy="-5" in="SourceAlpha" result="shadowOffsetOuter2"></feOffset>
+      <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter2" result="shadowBlurOuter2"></feGaussianBlur>
+      <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 1 0" type="matrix" in="shadowBlurOuter2"
+                     result="shadowMatrixOuter2"></feColorMatrix>
+      <feMerge>
+        <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+        <feMergeNode in="shadowMatrixOuter2"></feMergeNode>
+      </feMerge>
+    </filter>
+  </defs>
+  <g id="All-Pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Home-2" transform="translate(-264.000000, -379.000000)">
+      <g id="item" transform="translate(16.000000, 112.000000)">
+        <g id="photo">
+          <mask id="mask-3" fill="white">
+            <use xlink:href="#path-2"></use>
+          </mask>
+          <g id="Rectangle">
+            <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-2"></use>
+            <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+          </g>
+        </g>
+        <g id="features" transform="translate(16.000000, 261.000000)" fill="#323643" font-family="Helvetica"
+           font-size="12" font-weight="normal" line-spacing="20">
+          <g id="sqm" transform="translate(205.000000, 0.000000)">
+            <text id="Text">
+              <tspan x="25" y="11">230 sqm</tspan>
+            </text>
+          </g>
+        </g>
+      </g>
+      <g id="item" transform="translate(0.000000, 112.000000)">
+        <g id="photo">
+          <mask id="mask-6" fill="white">
+            <use xlink:href="#path-5"></use>
+          </mask>
+          <g id="Rectangle">
+            <use fill="black" fill-opacity="1" filter="url(#filter-7)" xlink:href="#path-5"></use>
+            <use fill="#F5F5F5" fill-rule="evenodd" xlink:href="#path-5"></use>
+          </g>
+        </g>
+        <g id="features" transform="translate(41.492711, 267.000000)" fill-rule="nonzero" stroke="#979797"
+           stroke-width="1.5">
+          <g id="sqm" transform="translate(224.125364, 0.000000)">
+            <g id="House-icon" transform="translate(0.000000, 1.000000)">
+              <path
+                d="M17.3187782,17.2413223 L13.0946859,17.2413223 C12.3765902,17.2413223 11.8274583,16.7336777 11.8274583,16.0698347 L11.8274583,10.2123967 C11.8274583,9.97809917 11.6584946,9.82190083 11.405049,9.82190083 L7.1809568,9.82190083 C6.92751126,9.82190083 6.75854757,9.97809917 6.75854757,10.2123967 L6.75854757,16.0698347 C6.75854757,16.7336777 6.20941558,17.2413223 5.4913199,17.2413223 L1.26722767,17.2413223 C0.54913199,17.2413223 0,16.7336777 0,16.0698347 L0,8.96280992 C0,8.65041322 0.126722767,8.37706612 0.380168301,8.1427686 L8.40594355,0.723347107 C8.91283461,0.254752066 9.67317122,0.254752066 10.1800623,0.723347107 L18.2058375,8.1427686 C18.4592831,8.37706612 18.5860058,8.65041322 18.5860058,8.96280992 L18.5860058,16.0698347 C18.5860058,16.7336777 18.0368738,17.2413223 17.3187782,17.2413223 Z"
+                id="Path"></path>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

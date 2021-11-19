@@ -1,0 +1,78 @@
+<svg width="19px" height="16px" viewBox="0 0 19 16" version="1.1" xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>Shape</title>
+  <defs>
+    <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+      <stop stop-color="#F8F8F8" offset="0%"></stop>
+      <stop stop-color="#EEEEEF" offset="100%"></stop>
+    </linearGradient>
+    <rect id="path-2" x="0" y="0" width="343" height="331" rx="8"></rect>
+    <filter x="-4.1%" y="-4.2%" width="108.5%" height="108.8%" filterUnits="objectBoundingBox" id="filter-4">
+      <feOffset dx="5" dy="5" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+      <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+      <feColorMatrix values="0 0 0 0 0.431372549   0 0 0 0 0.431372549   0 0 0 0 0.431372549  0 0 0 0.497842002 0"
+                     type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+      <feOffset dx="-5" dy="-5" in="SourceAlpha" result="shadowOffsetOuter2"></feOffset>
+      <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter2" result="shadowBlurOuter2"></feGaussianBlur>
+      <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 1 0" type="matrix" in="shadowBlurOuter2"
+                     result="shadowMatrixOuter2"></feColorMatrix>
+      <feMerge>
+        <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+        <feMergeNode in="shadowMatrixOuter2"></feMergeNode>
+      </feMerge>
+    </filter>
+    <rect id="path-5" x="0" y="0" width="375" height="331" rx="8"></rect>
+    <filter x="-3.7%" y="-4.2%" width="107.7%" height="108.8%" filterUnits="objectBoundingBox" id="filter-7">
+      <feOffset dx="5" dy="5" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+      <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+      <feColorMatrix values="0 0 0 0 0.431372549   0 0 0 0 0.431372549   0 0 0 0 0.431372549  0 0 0 0.497842002 0"
+                     type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+      <feOffset dx="-5" dy="-5" in="SourceAlpha" result="shadowOffsetOuter2"></feOffset>
+      <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter2" result="shadowBlurOuter2"></feGaussianBlur>
+      <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 1 0" type="matrix" in="shadowBlurOuter2"
+                     result="shadowMatrixOuter2"></feColorMatrix>
+      <feMerge>
+        <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+        <feMergeNode in="shadowMatrixOuter2"></feMergeNode>
+      </feMerge>
+    </filter>
+  </defs>
+  <g id="All-Pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Home-2" transform="translate(-17.000000, -342.000000)">
+      <g id="item" transform="translate(16.000000, 112.000000)">
+        <g id="photo">
+          <mask id="mask-3" fill="white">
+            <use xlink:href="#path-2"></use>
+          </mask>
+          <g id="Rectangle">
+            <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-2"></use>
+            <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+          </g>
+        </g>
+        <g id="Group-4" transform="translate(16.000000, 229.000000)">
+          <g id="Adreess-icon" transform="translate(0.000000, 1.500000)"></g>
+          <path
+            d="M8.3333,4.833 L8.3333,1.5 L2.3625546e-13,1.5 L2.3625546e-13,16.5 L16.6666,16.5 L16.6666,4.833 L8.3333,4.833 Z M3.3333,14.833 L1.6666,14.833 L1.6666,13.167 L3.3333,13.167 L3.3333,14.833 Z M3.3333,11.5 L1.6666,11.5 L1.6666,9.833 L3.3333,9.833 L3.3333,11.5 Z M3.3333,8.167 L1.6666,8.167 L1.6666,6.5 L3.3333,6.5 L3.3333,8.167 Z M3.3333,4.833 L1.6666,4.833 L1.6666,3.167 L3.3333,3.167 L3.3333,4.833 Z M6.6666,14.833 L5,14.833 L5,13.167 L6.6666,13.167 L6.6666,14.833 Z M6.6666,11.5 L5,11.5 L5,9.833 L6.6666,9.833 L6.6666,11.5 Z M6.6666,8.167 L5,8.167 L5,6.5 L6.6666,6.5 L6.6666,8.167 Z M6.6666,4.833 L5,4.833 L5,3.167 L6.6666,3.167 L6.6666,4.833 Z M15,14.833 L8.3333,14.833 L8.3333,13.167 L10,13.167 L10,11.5 L8.3333,11.5 L8.3333,9.833 L10,9.833 L10,8.167 L8.3333,8.167 L8.3333,6.5 L15,6.5 L15,14.833 Z M13.3333,8.167 L11.6666,8.167 L11.6666,9.833 L13.3333,9.833 L13.3333,8.167 Z M13.3333,11.5 L11.6666,11.5 L11.6666,13.167 L13.3333,13.167 L13.3333,11.5 Z"
+            id="Shape" fill="#888585" fill-rule="nonzero"></path>
+        </g>
+      </g>
+      <g id="item" transform="translate(0.000000, 112.000000)">
+        <g id="photo">
+          <mask id="mask-6" fill="white">
+            <use xlink:href="#path-5"></use>
+          </mask>
+          <g id="Rectangle">
+            <use fill="black" fill-opacity="1" filter="url(#filter-7)" xlink:href="#path-5"></use>
+            <use fill="#F5F5F5" fill-rule="evenodd" xlink:href="#path-5"></use>
+          </g>
+        </g>
+        <g id="Group-4" transform="translate(17.492711, 229.000000)">
+          <g id="Adreess-icon" transform="translate(0.000000, 1.500000)"></g>
+          <path
+            d="M9.11075073,4.833 L9.11075073,1.5 L2.58296785e-13,1.5 L2.58296785e-13,16.5 L18.2215015,16.5 L18.2215015,4.833 L9.11075073,4.833 Z M3.64427843,14.833 L1.82208455,14.833 L1.82208455,13.167 L3.64427843,13.167 L3.64427843,14.833 Z M3.64427843,11.5 L1.82208455,11.5 L1.82208455,9.833 L3.64427843,9.833 L3.64427843,11.5 Z M3.64427843,8.167 L1.82208455,8.167 L1.82208455,6.5 L3.64427843,6.5 L3.64427843,8.167 Z M3.64427843,4.833 L1.82208455,4.833 L1.82208455,3.167 L3.64427843,3.167 L3.64427843,4.833 Z M7.28855685,14.833 L5.4664723,14.833 L5.4664723,13.167 L7.28855685,13.167 L7.28855685,14.833 Z M7.28855685,11.5 L5.4664723,11.5 L5.4664723,9.833 L7.28855685,9.833 L7.28855685,11.5 Z M7.28855685,8.167 L5.4664723,8.167 L5.4664723,6.5 L7.28855685,6.5 L7.28855685,8.167 Z M7.28855685,4.833 L5.4664723,4.833 L5.4664723,3.167 L7.28855685,3.167 L7.28855685,4.833 Z M16.3994169,14.833 L9.11075073,14.833 L9.11075073,13.167 L10.9329446,13.167 L10.9329446,11.5 L9.11075073,11.5 L9.11075073,9.833 L10.9329446,9.833 L10.9329446,8.167 L9.11075073,8.167 L9.11075073,6.5 L16.3994169,6.5 L16.3994169,14.833 Z M14.577223,8.167 L12.7550292,8.167 L12.7550292,9.833 L14.577223,9.833 L14.577223,8.167 Z M14.577223,11.5 L12.7550292,11.5 L12.7550292,13.167 L14.577223,13.167 L14.577223,11.5 Z"
+            id="Shape" fill="#888585" fill-rule="nonzero"></path>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

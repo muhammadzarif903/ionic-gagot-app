@@ -1,0 +1,13 @@
+<ion-item>
+  <ion-textarea
+    (ionBlur)="onBlur($event)"
+    (ionChange)="onChange($event)"
+    (ionFocus)="onFocus($event)"
+    (ionInput)="onInput($event)"
+    [autoGrow]="autoGrow"
+    [placeholder]="placeholder">
+  </ion-textarea>
+  <ion-icon *ngIf="icon" [name]="icon" color="primary" slot="end" align-self-center></ion-icon>
+</ion-item>
+
+

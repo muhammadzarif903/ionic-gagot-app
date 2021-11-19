@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <!--BACK-->
+    <ion-buttons slot="start">
+      <ion-back-button (click)="previousPage()"
+                        [text]="''"
+                       color="primary"
+                       [icon]="'chevron-back-outline'">
+      </ion-back-button>
+    </ion-buttons>
+
+    <ion-title>{{'TITLES.ADD_NEW_PROPERTY' | translate}}</ion-title>
+
+<!--    &lt;!&ndash;NEXT&ndash;&gt;-->
+<!--    <ion-buttons slot="secondary">-->
+<!--      <ion-button (click)="nextPage($event)" color="primary" size="large">-->
+<!--        <ion-icon slot="icon-only" name="arrow-forward-outline"></ion-icon>-->
+<!--      </ion-button>-->
+<!--    </ion-buttons>-->
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true" [scrollY]="true">
+  <mx-progress-bar [steps]="steps"></mx-progress-bar>
+  <ion-button (click)="nextPage()">
+    {{'SAVE' | translate}}
+  </ion-button>
+  <router-outlet></router-outlet>
+</ion-content>

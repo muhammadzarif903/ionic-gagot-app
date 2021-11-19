@@ -1,0 +1,49 @@
+@import 'colors';
+@import 'fonts';
+
+.category-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.4rem;
+  margin: 0.5rem;
+  width: 4rem;
+  height: 3rem;
+  border-radius: 8px;
+  border-bottom: 4px solid;
+  background: $color-light;
+  box-shadow: $color-shadow-white;
+
+
+  .category-icon-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.8rem;
+    border-radius: 1px;
+    justify-content: center;
+
+    mx-text {
+      display: flex;
+      align-self: center;
+      text-align: center;
+      justify-content: center;
+    }
+  }
+
+  mx-checkbox {
+    position: absolute;
+    padding-bottom: 4.5rem;
+    padding-left: 4.5rem;
+  }
+
+
+  ion-icon {
+
+  }
+
+  mx-text {
+    margin: 0.2rem;
+  }
+}

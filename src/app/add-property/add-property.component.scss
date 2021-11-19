@@ -1,0 +1,7 @@
+@import "common";
+
+mx-progress-bar {
+  display: flex;
+  min-height: 5rem;
+  padding: $screen-padding;
+}
