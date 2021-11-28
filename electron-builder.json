@@ -1,0 +1,58 @@
+{
+  "productName": "GagotApp",
+  "directories": {
+    "output": "release/"
+  },
+  "publish": null,
+  "files": [
+    "dist/**/*",
+    "app.js",
+    "!**/*.ts",
+    "!platforms/",
+    "!plugins/",
+    "!release/",
+    "!resources/",
+    "!www/",
+    "!*.code-workspace",
+    "!LICENSE.md",
+    "!package.json",
+    "!package-lock.json",
+    "!src/",
+    "!e2e/",
+    "!hooks/",
+    "!angular.json",
+    "!_config.yml",
+    "!karma.conf.js",
+    "!tsconfig.json",
+    "!tslint.json",
+    "!node_modules/"
+  ],
+  "win": {
+    "icon": "dist/assets/gagotapp-logo-256.png",
+    "target": [
+      "nsis"
+    ]
+  },
+  "mac": {
+    "icon": "dist/assets/gagotapp-logo-256.png",
+    "target": [
+      "dmg"
+    ]
+  },
+  "linux": {
+    "icon": "dist/assets/gagotapp-logo-256.png",
+    "target": [
+      "AppImage"
+    ]
+  },
+  "nsis": {
+    "oneClick": false,
+    "perMachine": false,
+    "allowElevation": true,
+    "allowToChangeInstallationDirectory": true,
+    "runAfterFinish": false,
+    "deleteAppDataOnUninstall": true,
+    "artifactName": "gagotapp-3-setup.${ext}",
+    "uninstallDisplayName": "gagotapp-VERSION"
+  }
+}

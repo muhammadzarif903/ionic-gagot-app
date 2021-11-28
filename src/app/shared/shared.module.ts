@@ -32,7 +32,11 @@ import {TranslateModule} from '@ngx-translate/core';
   providers: [],
   bootstrap: [],
   exports: [
-    ProgressBarComponent
+    ProgressBarComponent,
+    CategoryButtonComponent,
+    CategoriesComponent,
+    TextComponent,
+    InputComponent
   ]
 })
 export class SharedModule {

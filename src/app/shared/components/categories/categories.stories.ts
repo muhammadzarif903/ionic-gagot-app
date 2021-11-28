@@ -6,6 +6,7 @@ import {CheckboxComponent} from '../checkbox/checkbox.component';
 import {CategoriesComponent} from './categories.component';
 import {CategoryButtonComponent, ICategory} from '../category-button/category-button.component';
 import * as Category from '../category-button/caterogy-button.stories';
+import {categories} from './categories.data';
 
 export default {
   title: 'Components/CategoryList',
@@ -34,52 +35,7 @@ const Template: Story<CategoriesComponent> = (args: CategoriesComponent) => ({
   props: args,
 });
 
-const categories: ICategory[] = [{
-  icon: 'home-outline',
-  title: 'Apartment',
-}, {
-  icon: 'home-outline',
-  title: 'Land',
-  selected: true,
-}, {
-  icon: 'home-outline',
-  title: 'Penthouse',
-}, {
-  icon: 'home-outline',
-  title: 'Condos',
-}, {
-  icon: 'home-outline',
-  title: 'House',
-},
-  {
-    icon: 'home-outline',
-    title: 'Clinics',
-  },
-  {
-    icon: 'home-outline',
-    title: 'Basement',
-  },
-  {
-    icon: 'home-outline',
-    title: 'Offices',
-  },
-  {
-    icon: 'home-outline',
-    title: 'Duplex Apartment',
-  },
-  {
-    icon: 'home-outline',
-    title: 'Duplex House',
-  },
-  {
-    icon: 'home-outline',
-    title: 'Town Houses',
-  },
-  {
-    icon: 'home-outline',
-    title: 'Community Center',
-  }
-];
+
 
 export const Many = Template.bind({});
 Many.args = {

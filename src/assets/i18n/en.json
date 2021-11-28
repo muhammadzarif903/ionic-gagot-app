@@ -38,10 +38,19 @@
     "PRICE_AND_AGREEMENT": "Price and Agreement",
     "OPEN_DOOR_EVENTS": "Open Door Events"
   },
+  "PLACEHOLDERS": {
+    "ENTER_ADDRESS": "Enter Address",
+    "ENTER_SQUARE_AREA": "Enter Square Area",
+    "DESCRIPTION": "Description",
+    "ENTER_PASSWORD": "Enter Password",
+    "ENTER_OLD_PASSWORD": "Enter old Password",
+    "ENTER_NEW_PASSWORD": "Enter new Password",
+    "ENTER_EMAIL": "Enter Email",
+    "ENTER_PHONE": "Enter Phone"
+  },
   "CATEGORIES": "Categories",
   "LOCATION": "Location",
   "ADDRESS": "Address",
-  "ENTER_ADDRESS": "Enter Address",
   "APARTMENT": "Apartment",
   "LAND": "Land",
   "PENTHOUSE": "Penthouse",

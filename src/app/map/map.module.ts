@@ -5,19 +5,22 @@ import {MapRoutingModule} from './map-routing.module';
 import {IonicModule} from '@ionic/angular';
 import {FormsModule} from '@angular/forms';
 import {TranslateModule} from '@ngx-translate/core';
-
+import {LeafletModule} from '@asymmetrik/ngx-leaflet';
 
 @NgModule({
   declarations: [MapComponent],
   imports: [
     CommonModule,
     MapRoutingModule,
-    IonicModule,
+    LeafletModule,
     FormsModule,
     TranslateModule,
     IonicModule,
     CommonModule,
   ],
+  exports: [
+    MapComponent
+  ]
 })
 export class MapModule {
 }

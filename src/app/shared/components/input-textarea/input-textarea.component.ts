@@ -35,6 +35,7 @@ export class InputTextAreaComponent implements OnInit {
   @Input() debounce: number;
   @Input() inputmode: InputAreaMode;
   @Input() mode: InputAreaModeType;
+  @Input() placeholder: string;
   @Input() enterkeyhint: 'done' | 'enter' | 'go' | 'next' | 'previous' | 'search' | 'send' | undefined;
   @Input() wrap: 'hard' | 'off' | 'soft' | undefined;
 

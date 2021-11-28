@@ -30,4 +30,8 @@ export class CategoryButtonComponent implements OnInit {
   ngOnInit() {
   }
 
+  onClick($event) {
+    this.selected = true;
+  }
+
 }

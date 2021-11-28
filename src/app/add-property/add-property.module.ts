@@ -12,6 +12,7 @@ import {AddMediaComponent} from './add-media/add-media.component';
 import {AddPriceAndAgreementComponent} from './add-price-and-agreement/add-price-and-agreement.component';
 import {AddOpenDoorEventComponent} from './add-open-door-event/add-open-door-event.component';
 import {SharedModule} from '../shared/shared.module';
+import {MapModule} from '../map/map.module';
 
 
 @NgModule({
@@ -23,14 +24,15 @@ import {SharedModule} from '../shared/shared.module';
     AddMediaComponent,
     AddPriceAndAgreementComponent,
     AddOpenDoorEventComponent],
-  imports: [
-    AddPropertyRoutingModule,
-    FormsModule,
-    TranslateModule,
-    IonicModule,
-    CommonModule,
-    SharedModule,
-  ]
+    imports: [
+        AddPropertyRoutingModule,
+        FormsModule,
+        TranslateModule,
+        IonicModule,
+        CommonModule,
+        SharedModule,
+        MapModule,
+    ]
 })
 export class AddPropertyModule {
 }

@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {ICategory} from '../../interfaces/category.interface';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {categories} from './categories.data';
 
 @Component({
   selector: 'mx-categories',
@@ -9,7 +9,9 @@ import {ICategory} from '../../interfaces/category.interface';
 export class CategoriesComponent implements OnInit {
 
 
-  @Input() categories: ICategory[];
+  @Input() categories = categories;
+
+  @Output() onClick: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() {
   }

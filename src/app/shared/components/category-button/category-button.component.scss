@@ -2,40 +2,40 @@
 @import 'fonts';
 
 .category-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 2.4rem;
-  margin: 0.5rem;
-  width: 4rem;
-  height: 3rem;
+  display: grid;
+  flex-direction: row;
   border-radius: 8px;
   border-bottom: 4px solid;
-  background: $color-light;
-  box-shadow: $color-shadow-white;
-
 
   .category-icon-text-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0.8rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    width: 5.6rem;
+    max-height: 5.5rem;
+    min-height: 5.5rem;
     border-radius: 1px;
-    justify-content: center;
+    justify-content: flex-start;
+    background: $color-light;
+    box-shadow: $color-shadow-white;
 
     mx-text {
       display: flex;
       align-self: center;
       text-align: center;
       justify-content: center;
+      max-width: 4.5rem;
     }
   }
 
   mx-checkbox {
-    position: absolute;
-    padding-bottom: 4.5rem;
-    padding-left: 4.5rem;
+    height: 0;
+    text-align: right;
+    z-index: 1;
+    margin-right: -0.3rem;
+    grid-area: 1 / 1;
   }
 
 

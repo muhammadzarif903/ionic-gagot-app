@@ -1,5 +1,3 @@
-import {PopularityEnum, PropertyStatusEnum, SquareUnitsEnum} from '../enums';
-
 export enum PropertyType {
     Sell = 'sell',
     Buy = 'buy'

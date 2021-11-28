@@ -3,7 +3,7 @@
     <!--BACK-->
     <ion-buttons slot="start">
       <ion-back-button (click)="previousPage()"
-                        [text]="''"
+                       [text]="''"
                        color="primary"
                        [icon]="'chevron-back-outline'">
       </ion-back-button>
@@ -11,19 +11,60 @@
 
     <ion-title>{{'TITLES.ADD_NEW_PROPERTY' | translate}}</ion-title>
 
-<!--    &lt;!&ndash;NEXT&ndash;&gt;-->
-<!--    <ion-buttons slot="secondary">-->
-<!--      <ion-button (click)="nextPage($event)" color="primary" size="large">-->
-<!--        <ion-icon slot="icon-only" name="arrow-forward-outline"></ion-icon>-->
-<!--      </ion-button>-->
-<!--    </ion-buttons>-->
+    <!--    &lt;!&ndash;NEXT&ndash;&gt;-->
+    <!--    <ion-buttons slot="secondary">-->
+    <!--      <ion-button (click)="nextPage($event)" color="primary" size="large">-->
+    <!--        <ion-icon slot="icon-only" name="arrow-forward-outline"></ion-icon>-->
+    <!--      </ion-button>-->
+    <!--    </ion-buttons>-->
 
   </ion-toolbar>
 </ion-header>
 
 
 <ion-content [fullscreen]="true" [scrollY]="true">
-  <mx-progress-bar [steps]="steps"></mx-progress-bar>
+  <!--  Progress Bar-->
+  <div class="section">
+    <mx-progress-bar [steps]="steps"></mx-progress-bar>
+  </div>
+  <!--  Categories-->
+  <div class="section">
+    <mx-text [type]="textType.sectionTitle" [title]="'TITLES.CATEGORIES' | translate"></mx-text>
+    <mx-categories (onClick)="onCategoryClick($event)"></mx-categories>
+  </div>
+  <!-- Address & Map-->
+<!--  <div class="section">-->
+<!--    <mx-text [type]="textType.sectionTitle" [title]="'ADDRESS' | translate"></mx-text>-->
+<!--    <mx-input [value]="''"-->
+<!--              [type]="'text'"-->
+<!--              [icon]="'locate-outline'"-->
+<!--              [placeholder]="'PLACEHOLDERS.ENTER_ADDRESS' | translate"></mx-input>-->
+<!--    <mx-map></mx-map>-->
+<!--  </div>-->
+<!--  <div class="section">-->
+<!--    <mx-text [type]="textType.sectionTitle" [title]="'SQUARE_AREA' | translate"></mx-text>-->
+<!--    <mx-input [value]="''"-->
+<!--              [type]="'text'"-->
+<!--              [placeholder]="'PLACEHOLDERS.ENTER_SQUARE_AREA' | translate"></mx-input>-->
+<!--  </div>-->
+  <ion-list class="flex-row">
+    <ion-radio-group allow-empty-selection="true" name="radio-group" (ionChange)="radioGroupChange($event)" #radioGroup>
+      <ion-list-header>
+        <ion-label>Name</ion-label>
+      </ion-list-header>
+      <ion-row>
+      <ion-item *ngFor="let item of radio_list"
+                (ionFocus)="radioFocus()"
+                (ionSelect)="radioSelect($event)"
+                (ionBlur)="radioBlur()">
+        <ion-label>{{item.text}}</ion-label>
+        <ion-radio slot="start" name="{{item.name}}" value="{{item.value}}" checked="{{item.checked}}"
+                   color="{{item.color}}" disabled="{{item.disabled}}"></ion-radio>
+      </ion-item>
+      </ion-row>
+    </ion-radio-group>
+  </ion-list>
+
   <ion-button (click)="nextPage()">
     {{'SAVE' | translate}}
   </ion-button>

@@ -1,4 +1,4 @@
-<ion-item>
+<ion-item class="input-field">
   <ion-input
     [autocomplete]="autocomplete"
     [autocorrect]="autocorrect"
@@ -16,7 +16,7 @@
     [step]="step"
     [required]="required"
     [color]="color"
-    [placeholder]="placeholder"
+    [placeholder]="placeholder | translate"
     [value]="value || ''"
     [type]="type"
     (ionBlur)="onBlurEvent($event)"

@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
+import {Platform} from '@ionic/angular';
+
 
 @Component({
   selector: 'mx-root',
@@ -8,13 +10,20 @@ import {TranslateService} from '@ngx-translate/core';
 })
 export class AppComponent {
 
-  constructor(private translate: TranslateService) {
-    translate.setDefaultLang('en');
-    translate.addLangs(['en', 'he']);
-    translate.use('en');
+  constructor(private translate: TranslateService,
+              private platform: Platform) {
+    this.initializeApp();
   }
 
   public switchLang(lang: string) {
     this.translate.use(lang);
+  }
+
+  async initializeApp() {
+    this.translate.setDefaultLang('en');
+    this.translate.addLangs(['en', 'he']);
+    this.translate.use('en');
+    this.platform.ready().then(async () => {
+    });
   }
 }
