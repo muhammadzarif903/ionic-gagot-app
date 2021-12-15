@@ -1,4 +1,6 @@
-<div class="categories-list flex-row">
+<div class="categories-list flex-wrap"
+     [class.scrollHorizontal]="inRow"
+     [class.flex-row]="inRow">
   <mx-category-button
     (click)="onClick.emit(category)"
     *ngFor="let category of categories"

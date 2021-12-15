@@ -1,6 +1,9 @@
 .categories-list {
   padding-top: 0.4em;
   display: flex;
-  justify-content: space-between;
-  overflow-x: scroll;
+  justify-content: space-evenly;
+
+  &.scrollHorizontal {
+    overflow-x: scroll;
+  }
 }

@@ -40,7 +40,7 @@
   },
   "PLACEHOLDERS": {
     "ENTER_ADDRESS": "Enter Address",
-    "ENTER_SQUARE_AREA": "Enter Square Area",
+    "ENTER_VALUE_IN": "Enter value in {{value}}",
     "DESCRIPTION": "Description",
     "ENTER_PASSWORD": "Enter Password",
     "ENTER_OLD_PASSWORD": "Enter old Password",
@@ -65,7 +65,7 @@
   "COMMUNITY_CENTER": "Community Center",
   "SQUARE_AREA": "Square Area",
   "NEW_CONSTRUCTION": "New Construction",
-  "YEAR_BUILD": "Year Build (optional)",
+  "YEAR_BUILD": "Year Build",
   "DESCRIPTION": "Description",
   "NEXT_TO": "Next To",
   "SUBWAY": "Subway",

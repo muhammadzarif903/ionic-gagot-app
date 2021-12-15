@@ -1,4 +1,4 @@
-$color-primary: #5fb2f2;
+$color-primary: #3140f5;
 $color-primary-light: #9AE7FF;
 $color-secondary: #8BC7FF;
 $color-tertiary: #5260ff;
@@ -7,10 +7,9 @@ $color-warning: #ffc409;
 $color-danger: #e82640;
 $color-dark: #2d2d52;
 $color-gray-dark: #636470;
-$color-medium: #92949c;
+$color-medium: #bec1de;
 $color-light: #f4f5f8;
 
-$color-text: $color-gray-dark;
 
 $color-white: #FFF;
 $color-black: $color-dark;
@@ -19,7 +18,7 @@ $color-blue: $color-primary;
 $color-orange: orange;
 $color-yellow: yellow;
 $color-red: #AE1100;
+$color-border: $color-light;
 $color-bg: #EBECF0;
-$color-shadow: #d5d5d5;
-$color-shadow-white: 0px 3px 4px #cccccc, 0px 0px 0px #f4f4f4;
+$color-shadow: 0px 3px 4px #ffffff, 0px 0px 0px $color-primary;
 

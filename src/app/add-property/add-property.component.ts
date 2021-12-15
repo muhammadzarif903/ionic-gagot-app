@@ -1,9 +1,11 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component, EventEmitter, Output, ViewChild} from '@angular/core';
 import {IProgressBarStep} from '../shared/components/progress-bar/progress-bar.component';
 import {StateService, StateType} from '../shared/services/state.service';
 import {Router} from '@angular/router';
 import {TextType} from '../shared/components/text/text.component';
 import {IPropertyDetails} from '../shared/interfaces/property.interface';
+import {IonDatetime} from '@ionic/angular';
+import {format, parseISO} from 'date-fns';
 
 export enum AddPropertyScreen {
   location = 'location',
@@ -20,6 +22,8 @@ export enum AddPropertyScreen {
   styleUrls: ['./add-property.component.scss'],
 })
 export class AddPropertyComponent {
+
+  @ViewChild(IonDatetime, {static: true}) datetime: IonDatetime;
 
 
   public property: IPropertyDetails;
@@ -40,35 +44,30 @@ export class AddPropertyComponent {
   public selectedRadioGroup: any;
   //Get value on ionSelect on IonRadio item
   public selectedRadioItem: any;
-
   public radio_list = [
     {
-      id: '1',
+      id: '0',
       name: 'radio_list',
       value: 'radio_1',
-      text: 'One',
-      disabled: false,
-      checked: false,
-      color: 'primary'
-    }, {
-      id: '2',
-      name: 'radio_list',
-      value: 'radio_2',
-      text: 'Two',
+      text: 'YES',
       disabled: false,
       checked: true,
-      color: 'secondary'
+      color: 'primary'
     }, {
-      id: '3',
+      id: '1',
       name: 'radio_list',
-      value: 'radio_3',
-      text: 'Three',
+      value: 'radio_2',
+      text: 'NO',
       disabled: false,
       checked: false,
-      color: 'danger'
-    },
+      color: 'secondary'
+    }
   ];
 
+  public customDayShortNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+  public dateValue = new Date().getFullYear();
+  public years = [];
 
   constructor(private router: Router,
               private stateService: StateService) {
@@ -77,6 +76,21 @@ export class AddPropertyComponent {
       active: obj.active,
       state: obj.active ? StateType.submitted : StateType.initial
     }));
+
+    this.setYears();
+  }
+  public onYearChange($event) {
+    console.log($event);
+    // this.dateValue = $event.value;
+  }
+
+  private setYears() {
+    const res = [];
+    const currentYear = new Date().getFullYear() + 5;
+    for (let i = 0; i < 70; i++) {
+      res.push(currentYear - i);
+    }
+    this.years = res;
   }
 
   public radioGroupChange(event) {
@@ -142,6 +156,18 @@ export class AddPropertyComponent {
       el.state = index <= routeIndex ? StateType.submitted : StateType.initial;
       return el;
     });
+  }
+
+  confirm() {
+    // this.datetime.confirm();
+  }
+
+  reset() {
+    // this.datetime.nativeEl.reset();
+  }
+
+  formatDate(value: string) {
+    return format(parseISO(value), 'MMM dd yyyy');
   }
 
 }

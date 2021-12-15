@@ -52,6 +52,8 @@ export enum Color {
   dark = '#222428',
   medium = '#92949c',
   light = '#f4f5f8',
+  white = '#ffffff',
+  transparent = 'transparent',
 }
 
 export enum IconSize {

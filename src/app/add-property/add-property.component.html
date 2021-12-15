@@ -32,41 +32,117 @@
     <mx-text [type]="textType.sectionTitle" [title]="'TITLES.CATEGORIES' | translate"></mx-text>
     <mx-categories (onClick)="onCategoryClick($event)"></mx-categories>
   </div>
-  <!-- Address & Map-->
-<!--  <div class="section">-->
-<!--    <mx-text [type]="textType.sectionTitle" [title]="'ADDRESS' | translate"></mx-text>-->
-<!--    <mx-input [value]="''"-->
-<!--              [type]="'text'"-->
-<!--              [icon]="'locate-outline'"-->
-<!--              [placeholder]="'PLACEHOLDERS.ENTER_ADDRESS' | translate"></mx-input>-->
-<!--    <mx-map></mx-map>-->
-<!--  </div>-->
-<!--  <div class="section">-->
-<!--    <mx-text [type]="textType.sectionTitle" [title]="'SQUARE_AREA' | translate"></mx-text>-->
-<!--    <mx-input [value]="''"-->
-<!--              [type]="'text'"-->
-<!--              [placeholder]="'PLACEHOLDERS.ENTER_SQUARE_AREA' | translate"></mx-input>-->
-<!--  </div>-->
-  <ion-list class="flex-row">
-    <ion-radio-group allow-empty-selection="true" name="radio-group" (ionChange)="radioGroupChange($event)" #radioGroup>
-      <ion-list-header>
-        <ion-label>Name</ion-label>
-      </ion-list-header>
-      <ion-row>
-      <ion-item *ngFor="let item of radio_list"
-                (ionFocus)="radioFocus()"
-                (ionSelect)="radioSelect($event)"
-                (ionBlur)="radioBlur()">
-        <ion-label>{{item.text}}</ion-label>
-        <ion-radio slot="start" name="{{item.name}}" value="{{item.value}}" checked="{{item.checked}}"
-                   color="{{item.color}}" disabled="{{item.disabled}}"></ion-radio>
-      </ion-item>
-      </ion-row>
-    </ion-radio-group>
-  </ion-list>
 
-  <ion-button (click)="nextPage()">
-    {{'SAVE' | translate}}
-  </ion-button>
+
+  <!--   Address & Map-->
+  <!--  <div class="section">-->
+  <!--    <mx-text [type]="textType.sectionTitle" [title]="'ADDRESS' | translate"></mx-text>-->
+  <!--    <mx-input [value]="''"-->
+  <!--              [autocomplete]="true"-->
+  <!--              [type]="'text'"-->
+  <!--              [icon]="'locate-outline'"-->
+  <!--              [placeholder]="'PLACEHOLDERS.ENTER_ADDRESS' | translate"></mx-input>-->
+  <!--    <mx-map></mx-map>-->
+  <!--  </div>-->
+
+
+  <div class="section">
+    <ion-item>
+      <ion-label position="fixed">
+        <mx-text [type]="textType.sectionTitle" [title]="'SQUARE_AREA' | translate"></mx-text>
+      </ion-label>
+      <ion-input [placeholder]="'PLACEHOLDERS.ENTER_VALUE_IN' | translate : {value: '(meter/feets)'}"></ion-input>
+    </ion-item>
+  </div>
+
+  <!--  New Construction-->
+  <div class="section flex-row ion-align-items-center full-width">
+    <ion-label>
+      <mx-text [type]="textType.sectionTitle" [title]="'NEW_CONSTRUCTION' | translate"></mx-text>
+    </ion-label>
+    <ion-list class="flex-auto mx-checkboxes">
+      <ion-radio-group allow-empty-selection="false"
+                       class="flex-auto space-evenly flex-1"
+                       name="radio-group"
+                       (ionChange)="radioGroupChange($event)"
+                       #radioGroup>
+        <ion-row class="flex-auto ion-float-right">
+          <ion-item *ngFor="let item of radio_list"
+                    (ionFocus)="radioFocus()"
+                    (ionSelect)="radioSelect($event)"
+                    (ionBlur)="radioBlur()">
+            <ion-label class="mx-label">{{item.text | translate}}</ion-label>
+            <ion-radio name="{{item.name}}"
+                       value="{{item.value}}"
+                       checked="{{item.checked}}"
+                       color="{{item.color}}"
+                       disabled="{{item.disabled}}">
+            </ion-radio>
+          </ion-item>
+        </ion-row>
+      </ion-radio-group>
+    </ion-list>
+  </div>
+
+  <!--  Year Build-->
+  <div class="section">
+    <ion-item>
+      <ion-label>
+        <mx-text [type]="textType.sectionTitle" [title]="'YEAR_BUILD' | translate"></mx-text>
+      </ion-label>
+      <ion-select
+        ok-text="Okay" cancel-text="Nah"
+        class="year"
+        [value]="dateValue" (ionChange)="dateValue = $event?.detail?.value">
+        <ion-select-option *ngFor="let year of years" [value]="year">{{year}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+  </div>
+
+  <!--         Datetime in popover with input -->
+
+  <!--  <div class="section">-->
+  <!--    <ion-item>-->
+  <!--      <ion-button fill="clear" id="open-date-input-2">-->
+  <!--        <ion-icon icon="calendar"></ion-icon>-->
+  <!--      </ion-button>-->
+  <!--      <ion-popover trigger="open-date-input-2" show-backdrop="false">-->
+  <!--        <ng-template>-->
+  <!--          <ion-datetime-->
+  <!--            #popoverDatetime2-->
+  <!--            presentation="date"-->
+  <!--            (ionChange)="dateValue2 = formatDate(popoverDatetime2.value)"-->
+  <!--          ></ion-datetime>-->
+  <!--        </ng-template>-->
+  <!--      </ion-popover>-->
+  <!--    </ion-item>-->
+  <!--  </div>-->
+
+  <!--  Description-->
+  <div class="section">
+    <mx-text [type]="textType.sectionTitle" [title]="'DESCRIPTION' | translate"></mx-text>
+    <mx-textarea [inputmode]="'text'"></mx-textarea>
+  </div>
+
+  <!--  Next to-->
+  <div class="section">
+    <mx-text [type]="textType.sectionTitle" [title]="'NEXT_TO' | translate"></mx-text>
+    <div class="flex-wrap">
+      <ion-button color="primary">Subway</ion-button>
+      <ion-button color="primary">Shop Mall</ion-button>
+      <ion-button color="light">Garden</ion-button>
+      <ion-button color="light">School</ion-button>
+      <ion-button color="light">Dog Park</ion-button>
+      <ion-button color="light">Sea Theater</ion-button>
+    </div>
+  </div>
+
+  <div class="section">
+    <ion-button (click)="nextPage()" expand="block">{{'SAVE' | translate}}</ion-button>
+  </div>
+
   <router-outlet></router-outlet>
+
+
 </ion-content>

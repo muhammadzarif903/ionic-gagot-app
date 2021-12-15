@@ -24,5 +24,5 @@
     (ionFocus)="onFocusEvent($event)"
     (ionInput)="onInputEvent($event)">
   </ion-input>
-  <ion-icon [name]="icon" color="primary" slot="end" align-self-center></ion-icon>
+  <ion-icon *ngIf="icon" [name]="icon" color="primary" slot="end" align-self-center></ion-icon>
 </ion-item>

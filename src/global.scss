@@ -25,16 +25,9 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
+@import "~leaflet/dist/leaflet.css";
+
 /* You can add global styles to this file, and also import other style files */
 @import './fonts';
 @import "./colors";
 @import "./common";
-
-ion-title {
-  color: $color-text;
-}
-
-
-textarea, input[type="text"] {
-  font-size: $font-size-normal !important;
-}

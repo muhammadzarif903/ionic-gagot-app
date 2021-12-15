@@ -5,7 +5,8 @@
   display: grid;
   flex-direction: row;
   border-radius: 8px;
-  border-bottom: 4px solid;
+  border: 1px solid $color-border;
+  border-bottom: 2px solid $color-border;
 
   .category-icon-text-wrapper {
     display: flex;
@@ -18,8 +19,7 @@
     min-height: 5.5rem;
     border-radius: 1px;
     justify-content: flex-start;
-    background: $color-light;
-    box-shadow: $color-shadow-white;
+    //box-shadow: $color-shadow;
 
     mx-text {
       display: flex;

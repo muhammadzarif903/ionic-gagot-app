@@ -10,7 +10,7 @@ export class CategoriesComponent implements OnInit {
 
 
   @Input() categories = categories;
-
+  @Input() inRow: boolean;
   @Output() onClick: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() {
