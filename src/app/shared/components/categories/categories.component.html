@@ -1,11 +1,20 @@
-<div class="categories-list flex-wrap"
-     [class.scrollHorizontal]="inRow"
-     [class.flex-row]="inRow">
-  <mx-category-button
-    (click)="onClick.emit(category)"
-    *ngFor="let category of categories"
-    [title]="category.title" [icon]="category.icon" [selected]="category.selected">
-  </mx-category-button>
-  <ng-content></ng-content>
-</div>
-
+<ion-segment
+  color="primary"
+  (ionChange)="onCategoryChange($event)"
+  class="categories-list flex-wrap"
+  [class.scrollHorizontal]="inRow"
+  [class.flex-row]="inRow">
+  <ion-segment-button
+    class="category-button"
+    *ngFor="let category of categories" value="{{category.title}}">
+    <mx-checkbox
+      *ngIf="category.title === selected"
+      [size]="'medium'" [background]="Color.primary"
+      [color]="Color.light"></mx-checkbox>
+    <ion-icon
+      [size]="'large'"
+      [name]="category.icon">
+    </ion-icon>
+    <ion-label class="text" text-wrap>{{category.title | translate}}</ion-label>
+  </ion-segment-button>
+</ion-segment>

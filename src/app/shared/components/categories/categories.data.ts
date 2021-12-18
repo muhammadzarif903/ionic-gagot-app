@@ -1,47 +1,47 @@
-import {ICategory} from '../category-button/category-button.component';
+import {ICategory} from './categories.component';
 
 export const categories: ICategory[] = [{
   icon: 'home-outline',
-  title: 'Apartment',
+  title: 'APARTMENT',
 }, {
   icon: 'home-outline',
-  title: 'Land',
+  title: 'LAND',
 }, {
   icon: 'home-outline',
-  title: 'Penthouse',
+  title: 'PENTHOUSE',
 }, {
   icon: 'home-outline',
-  title: 'Condos',
+  title: 'CONDO',
 }, {
   icon: 'home-outline',
-  title: 'House',
+  title: 'HOUSE',
 },
   {
     icon: 'home-outline',
-    title: 'Clinics',
+    title: 'CLINIC',
   },
   {
     icon: 'home-outline',
-    title: 'Basement',
+    title: 'BASEMENT',
   },
   {
     icon: 'home-outline',
-    title: 'Offices',
+    title: 'OFFICE',
   },
   {
     icon: 'home-outline',
-    title: 'Duplex Apartment',
+    title: 'DUPLEX_APARTMENT',
   },
   {
     icon: 'home-outline',
-    title: 'Duplex House',
+    title: 'DUPLEX_HOUSE',
   },
   {
     icon: 'home-outline',
-    title: 'Town Houses',
+    title: 'TOWN_HOUSE',
   },
   {
     icon: 'home-outline',
-    title: 'Community Center',
+    title: 'COMMUNITY_CENTER',
   }
 ];

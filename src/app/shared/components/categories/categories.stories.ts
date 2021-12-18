@@ -4,8 +4,7 @@ import {Meta, Story} from '@storybook/angular/types-6-0';
 import {TextComponent} from '../text/text.component';
 import {CheckboxComponent} from '../checkbox/checkbox.component';
 import {CategoriesComponent} from './categories.component';
-import {CategoryButtonComponent, ICategory} from '../category-button/category-button.component';
-import * as Category from '../category-button/caterogy-button.stories';
+import * as Category from './caterogy-button.stories';
 import {categories} from './categories.data';
 
 export default {
@@ -25,7 +24,7 @@ export default {
   },
   decorators: [
     moduleMetadata({
-      declarations: [TextComponent, CheckboxComponent, CategoryButtonComponent],
+      declarations: [TextComponent, CheckboxComponent],
       imports: [IonicModule.forRoot()],
     }),
   ],
@@ -41,7 +40,7 @@ export const Many = Template.bind({});
 Many.args = {
   categories: () => categories.map(obj => {
     return {
-      ...Category.Default.args,
+      // ...Category.Default.args,
       ...obj
     };
   })

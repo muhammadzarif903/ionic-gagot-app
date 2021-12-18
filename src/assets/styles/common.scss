@@ -44,11 +44,31 @@ mx-input {
 ion-title {
 }
 
+ion-segment-button {
+  text-transform: none;
+
+  &.category-button {
+    width: 6.5rem;
+    max-width: 8rem;
+    max-height: 6.5rem;
+    min-height: 6.5rem;
+    border-radius: 5px;
+
+    mx-checkbox {
+      position: absolute;
+      right: -10px;
+      top: 0;
+    }
+  }
+}
 
 textarea, input[type="text"] {
   font-size: $font-size-normal !important;
 }
 
+ion-header {
+  background: $color-white;
+}
 
 ion-select {
   //width: 100%;
@@ -56,6 +76,7 @@ ion-select {
   justify-content: center;
 
 }
+
 //ion-input {
 //  width: 100%;
 //}
@@ -64,9 +85,9 @@ ion-input,
 ion-textarea {
   font-size: $font-size-18;
   //box-shadow: 1px 1px 3px #c1c1c1, -1px -1px 3px #ffffff;
-  border-bottom-width: 1px;
-  border-bottom-color: $color-border;
-  border-bottom-style: solid;
+  //border-bottom-width: 1px;
+  //border-bottom-color: $color-border;
+  //border-bottom-style: solid;
 }
 
 
@@ -80,7 +101,15 @@ ion-textarea {
 }
 
 .section {
+  margin: 1rem 0 1rem 0;
+  padding: 1rem;
+  border-radius: 5px;
+  //border: 1px solid #f1f1f1;
+}
+
+.field {
   padding: 0.6rem;
+  border-radius: 5px;
   border: 1px solid #f1f1f1;
 }
 

@@ -8,7 +8,8 @@ export enum TextType {
   sectionTitle = 'sectionTitle',
   description = 'description',
   label = 'label',
-  placeholder = 'placeholder'
+  placeholder = 'placeholder',
+  segment = 'segment'
 }
 
 @Component({

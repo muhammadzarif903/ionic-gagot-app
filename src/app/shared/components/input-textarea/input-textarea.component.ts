@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 export enum InputAreaMode {
   decimal = 'decimal',
@@ -25,6 +25,7 @@ export enum InputAreaModeType {
 export class InputTextAreaComponent implements OnInit {
 
 
+  @Input() value: string;
   @Input() readonly: boolean;
   @Input() disabled: boolean;
   @Input() icon: string;
@@ -39,23 +40,31 @@ export class InputTextAreaComponent implements OnInit {
   @Input() enterkeyhint: 'done' | 'enter' | 'go' | 'next' | 'previous' | 'search' | 'send' | undefined;
   @Input() wrap: 'hard' | 'off' | 'soft' | undefined;
 
+  @Output() onChange: EventEmitter<any> = new EventEmitter<any>();
+  @Output() onFocus: EventEmitter<any> = new EventEmitter<any>();
+  @Output() onBlur: EventEmitter<any> = new EventEmitter<any>();
+  @Output() onInput: EventEmitter<any> = new EventEmitter<any>();
+
   constructor() {
   }
 
   ngOnInit() {
   }
 
-  public onChange($event) {
+  public onChangeEvent($event) {
+    this.onChange.emit($event);
   }
 
-  public onFocus($event) {
+  public onFocusEvent($event) {
+    this.onFocus.emit($event);
   }
 
-  public onBlur($event) {
+  public onBlurEvent($event) {
+    this.onBlur.emit($event);
   }
 
-  public onInput($event) {
-
+  public onInputEvent($event) {
+    this.onInput.emit($event);
   }
 
 

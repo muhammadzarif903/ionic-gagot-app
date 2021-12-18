@@ -28,7 +28,7 @@ const addPropertyChildren = [{
   component: AddOpenDoorEventComponent
 }, {
   path: '',
-  redirectTo: '',
+  redirectTo: AddPropertyScreen.location,
   pathMatch: 'full'
 }];
 

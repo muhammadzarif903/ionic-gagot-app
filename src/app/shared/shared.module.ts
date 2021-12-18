@@ -1,7 +1,6 @@
 import {NgModule} from '@angular/core';
 import {ProgressBarComponent} from './components/progress-bar/progress-bar.component';
 import {TextComponent} from './components/text/text.component';
-import {CategoryButtonComponent} from './components/category-button/category-button.component';
 import {IonicModule} from '@ionic/angular';
 import {CheckboxComponent} from './components/checkbox/checkbox.component';
 import {CategoriesComponent} from './components/categories/categories.component';
@@ -9,21 +8,22 @@ import {InputTextAreaComponent} from './components/input-textarea/input-textarea
 import {InputComponent} from './components/input/input.component';
 import {CommonModule} from '@angular/common';
 import {TranslateModule} from '@ngx-translate/core';
+import {PlusMinusToggleComponent} from './components/plus-minus-toggle/plus-minus-toggle.component';
 
 @NgModule({
   declarations: [
     ProgressBarComponent,
     TextComponent,
     InputComponent,
-    CategoryButtonComponent,
+    PlusMinusToggleComponent,
     InputTextAreaComponent,
     CategoriesComponent, CheckboxComponent],
   entryComponents: [ProgressBarComponent,
     TextComponent,
     CategoriesComponent,
     InputTextAreaComponent,
-    InputComponent,
-    CategoryButtonComponent],
+    PlusMinusToggleComponent,
+    InputComponent],
   imports: [
     IonicModule,
     CommonModule,
@@ -31,14 +31,14 @@ import {TranslateModule} from '@ngx-translate/core';
   ],
   providers: [],
   bootstrap: [],
-    exports: [
-        ProgressBarComponent,
-        CategoryButtonComponent,
-        CategoriesComponent,
-        TextComponent,
-        InputComponent,
-        InputTextAreaComponent
-    ]
+  exports: [
+    ProgressBarComponent,
+    CategoriesComponent,
+    TextComponent,
+    PlusMinusToggleComponent,
+    InputComponent,
+    InputTextAreaComponent
+  ]
 })
 export class SharedModule {
 }

@@ -1,3 +1,8 @@
-<p>
-  plus-minus-toggle works!
-</p>
+<ion-item class="full-width">
+  <ion-label>
+    <mx-text [type]="'sectionTitle'" [title]="title"></mx-text>
+  </ion-label>
+  <ion-fab-button (click)="onMinusClick()" color="primary" size="small">-</ion-fab-button>
+  <div class="number-value">{{value}}</div>
+  <ion-fab-button (click)="onPlusClick()" size="small">+</ion-fab-button>
+</ion-item>

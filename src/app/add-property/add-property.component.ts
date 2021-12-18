@@ -5,7 +5,6 @@ import {Router} from '@angular/router';
 import {TextType} from '../shared/components/text/text.component';
 import {IPropertyDetails} from '../shared/interfaces/property.interface';
 import {IonDatetime} from '@ionic/angular';
-import {format, parseISO} from 'date-fns';
 
 export enum AddPropertyScreen {
   location = 'location',
@@ -26,97 +25,59 @@ export class AddPropertyComponent {
   @ViewChild(IonDatetime, {static: true}) datetime: IonDatetime;
 
 
-  public property: IPropertyDetails;
+  public property: IPropertyDetails = {
+    title: '',
+    bedroom: 0,
+    bathroom: 0,
+    floors: 0,
+    square: 0,
+    lastFloor: false,
+    floor: 0,
+    price: 0,
+    place: null,
+    latitude: '',
+    type: null,
+    address: '',
+    longitude: '',
+    description: '',
+    isApproved: false,
+    authorID: -1,
+    categoryID: -1,
+    geoHash: '',
+    newConstruction: false,
+    built: 2021,
+    phone: '',
+    agentID: -1,
+    photo: '',
+    photoURLs: '',
+    nextTo: [],
+    videoURLs: '',
+    open_doors: null,
+    delete: false
+  };
   private rootRoute = '/addProperty';
   public steps: IProgressBarStep[] = [];
   public textType = TextType;
   public routeLinks = [
-    {path: '', title: 'TITLES.ADD_NEW_PROPERTY'},
-    {path: AddPropertyScreen.location, active: false, title: 'TITLES.LOCATION'},
+    {path: AddPropertyScreen.location, active: true, title: 'TITLES.LOCATION', data: this.property},
     {path: AddPropertyScreen.propertyDetails, active: false, title: 'TITLES.PROPERTY_DETAILS'},
     {path: AddPropertyScreen.roomDetails, active: false, title: 'TITLES.ROOM_DETAILS'},
     {path: AddPropertyScreen.media, active: false, title: 'TITLES.MEDIA'},
     {path: AddPropertyScreen.priceAndAgreement, active: false, title: 'TITLES.PRICE_AND_AGREEMENT'},
-    {path: AddPropertyScreen.openDoorEvent, active: false, title: 'TITLES.OPEN_DOOR_EVENTS'}];
-
-  public defaultSelectedRadio = "radio_2";
-  //Get value on ionChange on IonRadioGroup
-  public selectedRadioGroup: any;
-  //Get value on ionSelect on IonRadio item
-  public selectedRadioItem: any;
-  public radio_list = [
-    {
-      id: '0',
-      name: 'radio_list',
-      value: 'radio_1',
-      text: 'YES',
-      disabled: false,
-      checked: true,
-      color: 'primary'
-    }, {
-      id: '1',
-      name: 'radio_list',
-      value: 'radio_2',
-      text: 'NO',
-      disabled: false,
-      checked: false,
-      color: 'secondary'
-    }
+    {path: AddPropertyScreen.openDoorEvent, active: false, title: 'TITLES.OPEN_DOOR_EVENTS'}
   ];
 
-  public customDayShortNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-  public dateValue = new Date().getFullYear();
-  public years = [];
-
-  constructor(private router: Router,
-              private stateService: StateService) {
+  constructor(private router: Router) {
     this.steps = this.routeLinks.map(obj => ({
-      title: obj.title,
-      active: obj.active,
-      state: obj.active ? StateType.submitted : StateType.initial
+      title: obj?.title,
+      active: obj?.active,
+      state: obj?.active ? StateType.submitted : StateType.initial
     }));
-
-    this.setYears();
-  }
-  public onYearChange($event) {
-    console.log($event);
-    // this.dateValue = $event.value;
-  }
-
-  private setYears() {
-    const res = [];
-    const currentYear = new Date().getFullYear() + 5;
-    for (let i = 0; i < 70; i++) {
-      res.push(currentYear - i);
-    }
-    this.years = res;
-  }
-
-  public radioGroupChange(event) {
-    console.log("radioGroupChange", event.detail);
-    this.selectedRadioGroup = event.detail;
-  }
-
-  public radioFocus() {
-    console.log("radioFocus");
-  }
-
-  public radioSelect(event) {
-    console.log("radioSelect", event.detail);
-    this.selectedRadioItem = event.detail;
-  }
-
-  public radioBlur() {
-    console.log("radioBlur");
   }
 
   private getActiveRoute(): number {
     return this.routeLinks.findIndex((el) => el.active) || 0;
-  }
-
-  public onCategoryClick($event) {
-
   }
 
   private activateRoute(next?: boolean): any {
@@ -136,10 +97,14 @@ export class AddPropertyComponent {
     this.updateStep();
   }
 
-  public nextPage() {
+  public nextPage($event) {
     const route = this.activateRoute(true);
     this.navigate(route);
     this.updateStep();
+  }
+
+  public onOutletLoaded(component) {
+    component.property = this.property;
   }
 
 
@@ -156,18 +121,6 @@ export class AddPropertyComponent {
       el.state = index <= routeIndex ? StateType.submitted : StateType.initial;
       return el;
     });
-  }
-
-  confirm() {
-    // this.datetime.confirm();
-  }
-
-  reset() {
-    // this.datetime.nativeEl.reset();
-  }
-
-  formatDate(value: string) {
-    return format(parseISO(value), 'MMM dd yyyy');
   }
 
 }
