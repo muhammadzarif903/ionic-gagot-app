@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Color, IconSize} from '../../enums';
-import {roundNumber} from '../../utils';
 import {StateService, StateType} from '../../services/state.service';
+import {Utils} from '../../../../utils';
 
 export enum ProgressBarPosition {
   horizontalTop = 'top',
@@ -71,7 +71,7 @@ export class ProgressBarComponent implements OnInit {
 
   public get value() {
     const doneCount = this.getActiveIndex() + 1;
-    return roundNumber(doneCount / this.steps.length, 1);
+    return Utils.roundNumber(doneCount / this.steps.length, 1);
   }
 
   public get activeStep(): IProgressBarStep {

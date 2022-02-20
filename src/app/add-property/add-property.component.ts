@@ -3,7 +3,7 @@ import {IProgressBarStep} from '../shared/components/progress-bar/progress-bar.c
 import {StateService, StateType} from '../shared/services/state.service';
 import {Router} from '@angular/router';
 import {TextType} from '../shared/components/text/text.component';
-import {IPropertyDetails} from '../shared/interfaces/property.interface';
+import {IProperty} from '../shared/interfaces/property.interface';
 import {IonDatetime} from '@ionic/angular';
 
 export enum AddPropertyScreen {
@@ -25,7 +25,8 @@ export class AddPropertyComponent {
   @ViewChild(IonDatetime, {static: true}) datetime: IonDatetime;
 
 
-  public property: IPropertyDetails = {
+  public property: IProperty = {
+    state: [],
     title: '',
     bedroom: 0,
     bathroom: 0,
@@ -50,6 +51,10 @@ export class AddPropertyComponent {
     agentID: -1,
     photo: '',
     photoURLs: '',
+    kitchen: [],
+    facilities: [],
+    safetyAmenities: [],
+    amenities: [],
     nextTo: [],
     videoURLs: '',
     open_doors: null,

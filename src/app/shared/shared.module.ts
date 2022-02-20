@@ -9,6 +9,7 @@ import {InputComponent} from './components/input/input.component';
 import {CommonModule} from '@angular/common';
 import {TranslateModule} from '@ngx-translate/core';
 import {PlusMinusToggleComponent} from './components/plus-minus-toggle/plus-minus-toggle.component';
+import {ButtonListComponent} from './components/button-list/button-list.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +18,14 @@ import {PlusMinusToggleComponent} from './components/plus-minus-toggle/plus-minu
     InputComponent,
     PlusMinusToggleComponent,
     InputTextAreaComponent,
+    ButtonListComponent,
     CategoriesComponent, CheckboxComponent],
   entryComponents: [ProgressBarComponent,
     TextComponent,
     CategoriesComponent,
     InputTextAreaComponent,
     PlusMinusToggleComponent,
+    ButtonListComponent,
     InputComponent],
   imports: [
     IonicModule,
@@ -37,7 +40,8 @@ import {PlusMinusToggleComponent} from './components/plus-minus-toggle/plus-minu
     TextComponent,
     PlusMinusToggleComponent,
     InputComponent,
-    InputTextAreaComponent
+    InputTextAreaComponent,
+    ButtonListComponent
   ]
 })
 export class SharedModule {

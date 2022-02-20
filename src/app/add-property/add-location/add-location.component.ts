@@ -1,9 +1,10 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {format, parseISO} from 'date-fns';
 import {TextType} from '../../shared/components/text/text.component';
-import {IPropertyDetails} from '../../shared/interfaces/property.interface';
+import {IProperty} from '../../shared/interfaces/property.interface';
 import {Utils} from '../../../utils';
 import {Route, Router} from '@angular/router';
+import {NextToEnum} from '../../shared/enums/nexto.num';
 
 @Component({
   selector: 'mx-add-location',
@@ -12,9 +13,9 @@ import {Route, Router} from '@angular/router';
 })
 export class AddLocationComponent implements OnInit {
 
-  property: IPropertyDetails;
+  property: IProperty;
   public textType = TextType;
-  public nextToList = ['Subway', 'Shop Mall', 'Garden', 'School', 'Dog Park', 'Sea', 'Theater'];
+  public nextToList = Object.values(NextToEnum);
 
   constructor() {
   }
@@ -30,11 +31,11 @@ export class AddLocationComponent implements OnInit {
     this.property.address = $event;
   }
 
-  public onNextToClick($event) {
-    Utils.addRemoveListItem(this.property.nextTo, $event);
+  public onNextToClick(value: NextToEnum) {
+    this.property.nextTo = Utils.addRemoveArrayItem(this.property.nextTo, value);
   }
 
-  public isNextToSelected(name: string) {
+  public isNextToSelected(name: NextToEnum) {
     this.property.nextTo.includes(name);
   }
 

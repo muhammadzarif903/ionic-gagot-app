@@ -1,4 +1,7 @@
 <div class="section">
+  <mx-text [type]="textType.sectionTitle"
+           [title]="'TITLES.DETAILS' | translate">
+  </mx-text>
   <!--  Square¬-->
   <ion-item class="section field">
     <ion-label position="fixed">
@@ -56,7 +59,7 @@
     <ion-label>
       <mx-text [type]="textType.sectionTitle" [title]="'ON_THE_LAND' | translate"></mx-text>
     </ion-label>
-    <ion-toggle [(ngModel)]="pepperoni"></ion-toggle>
+    <ion-toggle [(ngModel)]="property.onTheLand"></ion-toggle>
   </ion-item>
 
   <!--   LAST FLOOR-->
@@ -82,46 +85,6 @@
       [placeholder]="'FLOOR' | translate"></mx-input>
   </ion-item>
 
-  <!--  BEDROOMS-->
-  <ion-item class="section field">
-    <mx-plus-minus-toggle class="full-width"
-                          (onChange)="onKitchenChange($event)"
-                          [value]="property.floor"
-                          [max]="10"
-                          [title]="'BEDROOMS' | translate">
-    </mx-plus-minus-toggle>
-  </ion-item>
-
-  <!--  BATHROOMS-->
-  <ion-item class="section field">
-    <mx-plus-minus-toggle class="full-width"
-                          (onChange)="onKitchenChange($event)"
-                          [value]="property.floor"
-                          [max]="5"
-                          [title]="'BATHROOMS' | translate">
-    </mx-plus-minus-toggle>
-  </ion-item>
-
-  <!--  KITCHEN-->
-  <ion-item class="section field">
-    <mx-plus-minus-toggle class="full-width"
-                          (onChange)="onKitchenChange($event)"
-                          [value]="property.floor"
-                          [max]="5"
-                          [title]="'KITCHEN' | translate">
-    </mx-plus-minus-toggle>
-  </ion-item>
-
-  <!--  Balcony -->
-  <ion-item class="section field">
-    <mx-plus-minus-toggle class="full-width"
-                          (onChange)="onKitchenChange($event)"
-                          [value]="property.floor"
-                          [max]="3"
-                          [title]="'BALCONY' | translate">
-    </mx-plus-minus-toggle>
-  </ion-item>
-
   <!--  Description-->
   <ion-item>
     <mx-text [type]="textType.sectionTitle"
@@ -133,6 +96,76 @@
     (onChange)="onDescriptionInput($event)"
     [inputmode]="'text'">
   </mx-textarea>
+</div>
 
+<div class="section">
+  <mx-text [type]="textType.sectionTitle"
+           [title]="'TITLES.ROOMS' | translate">
+  </mx-text>
+  <!--  BEDROOMS-->
+  <ion-item class="section field">
+    <mx-plus-minus-toggle class="full-width"
+                          (onChange)="onBedroomsChange($event)"
+                          [value]="property.floor"
+                          [max]="10"
+                          [title]="'BEDROOMS' | translate">
+    </mx-plus-minus-toggle>
+  </ion-item>
+
+  <!--  BATHROOMS-->
+  <ion-item class="section field">
+    <mx-plus-minus-toggle class="full-width"
+                          (onChange)="onBathroomsChange($event)"
+                          [value]="property.floor"
+                          [max]="5"
+                          [title]="'BATHROOMS' | translate">
+    </mx-plus-minus-toggle>
+  </ion-item>
+  <!--  BALCONIES -->
+  <ion-item class="section field">
+    <mx-plus-minus-toggle class="full-width"
+                          (onChange)="onBalconiesChange($event)"
+                          [value]="property.floor"
+                          [max]="3"
+                          [title]="'BALCONIES' | translate">
+    </mx-plus-minus-toggle>
+  </ion-item>
+</div>
+
+<!--KITCHEN AMENITIES-->
+<div class="section">
+  <mx-button-list
+    [values]="property.kitchen"
+    [buttons]="kitchenAmenities"
+    [title]="'KITCHEN' | translate"
+    (onClick)="onKitchenChange($event)"></mx-button-list>
+</div>
+
+<!--AMENITIES-->
+<div class="section">
+  <mx-button-list
+    [values]="property.amenities"
+    [buttons]="amenities"
+    [preview]="true"
+    [title]="'AMENITIES' | translate"
+    (onClick)="onAmenitiesClick($event)"></mx-button-list>
+</div>
+
+<div class="section">
+  <mx-button-list
+    [values]="property.facilities"
+    [buttons]="facilitiesList"
+    [preview]="true"
+    [title]="'FACILITIES' | translate"
+    (onClick)="onFacilitiesClick($event)"></mx-button-list>
+</div>
+
+<!--SAFETY AMENITIES-->
+<div class="section">
+  <mx-button-list
+    [values]="property.safetyAmenities"
+    [buttons]="safetyAmenitiesList"
+    [title]="'SAFETY_AMENITIES' | translate"
+    (onClick)="onSafetyAmenitiesClick($event)"></mx-button-list>
 </div>
 

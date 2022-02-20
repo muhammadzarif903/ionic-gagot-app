@@ -28,6 +28,8 @@
     <mx-progress-bar [steps]="steps"></mx-progress-bar>
   </div>
   <router-outlet (activate)="onOutletLoaded($event)"></router-outlet>
-  <ion-button size="large" (click)="nextPage($event)" expand="block">{{'SAVE' | translate}}</ion-button>
+  <div class="section">
+    <ion-button size="large" (click)="nextPage($event)" expand="block">{{'SAVE' | translate}}</ion-button>
+  </div>
 
 </ion-content>

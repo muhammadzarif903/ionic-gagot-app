@@ -1,12 +1,18 @@
 export class Utils {
 
-  static addRemoveListItem(items, item) {
+  static addRemoveArrayItem(items, item): any[] {
     const found = items.findIndex(el => el === item);
-    if (found > 0) {
+    if (found >= 0) {
       items.splice(found, 1);
     } else {
       items.push(item);
     }
+    return items;
   }
+
+  static roundNumber(value: number, decimals: number) {
+    decimals = decimals || 0;
+    return (Math.floor(value * Math.pow(10, decimals)) / Math.pow(10, decimals));
+  };
 
 }

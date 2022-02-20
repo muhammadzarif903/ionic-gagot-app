@@ -38,13 +38,11 @@
 <!--  </div>-->
 
 
-<!--  Next to-->
 <div class="section">
-  <mx-text [type]="textType.sectionTitle" [title]="'NEXT_TO' | translate"></mx-text>
-  <div class="flex-wrap ion-padding-vertical">
-    <ion-button (click)="onNextToClick(obj)" *ngFor="let obj of nextToList"
-                [color]="isNextToSelected(obj) ? 'primary' : 'light'">
-      {{obj | translate}}
-    </ion-button>
-  </div>
+  <mx-button-list
+    [values]="property.nextTo"
+    [buttons]="nextToList"
+    [preview]="true"
+    [title]="'NEXT_TO' | translate"
+    (onClick)="onNextToClick($event)"></mx-button-list>
 </div>

@@ -1,6 +1,6 @@
 import { RoleEnum } from "../enums";
 
-export interface UserInterface {
+export interface IUser {
   appIdentifier: string;
   id: string;
   userID: string;

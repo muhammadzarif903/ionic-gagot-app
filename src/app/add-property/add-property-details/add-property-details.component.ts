@@ -1,6 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {IPropertyDetails} from '../../shared/interfaces/property.interface';
+import {IProperty} from '../../shared/interfaces/property.interface';
 import {TextType} from '../../shared/components/text/text.component';
+import {CommonAmenitiesEnum, SafetyAmenitiesEnum} from '../../shared/enums/amenities.enum';
+import {FacilitiesEnum} from '../../shared/enums/facilities.enum';
+import {KitchenEnum} from '../../shared/enums/kitchen.enum';
 
 @Component({
   selector: 'mx-add-property-details',
@@ -9,7 +12,7 @@ import {TextType} from '../../shared/components/text/text.component';
 })
 export class AddPropertyDetailsComponent implements OnInit {
 
-  @Input() property: IPropertyDetails;
+  @Input() property: IProperty;
 
   public defaultSelectedRadio = "radio_2";
   //Get value on ionChange on IonRadioGroup
@@ -36,10 +39,10 @@ export class AddPropertyDetailsComponent implements OnInit {
     }
   ];
   public customDayShortNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-
-  pepperoni: any;
-  sausage: any;
-  mushrooms: any;
+  public amenities = Object.values(CommonAmenitiesEnum);
+  public kitchenAmenities = Object.values(KitchenEnum);
+  public safetyAmenitiesList = Object.values(SafetyAmenitiesEnum);
+  public facilitiesList = Object.values(FacilitiesEnum);
 
   public dateValue = new Date().getFullYear();
   public years = [];
@@ -105,11 +108,31 @@ export class AddPropertyDetailsComponent implements OnInit {
     this.property.floor = $event;
   }
 
+  public onBedroomsChange($event) {
+    this.property.bedroom = $event;
+  }
+
+  public onBathroomsChange($event) {
+    this.property.bathroom = $event;
+  }
+
   public onKitchenChange($event) {
     this.property.kitchen = $event;
   }
 
-  public onBalconyChange($event) {
+  public onBalconiesChange($event) {
     this.property.balcony = $event;
+  }
+
+  public onAmenitiesClick($event) {
+
+  }
+
+  public onSafetyAmenitiesClick($event) {
+
+  }
+
+  public onFacilitiesClick($event) {
+
   }
 }
