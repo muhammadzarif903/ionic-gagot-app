@@ -1,0 +1,63 @@
+<ion-header [translucent]="true" collapse="fade">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" shape="round" (click)="dismiss()">
+        <ion-icon color="dark" name='arrow-back'></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">{{ pageDetails.pageName }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list class="ion-padding">
+
+    <ion-item button class="box-view">
+      <ion-label color="medium">
+        <h4>Country or  Region</h4>
+      </ion-label>
+      <ion-select value="pakistan">
+        <ion-select-option value="pakistan">Pakistan</ion-select-option>
+        <ion-select-option value="India">India</ion-select-option>
+        <ion-select-option value="China">China</ion-select-option>
+        <ion-select-option value="germany">Germany</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item button class="box-view">
+      <ion-label color="medium">
+        <h4>Translation</h4>
+      </ion-label>
+      <ion-select value="eng">
+        <ion-select-option value="eng">English</ion-select-option>
+        <ion-select-option value="ur">Urdu</ion-select-option>
+        <ion-select-option value="ar">Arabic</ion-select-option>
+        <ion-select-option value="german">German</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item button class="box-view">
+      <ion-label color="medium">
+        <h4>Pause Profile</h4>
+      </ion-label>
+      <ion-toggle color="primary" ></ion-toggle>
+    </ion-item>
+    <br>
+
+    <ion-item button class="box-view">
+      <ion-label color="medium">
+        <h4>Delete Profile</h4>
+      </ion-label>
+      <ion-toggle color="primary" ></ion-toggle>
+    </ion-item>
+    <br>
+
+    <ion-item button class="box-view">
+      <ion-label color="medium">
+        <h4>Allow Notifications</h4>
+        <p>Allow are disable the notifications</p>
+      </ion-label>
+      <ion-toggle color="primary" ></ion-toggle>
+    </ion-item>
+  </ion-list>
+</ion-content>

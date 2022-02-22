@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- <ion-button color="" slot="start">
+      <ion-icon slot="icon-only" name="grid-outline"></ion-icon>
+    </ion-button> -->
+    <ion-title class="ion-text-center">Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <app-custom-loader *ngIf="loading.status" [title]="loading.msg"></app-custom-loader>
+  <div class="container">
+
+    <div class="profile-box">
+      <div class="avatar-box">
+        <img src="../../../assets/icons/img.png" id="proImage" class="profile_img">
+        <div class="cameraIcon">
+          <a>
+            <ion-icon name="camera-outline" class="profile_img"></ion-icon>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h3>John Henarry</h3>
+      </div>
+    </div>
+    <ion-item button detail (click)="onSettings()">
+      <ion-icon name="person" color="medium" slot="start" ></ion-icon>
+      <ion-label color="dark">
+        Account Details
+        <!-- <p>All the Account Details you can see here</p> -->
+      </ion-label>
+    </ion-item>
+    
+    <ion-item button detail (click)="onSettings()">
+      <ion-icon name="settings" color="medium" slot="start"></ion-icon>
+      <ion-label color="dark">
+        Settings
+        <!-- <p>App settings to change general role or app</p> -->
+      </ion-label>
+    </ion-item>
+
+    <ion-item button detail (click)="onChangePassword()">
+      <ion-icon name="lock-open" color="medium" slot="start"></ion-icon>
+      <ion-label color="dark">
+        Change Password
+        <!-- <p>App settings to change general role or app</p> -->
+      </ion-label>
+    </ion-item>
+    
+    <ion-item button detail >
+      <ion-icon name="chatbubbles" color="medium" slot="start"></ion-icon>
+      <ion-label color="dark">
+        Messages
+      </ion-label>
+    </ion-item>
+    
+    
+    <ion-item button detail >
+      <ion-icon name="heart" color="medium" slot="start"></ion-icon>
+      <ion-label color="dark">
+        My Favorite
+      </ion-label>
+    </ion-item>
+    
+    <ion-item button detail >
+      <ion-icon name="cash" color="medium" slot="start"></ion-icon>
+      <ion-label color="dark">
+        Pricings
+      </ion-label>
+    </ion-item>
+    <ion-item button detail >
+      <ion-icon name="cash" color="medium" slot="start"></ion-icon>
+      <ion-label color="dark">
+        User Management
+        <p></p>
+      </ion-label>
+    </ion-item>
+    <ion-item button detail >
+      <ion-icon name="cash" color="medium" slot="start"></ion-icon>
+      <ion-label color="dark">
+        Privacy
+        <p></p>
+      </ion-label>
+    </ion-item>
+  </div>
+</ion-content>
