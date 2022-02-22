@@ -1,3 +1,6 @@
+import { FormsModule } from '@angular/forms';
+import { UpdatePersonalProfileComponent } from './../profile-settings/update-personal-profile/update-personal-profile.component';
+import { CustomLoaderComponent } from './components/custom-loader/custom-loader.component';
 import {NgModule} from '@angular/core';
 import {ProgressBarComponent} from './components/progress-bar/progress-bar.component';
 import {TextComponent} from './components/text/text.component';
@@ -10,6 +13,8 @@ import {CommonModule} from '@angular/common';
 import {TranslateModule} from '@ngx-translate/core';
 import {PlusMinusToggleComponent} from './components/plus-minus-toggle/plus-minus-toggle.component';
 import {ButtonListComponent} from './components/button-list/button-list.component';
+import { ResetPassowrdComponent } from './components/reset-passowrd/reset-passowrd.component';
+import { SettingsComponent } from '../profile-settings/settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -19,18 +24,25 @@ import {ButtonListComponent} from './components/button-list/button-list.componen
     PlusMinusToggleComponent,
     InputTextAreaComponent,
     ButtonListComponent,
-    CategoriesComponent, CheckboxComponent],
+    CategoriesComponent, CheckboxComponent,CustomLoaderComponent,ResetPassowrdComponent,
+    UpdatePersonalProfileComponent,
+  SettingsComponent],
   entryComponents: [ProgressBarComponent,
     TextComponent,
     CategoriesComponent,
     InputTextAreaComponent,
     PlusMinusToggleComponent,
     ButtonListComponent,
-    InputComponent],
+    InputComponent,
+    CustomLoaderComponent,
+    ResetPassowrdComponent,UpdatePersonalProfileComponent,
+    SettingsComponent],
   imports: [
     IonicModule,
     CommonModule,
-    TranslateModule
+    TranslateModule,
+    FormsModule,
+    IonicModule,
   ],
   providers: [],
   bootstrap: [],
@@ -41,7 +53,9 @@ import {ButtonListComponent} from './components/button-list/button-list.componen
     PlusMinusToggleComponent,
     InputComponent,
     InputTextAreaComponent,
-    ButtonListComponent
+    ButtonListComponent,
+    CustomLoaderComponent,
+    ResetPassowrdComponent
   ]
 })
 export class SharedModule {
