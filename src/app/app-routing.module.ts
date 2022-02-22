@@ -3,19 +3,7 @@ import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 import {environment} from '../environments/environment';
 
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full'
-  },
-  {
-    path: 'home',  
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
-  },
-  {
-    path: 'login',
-    loadChildren: () => import('./authentications/authentications.module').then(m => m.AuthenticationsPageModule)
-  },
+  {path: '', loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)},
   {
     path: 'addProperty',
     loadChildren: () => import('./add-property/add-property.module').then(m => m.AddPropertyModule)
@@ -38,7 +26,7 @@ const routes: Routes = [
   },
   {
     path: 'profile',
-    loadChildren: () => import('./profile-settings/profile-settings.module').then(m => m.ProfileSettingsPageModule)
+    loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule)
   }
 ];
 
