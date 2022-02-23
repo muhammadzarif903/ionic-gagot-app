@@ -1,3 +1,5 @@
+@import "../../assets/styles/colors.scss";
+
 ion-list {
   background: none;
   --background: none;
@@ -8,7 +10,7 @@ ion-list {
   margin: 10px 0;
   --background: none;
   border-radius: 8px;
-  box-shadow: 5px 5px 8px #8d8f914d, -3px -3px 10px #fff;
+  box-shadow: 5px 5px 8px #8d8f914d, -3px -3px 10px $color-white;
 }
 
 .container {
@@ -18,7 +20,7 @@ ion-list {
     // margin: 15px 0px;
     // --background: none;
     // border-radius: 8px;
-    // box-shadow: 5px 5px 8px #8d8f914d, -3px -3px 10px #fff;
+    // box-shadow: 5px 5px 8px #8d8f914d, -3px -3px 10px $color-white;
     // height: 65px;
     ion-icon {
       margin: 0px 8px 0px 0px !important;
@@ -32,13 +34,7 @@ ion-list {
 }
 
 .profile-box {
-  padding: 25px 20px 25px 25px;
-  box-shadow: 4px 5px 5px #8d8f914d, -3px -3px 8px #fff;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  align-content: center;
-  justify-content: space-between;
+  padding: 25px 10px 25px 10px;
   height: auto !important;
   .cameraIcon {
     position: absolute !important;
@@ -48,9 +44,9 @@ ion-list {
     a {
       ion-icon {
         font-size: 20px !important;
-        background: #d2cdcda1;
+        background: $color-gray-light;
         border-radius: 50px;
-        color: #fff;
+        color: $color-white;
         padding: 5px;
       }
     }

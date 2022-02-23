@@ -29,58 +29,45 @@
 
 /* You can add global styles to this file, and also import other style files */
 @import "./fonts.scss";
-@import "./colors";
+@import "./assets/styles/colors.scss";
 @import "./common";
 
 ion-content {
   --background: none;
-  background: #f5f5f5;
+  background: $color-bg;
 }
-/* Inputs Style */
 
+/* Inputs Style */
 .input-item {
   --background: none;
   padding: 8px 10px 10px 20px;
   height: 60px;
   font-size: 16px;
   font-weight: 500;
-  border: 1px solid;
-  border-image-source: linear-gradient(
-    163.71deg,
-    rgba(18, 61, 101, 0.05) 49.23%,
-    rgba(18, 61, 101, 0.264642) 146.13%
-  );
-  box-shadow: inset -7px -7px 8px #fff, inset 2px 2px 9px #9d9fa67a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: nowrap;
+  box-shadow: inset -7px -7px 8px $color-white, inset 2px 2px 9px #9d9fa67a;
   border-radius: 8px;
   ion-input {
-    display: block;
-    width: 100%;
-    padding: 0;
-    border: none;
-    outline: none;
-    box-sizing: border-box;
-    color: #9d9fa6;
+    color: $color-gray-light;
   }
   ion-input input::placeholder {
-    color: #9d9fa6;
+    color: $color-gray-light;
     font-size: 16px;
     font-weight: 500;
   }
 }
 
-.error-label {
-  font-size: 12px;
-  color: red;
-  text-transform: lowercase;
-}
-
 .grd-btn {
   --background: none;
-  background: linear-gradient(180deg, #ea2c01 0%, #f76c00 100%);
-  box-shadow: -1px -1px 5px #fff, 2px 7px 31px #6e6e6e66;
+  background: $button-bg;
+  box-shadow: $button-shadow;
   border-radius: 10px;
   height: 58px;
-  color: #fff;
+  color: $color-white;
   text-transform: capitalize;
   --border-radius: 10px;
   font-size: 16px;
@@ -94,6 +81,15 @@ ion-content {
   align-items: center;
 }
 
+.flex-all-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
 .other-details {
   display: flex;
   flex-direction: column;
@@ -102,7 +98,7 @@ ion-content {
     font-size: 18px;
     white-space: nowrap;
     font-weight: 400;
-    color: #9d9fa6;
+    color: $color-gray-light;
     a {
       font-weight: 500;
     }
@@ -118,27 +114,21 @@ ion-content {
   font-weight: 400;
   color: #383535db;
   font-size: 28px;
-  text-shadow: 0px 1px 3px #1e1e1e;
+  text-shadow: $text-shadow;
   text-align: center;
 }
 
 /* Profile Avatar settings */
 .avatar-box img {
-  background: #fff;
+  background: $color-white;
   padding: 0px;
   border-radius: 50%;
   width: 120px;
   height: 120px;
   object-fit: cover;
 }
-// .profile_pic_icon img.smalllogo {
-//   background: #fff;
-//   padding: 0px;
-//   border-radius: 50% !important;
-//   width: 60px !important;
-//   height: 60px !important;
-//   object-fit: cover !important;
-// }
+
+
 .cameraIcon {
   position: absolute;
   margin-top: -60px;
@@ -146,9 +136,9 @@ ion-content {
   z-index: 10px;
   ion-icon {
     font-size: 30px;
-    background: #d2cdcda1;
+    background: $color-gray-light;
     border-radius: 50px;
-    color: #fff;
+    color: $color-white;
     padding: 5px;
   }
 }
@@ -157,8 +147,13 @@ ion-content {
   margin: 15px 0;
   --background: none;
   border-radius: 8px;
-  box-shadow: 4px 5px 5px #8d8f914d, -3px -3px 3px #fff;
-  height: 65px;
+  box-shadow: 4px 5px 5px #8d8f914d, -3px -3px 3px $color-white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  flex-wrap: nowrap;
+  padding: 6px;
 }
 
 .img-icon {
@@ -167,19 +162,17 @@ ion-content {
 }
 
 .gray {
-  color: #9d9fa6 !important;
+  color: $color-gray-light !important;
 }
 .gray-txt {
-  color: #9d9fa6;
+  color: $color-gray-light;
   font-weight: 500;
   font-size: 22px;
   font-style: normal;
 }
-.justify-text {
-  
-}
+
 a {
-  color: #3880ff !important;
+  color: $color-primary !important;
 }
 
 /* Paddings */

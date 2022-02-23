@@ -205,6 +205,7 @@
   "RECOVER_PASSWORD": "Recover Password",
   "CHANGE_YOUR_PASSWORD": "Change your Password",
   "CHANGE_YOUR_PASSWORD_HINT": "If you want to change your password associated with your account you may do so bellow,be sure to click on update button onces you are done.",
-  "CONFORM_PASSWORD": "Conform Password"
+  "CONFORM_PASSWORD": "Conform Password",
+  "SELECT_COUNTRY": "Select Country"
 
 }

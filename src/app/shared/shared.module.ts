@@ -1,3 +1,4 @@
+import { CountryCodesComponent } from './components/country-codes/country-codes.component';
 import { FormsModule } from '@angular/forms';
 import { UpdatePersonalProfileComponent } from './../profile-settings/update-personal-profile/update-personal-profile.component';
 import { CustomLoaderComponent } from './components/custom-loader/custom-loader.component';
@@ -26,6 +27,7 @@ import { SettingsComponent } from '../profile-settings/settings/settings.compone
     ButtonListComponent,
     CategoriesComponent, CheckboxComponent,CustomLoaderComponent,ResetPassowrdComponent,
     UpdatePersonalProfileComponent,
+    CountryCodesComponent,
   SettingsComponent],
   entryComponents: [ProgressBarComponent,
     TextComponent,
@@ -36,7 +38,8 @@ import { SettingsComponent } from '../profile-settings/settings/settings.compone
     InputComponent,
     CustomLoaderComponent,
     ResetPassowrdComponent,UpdatePersonalProfileComponent,
-    SettingsComponent],
+    SettingsComponent,
+    CountryCodesComponent],
   imports: [
     IonicModule,
     CommonModule,
