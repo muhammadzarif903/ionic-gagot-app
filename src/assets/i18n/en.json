@@ -196,6 +196,15 @@
   "MY_FAVORITE": "My Favorite",
   "PRICINGS": "Pricings",
   "USER_MANAGEMENT": "User Management",
-  "PRIVACY": "Privacy"
+  "PRIVACY": "Privacy",
+  "ALLOW_NOTIFICATIONS": "Allow Notifications",
+  "ALLOW_NOTIFICATIONS_HINT": "Allow are disable the notifications",
+  "TRANSLATE": "Translate",
+  "COUNTRY_OR_REGION": "Country or Region",
+  "EDIT_DETAILS": "Edit Details",
+  "RECOVER_PASSWORD": "Recover Password",
+  "CHANGE_YOUR_PASSWORD": "Change your Password",
+  "CHANGE_YOUR_PASSWORD_HINT": "If you want to change your password associated with your account you may do so bellow,be sure to click on update button onces you are done.",
+  "CONFORM_PASSWORD": "Conform Password"
 
 }
