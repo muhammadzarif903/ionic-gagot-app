@@ -17,8 +17,8 @@ export class SignupDetailsComponent implements OnInit {
   activeSegment = 'basic-info';
 
   steps = {
-    step:1,
-    progressBar:0
+    step: 1,
+    progressBar: 0
   }
 
   managePassword() {
@@ -32,17 +32,17 @@ export class SignupDetailsComponent implements OnInit {
   }
 
   loading = false;
-  formDetails= {
-    fname:'',
-    lname:'',
-    email:'',
-    password:'',
-    phone_number:''
+  formDetails = {
+    fname: '',
+    lname: '',
+    email: '',
+    password: '',
+    phone_number: ''
   }
 
 
-  selectedContry= {
-    phone_code:388,
+  selectedContry = {
+    phone_code: 388,
   }
 
   constructor(private modalCtrl: ModalController,
@@ -52,12 +52,12 @@ export class SignupDetailsComponent implements OnInit {
 
   }
 
-  segmentChange(ev){
+  segmentChange(ev) {
     this.activeSegment = ev.detail.value;
   }
 
-  loginInAs(type){
-    this.modalCtrl.dismiss({type:type},'move');
+  loginInAs(type) {
+    this.modalCtrl.dismiss({ type: type }, 'move');
   }
 
   ngOnInit() { }
@@ -95,9 +95,9 @@ export class SignupDetailsComponent implements OnInit {
       nextElement.setFocus();
       return;
     }
-    console.log("code in array",this.digitCode);
+    console.log("code in array", this.digitCode);
     const completeCode = this.digitCode.join('');
-    console.log("code after join",completeCode);
+    console.log("code after join", completeCode);
     if (this.digitCode.length == 4) {
       this.verifyEmailBtn();
     }
@@ -116,12 +116,12 @@ export class SignupDetailsComponent implements OnInit {
   }
 
   async signup(f) {
-    
+
     // this.steps.step = this.steps.step + 1;
     // this.steps.progressBar = this.steps.progressBar + 16;
   }
 
-  terms(){
+  terms() {
 
   }
 

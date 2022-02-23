@@ -31,8 +31,8 @@
       </div>
 
       <ion-segment (ionChange)="segmentChange($event)" [value]="activeSegment">
-        <ion-segment-button value="basic-info">Basic Info</ion-segment-button>
-        <ion-segment-button value="agent-info">Agent Info</ion-segment-button>
+        <ion-segment-button value="basic-info">{{'AGENT_INFO' | translate}}</ion-segment-button>
+        <ion-segment-button value="agent-info">{{'AGENT_INFO' | translate}}</ion-segment-button>
       </ion-segment>
 
       <!-- agent-info -->
@@ -99,28 +99,28 @@
 
     <!-- Step Two -->
     <ng-container *ngIf="steps.step == 2">
-          <ion-row class="animate__animated animate__flipInY animate__slow">
-            <ion-col size="12">
-              <div class="code-container">
-              <div size='12' class="ion-text-center">
-                <h1 class="brand-title">Enter the code we sent you </h1>
-              </div>
-              <div class="code-box">
-                <ion-item lines="none" class="code-box">
-                  <ion-input class="vefy-input" (keyup)="digChange(d2)" type='number' #d1 minlength="1" min='0' max='1'
-                    maxlength="1" [(ngModel)]="digitCode[0]"></ion-input>
-                  <ion-input class="vefy-input" (keyup)="digChange(d3)" type='number' #d2 minlength="1" min='0' max='1'
-                    maxlength="1" [(ngModel)]="digitCode[1]"></ion-input>
-                  <ion-input class="vefy-input" (keyup)="digChange(d4)" type='number' #d3 minlength="1" min='0' max='1'
-                    maxlength="1" [(ngModel)]="digitCode[2]"></ion-input>
-                  <ion-input class="vefy-input" (keyup)="digChange('no')" type='number' #d4 minlength="1" min='0' max='1'
-                    maxlength="1" [(ngModel)]="digitCode[3]"></ion-input>
-                </ion-item>
-              </div>
+      <ion-row class="animate__animated animate__flipInY animate__slow">
+        <ion-col size="12">
+          <div class="code-container">
+            <div size='12' class="ion-text-center">
+              <h1 class="brand-title">{{'ENTER_CODE_WE_SENT' | translate}}</h1>
             </div>
-            </ion-col>
-    
-            <!-- <ion-col size="6">
+            <div class="code-box">
+              <ion-item lines="none" class="code-box">
+                <ion-input class="vefy-input" (keyup)="digChange(d2)" type='number' #d1 minlength="1" min='0' max='1'
+                  maxlength="1" [(ngModel)]="digitCode[0]"></ion-input>
+                <ion-input class="vefy-input" (keyup)="digChange(d3)" type='number' #d2 minlength="1" min='0' max='1'
+                  maxlength="1" [(ngModel)]="digitCode[1]"></ion-input>
+                <ion-input class="vefy-input" (keyup)="digChange(d4)" type='number' #d3 minlength="1" min='0' max='1'
+                  maxlength="1" [(ngModel)]="digitCode[2]"></ion-input>
+                <ion-input class="vefy-input" (keyup)="digChange('no')" type='number' #d4 minlength="1" min='0' max='1'
+                  maxlength="1" [(ngModel)]="digitCode[3]"></ion-input>
+              </ion-item>
+            </div>
+          </div>
+        </ion-col>
+
+        <!-- <ion-col size="6">
               <ion-button (click)="verifyEmailBtn()" #verify shape="round" expand="block" color="success">Verify
               </ion-button>
             </ion-col>
@@ -128,26 +128,27 @@
               <ion-button (click)="reSendEmail()" [disabled]="formDetails.acc_conformed==true" shape="round" expand="block"
                 color="dark">Re-Send</ion-button>
             </ion-col> -->
-          </ion-row>
+      </ion-row>
     </ng-container>
 
     <ion-row>
       <ion-col size='12' class="">
-        <ion-button expand="block" class="grd-btn w-100" (click)="goNext()" *ngIf="steps.step == 1"> Register
-        </ion-button>
+        <ion-button expand="block" class="grd-btn w-100" (click)="goNext()" *ngIf="steps.step == 1"> {{'SIGN_UP'
+          |translate}} </ion-button>
       </ion-col>
     </ion-row>
 
-    <ion-row *ngIf="steps.step != 2" >
+    <ion-row *ngIf="steps.step != 2">
       <ion-col size="12" class="de-flex">
         <br>
         <div class="other-container de-flex">
-          <h2 class="gray-txt">OR</h2>
+          <h2 class="gray-txt">{{'OR' | translate}}</h2>
           <div class="other-details de-flex">
-            <ion-label><a (click)="loginInAs('mobile')"> Sign up with phone number</a></ion-label>
-            <ion-label>By Creating an account you agree with Our </ion-label>
-            <ion-label><a (click)="terms()">Terms of use</a> </ion-label>
-            <ion-label class="gray">Already have an account? <a (click)="loginInAs('')">Login</a></ion-label>
+            <ion-label><a (click)="loginInAs('mobile')"> {{'SIGNIN_WITH_MOBILE' | translate}}</a></ion-label>
+            <ion-label>{{'BY_CREATING_AN_ACCOUNT' | translate}} </ion-label>
+            <ion-label><a (click)="terms()">{{'TERMS_OF_USE' | translate}}</a> </ion-label>
+            <ion-label class="gray">{{'ALREADY_HAVE_ACCOUNT' | translate}} <a (click)="loginInAs('')">{{'LOGIN' |
+                translate}}</a></ion-label>
           </div>
         </div>
       </ion-col>

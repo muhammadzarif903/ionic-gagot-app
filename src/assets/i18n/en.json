@@ -170,13 +170,21 @@
   "SAT": "Sat",
   "LOGIN_TO_ACCOUNT": "Login to Account",
   "SIGN_IN": "Sign In",
+  "LOGIN": "Login",
+  "SIGN_UP": "Sign Un",
   "PHONENO_ERR_MSG": "Please Enter Correct PhoneNo.",
   "EMAIL_ERR_MSG": "Please Enter Correct Email.",
   "OR": "OR",
   "SINGIN_WITH_EMAIL": "Sing in with Email",
   "SIGNIN_WITH_MOBILE": "Sing in with phone number",
   "DONT_HAVE_ACCOUNT": "Don't have Account?",
+  "ALREADY_HAVE_ACCOUNT": "Already have Account?",
+  "BY_CREATING_AN_ACCOUNT": "By creating an account you agree with our",
+  "TERMS_OF_USE": "Terms of use",
   "CREATE_ACCOUNT": "Create Account",
   "EMAIL_PLACEHOLDER": "Enter Email Address",
-  "PASSWORD_PLACEHOLDER": "Enter Email Address"
+  "PASSWORD_PLACEHOLDER": "Enter Email Address",
+  "BASIC_INFO": "Basic Info",
+  "AGENT_INFO": "Agent Info",
+  "ENTER_CODE_WE_SENT": "Enter the code we sent you "
 }
