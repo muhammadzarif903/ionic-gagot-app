@@ -6,6 +6,7 @@ import { IonicModule } from '@ionic/angular';
 import { ProfileSettingsPageRoutingModule } from './profile-settings-routing.module';
 import { ProfileSettingsPage } from './profile-settings.page';
 import { SharedModule } from '../shared/shared.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { SharedModule } from '../shared/shared.module';
     FormsModule,
     IonicModule,
     ProfileSettingsPageRoutingModule,
-    SharedModule
+    SharedModule,
+    TranslateModule
   ],
   declarations: [ProfileSettingsPage]
 })

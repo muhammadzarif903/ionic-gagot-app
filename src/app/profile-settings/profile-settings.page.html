@@ -3,7 +3,7 @@
     <!-- <ion-button color="" slot="start">
       <ion-icon slot="icon-only" name="grid-outline"></ion-icon>
     </ion-button> -->
-    <ion-title class="ion-text-center">Profile</ion-title>
+    <ion-title class="ion-text-center">{{'PROFILE' | translate}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -26,17 +26,17 @@
       </div>
     </div>
     <ion-item button detail (click)="onSettings()">
-      <ion-icon name="person" color="medium" slot="start" ></ion-icon>
+      <ion-icon name="person" color="medium" slot="start"></ion-icon>
       <ion-label color="dark">
-        Account Details
+        {{'ACCOUNT_DETAILS' | translate}}
         <!-- <p>All the Account Details you can see here</p> -->
       </ion-label>
     </ion-item>
-    
+
     <ion-item button detail (click)="onSettings()">
       <ion-icon name="settings" color="medium" slot="start"></ion-icon>
       <ion-label color="dark">
-        Settings
+        {{'TITLES.SETTINGS' | translate}}
         <!-- <p>App settings to change general role or app</p> -->
       </ion-label>
     </ion-item>
@@ -44,43 +44,43 @@
     <ion-item button detail (click)="onChangePassword()">
       <ion-icon name="lock-open" color="medium" slot="start"></ion-icon>
       <ion-label color="dark">
-        Change Password
+        {{'CHANGE_PASSWORD' | translate}}
         <!-- <p>App settings to change general role or app</p> -->
       </ion-label>
     </ion-item>
-    
-    <ion-item button detail >
+
+    <ion-item button detail>
       <ion-icon name="chatbubbles" color="medium" slot="start"></ion-icon>
       <ion-label color="dark">
-        Messages
+        {{'MESSAGES' | translate}}
       </ion-label>
     </ion-item>
-    
-    
-    <ion-item button detail >
+
+
+    <ion-item button detail>
       <ion-icon name="heart" color="medium" slot="start"></ion-icon>
       <ion-label color="dark">
-        My Favorite
+        {{'MY_FAVORITE' | translate}}
       </ion-label>
     </ion-item>
-    
-    <ion-item button detail >
+
+    <ion-item button detail>
       <ion-icon name="cash" color="medium" slot="start"></ion-icon>
       <ion-label color="dark">
-        Pricings
+        {{'PRICINGS' | translate}}
       </ion-label>
     </ion-item>
-    <ion-item button detail >
+    <ion-item button detail>
       <ion-icon name="cash" color="medium" slot="start"></ion-icon>
       <ion-label color="dark">
-        User Management
+        {{'USER_MANAGEMENT' | translate}}
         <p></p>
       </ion-label>
     </ion-item>
-    <ion-item button detail >
+    <ion-item button detail>
       <ion-icon name="cash" color="medium" slot="start"></ion-icon>
       <ion-label color="dark">
-        Privacy
+        {{'PRIVACY' | translate}}
         <p></p>
       </ion-label>
     </ion-item>

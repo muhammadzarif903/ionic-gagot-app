@@ -182,9 +182,20 @@
   "BY_CREATING_AN_ACCOUNT": "By creating an account you agree with our",
   "TERMS_OF_USE": "Terms of use",
   "CREATE_ACCOUNT": "Create Account",
+  "ACCOUNT_DETAILS": "Account Details",
   "EMAIL_PLACEHOLDER": "Enter Email Address",
-  "PASSWORD_PLACEHOLDER": "Enter Email Address",
+  "PASSWORD_PLACEHOLDER": "Enter Password",
+  "ENTER_COMPANY_ID": "Enter Company Id",
+  "ENTER_COMPANY_ADDRESS": "Enter Company Address",
+  "ENTER_MOBILE_NO": "Enter Mobile Number",
   "BASIC_INFO": "Basic Info",
   "AGENT_INFO": "Agent Info",
-  "ENTER_CODE_WE_SENT": "Enter the code we sent you "
+  "ENTER_CODE_WE_SENT": "Enter the code we sent you",
+  "CHANGE_PASSWORD": "Change Password",
+  "MESSAGES": "Messages",
+  "MY_FAVORITE": "My Favorite",
+  "PRICINGS": "Pricings",
+  "USER_MANAGEMENT": "User Management",
+  "PRIVACY": "Privacy"
+
 }

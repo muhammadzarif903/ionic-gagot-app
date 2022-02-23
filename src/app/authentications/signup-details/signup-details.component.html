@@ -42,7 +42,7 @@
             <ion-row class="animate__animated animate__flipInY animate__slow">
               <ion-col size="12" size-sm="6" offset-sm="3">
                 <ion-item lines="none" class='input-item'>
-                  <ion-input name="fnametxt" placeholder="Enter Company Id *" [(ngModel)]="formDetails.fname"
+                  <ion-input name="fnametxt" [placeholder]="'ENTER_COMPANY_ID' | translate" [(ngModel)]="formDetails.fname"
                     type="text" ngModel required #fname="ngModel"></ion-input>
                   <span class="validity"></span>
                 </ion-item>
@@ -50,7 +50,7 @@
 
               <ion-col size="12" size-sm="6" offset-sm="3">
                 <ion-item lines="none" class='input-item'>
-                  <ion-input name="lnametxt" placeholder="Enter Company Address *" [(ngModel)]="formDetails.lname"
+                  <ion-input name="lnametxt" [placeholder]="'ENTER_COMPANY_ADDRESS' | translate" [(ngModel)]="formDetails.lname"
                     type="text" ngModel required #lname="ngModel"></ion-input>
                   <span class="validity"></span>
                 </ion-item>
@@ -67,7 +67,7 @@
             <ion-row class="animate__animated animate__flipInY animate__slow">
               <ion-col size="12" size-sm="6" offset-sm="3">
                 <ion-item lines="none" class='input-item'>
-                  <ion-input name="emailTxt" placeholder="Email *" [(ngModel)]="formDetails.email" type="email" ngModel
+                  <ion-input name="emailTxt" [placeholder]="'EMAIL' | translate" [(ngModel)]="formDetails.email" type="email" ngModel
                     required email #emailCtrl="ngModel"></ion-input>
                   <span class="validity"></span>
                 </ion-item>
@@ -75,7 +75,7 @@
 
               <ion-col size="12" size-sm="6" offset-sm="3">
                 <ion-item lines="none" class='input-item'>
-                  <ion-input placeholder="Password *" [(ngModel)]="formDetails.password" type="{{passwordType}}" ngModel
+                  <ion-input [placeholder]="'PASSWORD_PLACEHOLDER' | translate" [(ngModel)]="formDetails.password" type="{{passwordType}}" ngModel
                     name="passwordTxt" required minlength="6" maxlength="20" #passwordCtrl="ngModel"></ion-input>
                   <div class="keep-eye-on" slot="end" (click)="managePassword()">
                     <ion-icon size='medium' color="primary" size="small" name="{{passeye}}"></ion-icon>
@@ -87,7 +87,7 @@
                 <ion-item lines="none" class='input-item'>
                   <ion-input [value]="'+'+selectedContry.phone_code" style="max-width: 45px;" readonly='true'>
                   </ion-input>
-                  <ion-input placeholder="Mobile Number" [(ngModel)]="formDetails.phone_number" type='tel' ngModel
+                  <ion-input [placeholder]="'ENTER_MOBILE_NO' | translate" [(ngModel)]="formDetails.phone_number" type='tel' ngModel
                     name="phoneNumber" required #phoneCtrl="ngModel"></ion-input>
                 </ion-item>
               </ion-col>
