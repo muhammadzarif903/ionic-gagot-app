@@ -1,9 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {format, parseISO} from 'date-fns';
 import {TextType} from '../../shared/components/text/text.component';
 import {IProperty} from '../../shared/interfaces/property.interface';
 import {Utils} from '../../../utils';
-import {Route, Router} from '@angular/router';
 import {NextToEnum} from '../../shared/enums/nexto.num';
 
 @Component({
@@ -13,7 +12,7 @@ import {NextToEnum} from '../../shared/enums/nexto.num';
 })
 export class AddLocationComponent implements OnInit {
 
-  property: IProperty;
+  public property: IProperty;
   public textType = TextType;
   public nextToList = Object.values(NextToEnum);
 
