@@ -12,7 +12,7 @@ import {KitchenEnum} from '../../shared/enums/kitchen.enum';
 })
 export class AddPropertyDetailsComponent implements OnInit {
 
-  @Input() property: IProperty;
+  @Input() public property: IProperty;
 
   public defaultSelectedRadio = "radio_2";
   //Get value on ionChange on IonRadioGroup

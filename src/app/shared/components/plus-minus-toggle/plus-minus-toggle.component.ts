@@ -8,8 +8,8 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 export class PlusMinusToggleComponent implements OnInit {
 
 
-  @Input() title: string = '';
-  @Input() value: number = 0;
+  @Input() title = '';
+  @Input() value = 0;
 
   @Input() min: number;
   @Input() max: number;
