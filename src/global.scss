@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -28,117 +28,170 @@
 @import "~leaflet/dist/leaflet.css";
 
 /* You can add global styles to this file, and also import other style files */
-@import './fonts';
+@import "./fonts.scss";
 @import "./colors";
 @import "./common";
 
-ion-content{
-  --background:none;
-  background: #F5F5F5;
+ion-content {
+  --background: none;
+  background: #f5f5f5;
 }
 /* Inputs Style */
 
-.input-item{
-    --background: none;
-    padding: 0 10px 10px 20px;
-    height: 50px;
-    font-size: 14px;
-    border: 1px solid;
-    border-image-source: linear-gradient(163.71deg,rgba(18,61,101,.05) 49.23%,rgba(18,61,101,.264642) 146.13%);
-    box-shadow: inset -4px -4px 10px #ffffff, inset 4px 4px 6px #9d9fa67a;
-    border-radius: 8px;
-    ion-input {
-        display: block;
-        width: 100%;
-        padding: 0;
-        border: none;
-        outline: none;
-        box-sizing: border-box;
-      }
-    ion-input::placeholder {
-        color: gray;
+.input-item {
+  --background: none;
+  padding: 8px 10px 10px 20px;
+  height: 60px;
+  font-size: 16px;
+  font-weight: 500;
+  border: 1px solid;
+  border-image-source: linear-gradient(
+    163.71deg,
+    rgba(18, 61, 101, 0.05) 49.23%,
+    rgba(18, 61, 101, 0.264642) 146.13%
+  );
+  box-shadow: inset -7px -7px 8px #fff, inset 2px 2px 9px #9d9fa67a;
+  border-radius: 8px;
+  ion-input {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    color: #9d9fa6;
+  }
+  ion-input input::placeholder {
+    color: #9d9fa6;
+    font-size: 16px;
+    font-weight: 500;
+  }
+}
+
+.error-label {
+  font-size: 12px;
+  color: red;
+  text-transform: lowercase;
+}
+
+.grd-btn {
+  --background: none;
+  background: linear-gradient(180deg, #ea2c01 0%, #f76c00 100%);
+  box-shadow: -1px -1px 5px #fff, 2px 7px 31px #6e6e6e66;
+  border-radius: 10px;
+  height: 58px;
+  color: #fff;
+  text-transform: capitalize;
+  --border-radius: 10px;
+  font-size: 16px;
+}
+
+.de-flex {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.other-details {
+  display: flex;
+  flex-direction: column;
+  ion-label {
+    margin-bottom: 5px;
+    font-size: 18px;
+    white-space: nowrap;
+    font-weight: 400;
+    color: #9d9fa6;
+    a {
+      font-weight: 500;
     }
+  }
 }
 
-.error-label{
-    font-size: 12px;
-    color: red;
-    text-transform: lowercase;
+.flexed-div {
+  padding: 10px;
 }
 
-.grd-btn{
-    --background: none;
-    background: linear-gradient(180deg,#EA2C01 0%,#F76C00 100%);
-    box-shadow: -1px -1px 5px #ffffff, 5px 7px 12px #6e6e6e80;
-    border-radius: 8px;
-    height: 42px;
-    color: #fff;
-    text-transform: capitalize;
-    --border-radius: 8px;
-}
-
-.de-flex{
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
+.brand-title {
+  margin: 25px 0;
+  font-weight: 400;
+  color: #383535db;
+  font-size: 28px;
+  text-shadow: 0px 1px 3px #1e1e1e;
+  text-align: center;
 }
 
 /* Profile Avatar settings */
 .avatar-box img {
-    background: #fff;
-    padding: 5px;
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-  }
-  .profile_pic_icon img.smalllogo {
-    background: #fff;
-    padding: 5px;
-    border-radius: 50% !important;
-    width: 60px !important;
-    height: 60px !important;
-    object-fit: cover !important;
-  }
+  background: #fff;
+  padding: 0px;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+}
+// .profile_pic_icon img.smalllogo {
+//   background: #fff;
+//   padding: 0px;
+//   border-radius: 50% !important;
+//   width: 60px !important;
+//   height: 60px !important;
+//   object-fit: cover !important;
+// }
 .cameraIcon {
-    position: absolute;
-    right: 38%;
-    margin-top: -40px;
-    z-index: 10px;
-    ion-icon{
-        font-size: 18px;
-        background: #808289cf;
-        border-radius: 50px;
-        color: white;
-        padding: 5px;
-    }
+  position: absolute;
+  margin-top: -60px;
+  margin-left: 92px;
+  z-index: 10px;
+  ion-icon {
+    font-size: 30px;
+    background: #d2cdcda1;
+    border-radius: 50px;
+    color: #fff;
+    padding: 5px;
   }
-  .box-view{
-    padding: 7px;
-    margin: 15px 0;
-    --background: none;
-    border-radius: 8px;
-    box-shadow: 5px 5px 8px #8d8f914d, -3px -3px 10px #fff;
-    height: 65px;
-  }
+}
+.box-view {
+  padding: 7px;
+  margin: 15px 0;
+  --background: none;
+  border-radius: 8px;
+  box-shadow: 5px 5px 8px #8d8f914d, -3px -3px 10px #fff;
+  height: 65px;
+}
 
-  .gray-txt{
-    color: gray;
-    font-size: 1.1rem;
-  }
-  a{
-    color: #3880ff !important;
-  }
+.img-icon {
+  width: 30px;
+  margin-right: 5px;
+}
+
+.gray {
+  color: #9d9fa6 !important;
+}
+.gray-txt {
+  color: #9d9fa6;
+  font-weight: 500;
+  font-size: 22px;
+  font-style: normal;
+}
+a {
+  color: #3880ff !important;
+}
 
 /* Paddings */
-.plr-5{
-    padding: 0px 5px 0px 5px;
+.ptb {
+  padding: 5px 0px 5px 0px !important;
 }
-.plr-10{
-    padding: 0px 10px 0px 10px;
+.ptb-10 {
+  padding: 10px 0px 10px 0px !important;
 }
-.plr-15{
-    padding: 0px 15px 0px 15px;
+.plr-5 {
+  padding: 0px 5px 0px 5px;
+}
+.plr-10 {
+  padding: 0px 10px 0px 10px;
+}
+.plr-15 {
+  padding: 0px 15px 0px 15px;
 }

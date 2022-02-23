@@ -41,17 +41,4 @@ ion-list{
     align-items: center;
     align-content: center;
     justify-content: space-between;
-    .avatar-box img{
-        background: #fff;
-        padding: 10px;
-        border-radius: 50%;
-        width: 120px;
-        height: 120px;
-        object-fit: cover;
-    }
-    .cameraIcon{
-        position: absolute;
-        right: 66%;
-        margin-top: -40px;
-    }
 }

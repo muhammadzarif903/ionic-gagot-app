@@ -9,7 +9,8 @@ import { AuthenticationsPageRoutingModule } from './authentications-routing.modu
 import { AuthenticationsPage } from './authentications.page';
 import { SignupDetailsComponent } from './signup-details/signup-details.component';
 import { SharedModule } from '../shared/shared.module';
-// import { SharedModule } from '../shared/shared.module';
+
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { SharedModule } from '../shared/shared.module';
     FormsModule,
     IonicModule,
     AuthenticationsPageRoutingModule,
-    SharedModule
+    SharedModule,
+    TranslateModule
   ],
   declarations: [AuthenticationsPage,SignupDetailsComponent],
   entryComponents: [SignupDetailsComponent]

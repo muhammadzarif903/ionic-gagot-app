@@ -1,72 +1,76 @@
 <ion-content>
-
   <!-- Login with Mobile -->
-  <ng-container *ngIf="loginType === 'mobile'"  >
+  <ng-container *ngIf="loginType === 'mobile'">
     <div class="bg">
       <div class="container">
-        <div class="brand-title">Login to Account</div>
+
+        <div class="brand-title">{{'LOGIN_TO_ACCOUNT' | translate}}</div>
+
         <div class="brand-logo">
           <ion-icon name="home-outline"></ion-icon>
         </div>
-  
+
         <div class="inputs">
           <ion-col size="12" size-sm="6" offset-sm="3">
             <ion-item lines="none" class='input-item'>
+              <img class="img-icon" src="../../assets/icons/saudi-arabia.png" alt="">
               <ion-input [value]="'+'+selectedContry.phone_code" style="max-width: 45px;" readonly='true'></ion-input>
-              <ion-input placeholder="___-___-____"  [(ngModel)]="formDetails.phone_number" type='tel' ngModel name="phoneNumber" required
-                #phoneCtrl="ngModel"></ion-input>
+              <ion-input placeholder="___-___-____" [(ngModel)]="formDetails.phone_number" type='tel' ngModel
+                name="phoneNumber" required #phoneCtrl="ngModel"></ion-input>
             </ion-item>
             <ion-label *ngIf="!phoneCtrl.valid && phoneCtrl.touched" class='error-label'>
-              Please add a Correct phone number
-            </ion-label> 
+             {{'PHONENO_ERR_MSG' | translate}}
+            </ion-label>
+            <ion-button expand="block" class="grd-btn" (click)="doLogin()" type="submit">{{ 'SIGN_IN' | translate}} </ion-button>
           </ion-col>
-          <ion-button expand="block" class="grd-btn" (click)="doLogin()"  type="submit">LOGIN</ion-button>
           <br>
-          <h2 class="gray-txt">OR</h2>
-          <br>
+          <h2 class="gray-txt">{{ 'OR' | translate}}</h2>
           <div class="other-details">
-            <a (click)="loginInAs('email')"> Sign in with Email</a> <br>
-            <ion-label>Don't have an account? <a (click)="createAccount()">Create Account</a></ion-label>
+            <ion-label> <a (click)="loginInAs('email')"> {{'SINGIN_WITH_EMAIL' | translate}} </a> </ion-label> 
+            <ion-label class="gray">{{'DONT_HAVE_ACCOUNT' | translate}} <a (click)="createAccount()">{{'CREATE_ACCOUNT' | translate}}</a></ion-label>
           </div>
         </div>
-  
+
       </div>
     </div>
   </ng-container>
 
   <!-- Login with Email -->
-  <ng-container *ngIf="loginType === 'email'" >
+  <ng-container *ngIf="loginType === 'email'">
     <div class="bg">
-      <div class="container" >
-        <div class="brand-title">Login to Account</div>
-        <div class="brand-logo"><ion-icon name="home-outline"></ion-icon></div>
-        <div class="inputs">   
-          <ion-col size="12" size-sm="6" offset-sm="3">
-            <ion-item lines="none" class='input-item'>
-              <ion-input type="email" placeholder="example@test.com" ngModel #emailCtrl="ngModel" required ></ion-input>
-            </ion-item>
-            <ion-label *ngIf="!emailCtrl.valid && emailCtrl.touched" class='error-label'>
-              Please Enter a valid email
-            </ion-label> 
-          </ion-col>
+      <div class="container">
 
-          <ion-col size="12" size-sm="6" offset-sm="3">
-            <ion-item lines="none" class='input-item'>
-              <ion-input type="password" placeholder="Min 6 charaters long" minlength="6" maxlength="20" ngModel #passwordCtrl="ngModel" required ></ion-input>
-            </ion-item>
-            <ion-label *ngIf="!passwordCtrl.valid && passwordCtrltouched" class='error-label'>
-              Please Enter a valid Password
-            </ion-label> 
-          </ion-col>
+        <div class="brand-title">{{'LOGIN_TO_ACCOUNT' | translate}}</div>
+        
+        <div class="brand-logo">
+          <ion-icon name="home-outline"></ion-icon>
+        </div>
+        
+        <div class="inputs">
+          <ion-row>
+            <ion-col class="ion-no-padding ion-no-margin ptb" size="12" size-sm="6" offset-sm="3">
+              <ion-item lines="none" class='input-item'>
+                <ion-input type="email" placeholder='Enter Email Address' ngModel #emailCtrl="ngModel" required></ion-input>
+              </ion-item>
+            </ion-col>
+  
+            <ion-col class ='ion-no-padding ion-no-margin ptb' size="12" size-sm="6" offset-sm="3">
+              <ion-item lines="none" class='input-item'>
+                <ion-input type="password" placeholder="Enter Password" minlength="6" maxlength="20" ngModel
+                  #passwordCtrl="ngModel" required></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-button expand="block" class="grd-btn" type="submit">{{'SIGN_IN' | translate}}</ion-button>
 
-          <ion-button expand="block" class="grd-btn" type="submit">LOGIN</ion-button>
           <br>
-          <h2 class="gray-txt">OR</h2>
-          <br>
+
+          <h2 class="gray-txt">{{'OR'|translate}}</h2>
+
           <div class="other-details">
-            <a (click)="loginInAs('mobile')"> Sign in with Phone Number</a><br>
-            <ion-label>Don't have an account? <a (click)="createAccount()">Create Account</a></ion-label>
-          </div>
+            <ion-label> <a (click)="loginInAs('mobile')"> {{'SIGNIN_WITH_MOBILE' | translate}}</a> </ion-label>
+            <ion-label class="gray">{{'DONT_HAVE_ACCOUNT' | translate}} <a (click)="createAccount()">{{'CREATE_ACCOUNT' | translate}}</a></ion-label>
+          </div> 
         </div>
       </div>
     </div>

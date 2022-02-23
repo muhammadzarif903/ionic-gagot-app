@@ -167,5 +167,16 @@
   "WED": "Wed",
   "THU": "Thu",
   "FRI": "Fri",
-  "SAT": "Sat"
+  "SAT": "Sat",
+  "LOGIN_TO_ACCOUNT": "Login to Account",
+  "SIGN_IN": "Sign In",
+  "PHONENO_ERR_MSG": "Please Enter Correct PhoneNo.",
+  "EMAIL_ERR_MSG": "Please Enter Correct Email.",
+  "OR": "OR",
+  "SINGIN_WITH_EMAIL": "Sing in with Email",
+  "SIGNIN_WITH_MOBILE": "Sing in with phone number",
+  "DONT_HAVE_ACCOUNT": "Don't have Account?",
+  "CREATE_ACCOUNT": "Create Account",
+  "EMAIL_PLACEHOLDER": "Enter Email Address",
+  "PASSWORD_PLACEHOLDER": "Enter Email Address"
 }
