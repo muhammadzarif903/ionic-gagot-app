@@ -1,9 +1,6 @@
-ion-content{
-    --background: #ffffff !important;
-    background-color: #ffffff !important;
-    background: #ffffff !important;
-}
 ion-list{
+    --background: none;
+    background: none;
     ion-list-header{
         --padding-start: 0px;
         padding: 0px 10px;
@@ -11,3 +8,4 @@ ion-list{
         color: black;
     }
 }
+

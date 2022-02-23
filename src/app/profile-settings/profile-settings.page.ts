@@ -83,6 +83,9 @@ export class ProfileSettingsPage implements OnInit {
     }
   }
 
+  openCamera(){
+    
+  }
 
   // Deleted profile
   async deleteProfile(evnt){

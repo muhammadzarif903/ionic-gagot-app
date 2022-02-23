@@ -11,13 +11,13 @@
   <app-custom-loader *ngIf="loading.status" [title]="loading.msg"></app-custom-loader>
   <div class="container">
 
-    <div class="profile-box">
-      <div class="avatar-box">
-        <img src="../../../assets/icons/img.png" id="proImage" class="profile_img">
+    <div class="profile-box box-view">
+      <div class="">
+        <ion-avatar>
+          <img src="../../../assets/icons/img.png" id="proImage" class="profile_img">
+        </ion-avatar>
         <div class="cameraIcon">
-          <a>
-            <ion-icon name="camera-outline" class="profile_img"></ion-icon>
-          </a>
+          <a (click)="openCamera()"><ion-icon name="camera" class="profile_img"></ion-icon></a>
         </div>
       </div>
 
@@ -25,7 +25,7 @@
         <h3>John Henarry</h3>
       </div>
     </div>
-    <ion-item button detail (click)="onSettings()">
+    <ion-item class="box-view" button detail (click)="onSettings()">
       <ion-icon name="person" color="medium" slot="start"></ion-icon>
       <ion-label color="dark">
         {{'ACCOUNT_DETAILS' | translate}}
@@ -33,7 +33,7 @@
       </ion-label>
     </ion-item>
 
-    <ion-item button detail (click)="onSettings()">
+    <ion-item class="box-view" button detail (click)="onSettings()">
       <ion-icon name="settings" color="medium" slot="start"></ion-icon>
       <ion-label color="dark">
         {{'TITLES.SETTINGS' | translate}}
@@ -41,7 +41,7 @@
       </ion-label>
     </ion-item>
 
-    <ion-item button detail (click)="onChangePassword()">
+    <ion-item class="box-view" button detail (click)="onChangePassword()">
       <ion-icon name="lock-open" color="medium" slot="start"></ion-icon>
       <ion-label color="dark">
         {{'CHANGE_PASSWORD' | translate}}
@@ -49,36 +49,37 @@
       </ion-label>
     </ion-item>
 
-    <ion-item button detail>
+    <ion-item class="box-view" button detail>
       <ion-icon name="chatbubbles" color="medium" slot="start"></ion-icon>
       <ion-label color="dark">
         {{'MESSAGES' | translate}}
       </ion-label>
     </ion-item>
 
-
-    <ion-item button detail>
+    <ion-item class="box-view" button detail>
       <ion-icon name="heart" color="medium" slot="start"></ion-icon>
       <ion-label color="dark">
         {{'MY_FAVORITE' | translate}}
       </ion-label>
     </ion-item>
 
-    <ion-item button detail>
+    <ion-item class="box-view" button detail>
       <ion-icon name="cash" color="medium" slot="start"></ion-icon>
       <ion-label color="dark">
         {{'PRICINGS' | translate}}
       </ion-label>
     </ion-item>
-    <ion-item button detail>
-      <ion-icon name="cash" color="medium" slot="start"></ion-icon>
+
+    <ion-item class="box-view" button detail>
+      <ion-icon name="people-circle" color="medium" slot="start"></ion-icon>
       <ion-label color="dark">
         {{'USER_MANAGEMENT' | translate}}
         <p></p>
       </ion-label>
     </ion-item>
-    <ion-item button detail>
-      <ion-icon name="cash" color="medium" slot="start"></ion-icon>
+
+    <ion-item class="box-view" button detail>
+      <ion-icon name="document" color="medium" slot="start"></ion-icon>
       <ion-label color="dark">
         {{'PRIVACY' | translate}}
         <p></p>

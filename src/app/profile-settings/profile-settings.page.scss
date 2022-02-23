@@ -1,44 +1,58 @@
-
-ion-list{
-    background: none;
-    --background: none;
+ion-list {
+  background: none;
+  --background: none;
 }
 
 .box {
-    padding: 0 10px;
-    margin: 10px 0;
-    --background: none;
-    border-radius: 8px;
-    box-shadow: 5px 5px 8px #8d8f914d, -3px -3px 10px #fff;
+  padding: 0 10px;
+  margin: 10px 0;
+  --background: none;
+  border-radius: 8px;
+  box-shadow: 5px 5px 8px #8d8f914d, -3px -3px 10px #fff;
 }
 
-.container{
-    padding: 20px;
-    ion-item {
-        padding: 7px 7px;
-        margin: 15px 0px;
-        --background: none;
-        border-radius: 8px;
-        box-shadow: 5px 5px 8px #8d8f914d, -3px -3px 10px #fff;
-        height: 65px;
-        ion-icon {
-            margin: 0px 8px 0px 0px !important;
-        }
-        ion-label{
-            p{
-                font-size: 12px;
-            }
-        }
-
+.container {
+  padding: 20px;
+  ion-item {
+    // padding: 7px 7px;
+    // margin: 15px 0px;
+    // --background: none;
+    // border-radius: 8px;
+    // box-shadow: 5px 5px 8px #8d8f914d, -3px -3px 10px #fff;
+    // height: 65px;
+    ion-icon {
+      margin: 0px 8px 0px 0px !important;
     }
+    ion-label {
+      p {
+        font-size: 12px;
+      }
+    }
+  }
 }
 
-.profile-box{
-    padding: 10px;
-    box-shadow: 5px 5px 8px #8d8f914d, -3px -3px 10px #fff;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    align-content: center;
-    justify-content: space-between;
+.profile-box {
+  padding: 25px 20px 25px 25px;
+  box-shadow: 4px 5px 5px #8d8f914d, -3px -3px 8px #fff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  height: auto !important;
+  .cameraIcon {
+    position: absolute !important;
+    margin-top: -37px;
+    margin-left: 43px;
+    z-index: 10px;
+    a {
+      ion-icon {
+        font-size: 20px !important;
+        background: #d2cdcda1;
+        border-radius: 50px;
+        color: #fff;
+        padding: 5px;
+      }
+    }
+  }
 }
