@@ -1,0 +1,78 @@
+<ion-content>
+  <!-- Login with Mobile -->
+  <ng-container *ngIf="loginType === 'mobile'">
+    <div class="bg">
+      <div class="container">
+
+        <div class="brand-title">{{'LOGIN_TO_ACCOUNT' | translate}}</div>
+
+        <div class="brand-logo">
+          <ion-icon name="home-outline"></ion-icon>
+        </div>
+
+        <div class="inputs">
+          <ion-col size="12" size-sm="6" offset-sm="3">
+            <ion-item lines="none" class='input-item'>
+              <img class="img-icon" (click)="getCountryCode()" [src]="selectedCountry.country_flag?selectedCountry.country_flag: '../../assets/icons/saudi-arabia.png'" alt="">
+              <ion-input [value]="selectedCountry.country_calling_code" style="max-width: 45px;" readonly='true'></ion-input>
+              <ion-input placeholder="___-___-____" [pattern]="selectedCountry.regex" [(ngModel)]="formDetails.phone_number" type='tel' ngModel
+                name="phoneNumber" required #phoneCtrl="ngModel"></ion-input>
+            </ion-item>
+            <ion-label *ngIf="!phoneCtrl.valid && phoneCtrl.touched" class='error-label'>
+             {{'PHONENO_ERR_MSG' | translate}}
+            </ion-label>
+            <ion-button expand="block" class="grd-btn" (click)="doLogin()" type="submit">{{ 'SIGN_IN' | translate}} </ion-button>
+          </ion-col>
+          <br>
+          <h2 class="gray-txt">{{ 'OR' | translate}}</h2>
+          <div class="other-details">
+            <ion-label> <a (click)="loginInAs('email')"> {{'SINGIN_WITH_EMAIL' | translate}} </a> </ion-label> 
+            <ion-label class="gray">{{'DONT_HAVE_ACCOUNT' | translate}} <a (click)="createAccount()">{{'CREATE_ACCOUNT' | translate}}</a></ion-label>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </ng-container>
+
+  <!-- Login with Email -->
+  <ng-container *ngIf="loginType === 'email'">
+    <div class="bg">
+      <div class="container">
+
+        <div class="brand-title">{{'LOGIN_TO_ACCOUNT' | translate}}</div>
+        
+        <div class="brand-logo">
+          <ion-icon name="home-outline"></ion-icon>
+        </div>
+        
+        <div class="inputs">
+          <ion-row>
+            <ion-col class="ion-no-padding ion-no-margin ptb" size="12" size-sm="6" offset-sm="3">
+              <ion-item lines="none" class='input-item'>
+                <ion-input type="email" [placeholder]="'EMAIL_PLACEHOLDER' | translate"  ngModel #emailCtrl="ngModel" required></ion-input>
+              </ion-item>
+            </ion-col>
+  
+            <ion-col class ='ion-no-padding ion-no-margin ptb' size="12" size-sm="6" offset-sm="3">
+              <ion-item lines="none" class='input-item'>
+                <ion-input type="password" [placeholder]="'PASSWORD_PLACEHOLDER' | translate" minlength="6" maxlength="20" ngModel
+                  #passwordCtrl="ngModel" required></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-button expand="block" class="grd-btn" type="submit">{{'SIGN_IN' | translate}}</ion-button>
+
+          <br>
+
+          <h2 class="gray-txt">{{'OR'|translate}}</h2>
+
+          <div class="other-details">
+            <ion-label> <a (click)="loginInAs('mobile')"> {{'SIGNIN_WITH_MOBILE' | translate}}</a> </ion-label>
+            <ion-label class="gray">{{'DONT_HAVE_ACCOUNT' | translate}} <a (click)="createAccount()">{{'CREATE_ACCOUNT' | translate}}</a></ion-label>
+          </div> 
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</ion-content>

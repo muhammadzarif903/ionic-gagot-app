@@ -21,18 +21,18 @@ const routes: Routes = [
       },
       {
         path: 'profile',
-        loadChildren: () => import('./tab4-profile/tab4.module').then(m => m.Tab4PageModule)
+        loadChildren: () => import('../profile-settings/profile-settings.module').then(m => m.ProfileSettingsPageModule)
       },
       {
         path: '',
-        redirectTo: '/tabs/home',
+        redirectTo: 'tabs/home',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/home',
+    redirectTo: 'tabs/home',
     pathMatch: 'full'
   }
 ];

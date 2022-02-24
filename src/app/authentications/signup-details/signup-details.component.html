@@ -1,0 +1,158 @@
+<ion-header class='ion-no-border' translucent='true'>
+  <ion-toolbar class='bg-primary'>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" [disabled]="steps.step == 3" (click)="dismiss()" slot="icon-only" shape="round">
+        <ion-icon name='chevron-back' color='dark'></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <!-- <ion-title color='light'>
+      Registration
+    </ion-title> -->
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true" class='bg-primary' translucent='true'>
+  <app-custom-loader *ngIf="loading" title="Please Wait..."></app-custom-loader>
+  <form #form="ngForm" class='plr-5'>
+
+    <!-- Step One -->
+    <ng-container *ngIf="steps.step == 1">
+      <div class="container de-flex ">
+        <div>
+          <div class="brand-title">{{'LOGIN_TO_ACCOUNT' | translate}}</div>
+        </div>
+        <div class="avatar-box">
+          <img src="../../../assets/icons/img.png" id="proImage" class="profile_img">
+          <div class="cameraIcon">
+            <a>
+              <ion-icon name="camera" class="profile_img"></ion-icon>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <ion-segment (ionChange)="segmentChange($event)" [value]="activeSegment">
+        <ion-segment-button value="basic-info">{{'AGENT_INFO' | translate}}</ion-segment-button>
+        <ion-segment-button value="agent-info">{{'AGENT_INFO' | translate}}</ion-segment-button>
+      </ion-segment>
+
+      <!-- agent-info -->
+      <ng-container *ngIf="activeSegment=='agent-info'" class='set-bg'>
+        <div class="container h-100 ptb-10">
+          <div class="flexed-div">
+            <ion-row class="animate__animated animate__flipInY animate__slow">
+              <ion-col size="12" size-sm="6" offset-sm="3">
+                <ion-item lines="none" class='input-item'>
+                  <ion-input name="fnametxt" [placeholder]="'ENTER_COMPANY_ID' | translate" [(ngModel)]="formDetails.fname"
+                    type="text" ngModel required #fname="ngModel"></ion-input>
+                  <span class="validity"></span>
+                </ion-item>
+              </ion-col>
+
+              <ion-col size="12" size-sm="6" offset-sm="3">
+                <ion-item lines="none" class='input-item'>
+                  <ion-input name="lnametxt" [placeholder]="'ENTER_COMPANY_ADDRESS' | translate" [(ngModel)]="formDetails.lname"
+                    type="text" ngModel required #lname="ngModel"></ion-input>
+                  <span class="validity"></span>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </div>
+        </div>
+      </ng-container>
+
+      <!-- basic-info -->
+      <ng-container *ngIf="activeSegment=='basic-info'">
+        <div class="container h-100 ptb-10">
+          <div class="flexed-div">
+            <ion-row class="animate__animated animate__flipInY animate__slow">
+              <ion-col size="12" size-sm="6" offset-sm="3">
+                <ion-item lines="none" class='input-item'>
+                  <ion-input name="emailTxt" [placeholder]="'EMAIL' | translate" [(ngModel)]="formDetails.email" type="email" ngModel
+                    required email #emailCtrl="ngModel"></ion-input>
+                  <span class="validity"></span>
+                </ion-item>
+              </ion-col>
+
+              <ion-col size="12" size-sm="6" offset-sm="3">
+                <ion-item lines="none" class='input-item'>
+                  <ion-input [placeholder]="'PASSWORD_PLACEHOLDER' | translate" [(ngModel)]="formDetails.password" type="{{passwordType}}" ngModel
+                    name="passwordTxt" required minlength="6" maxlength="20" #passwordCtrl="ngModel"></ion-input>
+                  <div class="keep-eye-on" slot="end" (click)="managePassword()">
+                    <ion-icon size='medium' color="primary" size="small" name="{{passeye}}"></ion-icon>
+                  </div>
+                </ion-item>
+              </ion-col>
+
+              <ion-col size="12" size-sm="6" offset-sm="3">
+                <ion-item lines="none" class='input-item'>
+                  <ion-input [value]="'+'+selectedContry.phone_code" style="max-width: 45px;" readonly='true'>
+                  </ion-input>
+                  <ion-input [placeholder]="'ENTER_MOBILE_NO' | translate" [(ngModel)]="formDetails.phone_number" type='tel' ngModel
+                    name="phoneNumber" required #phoneCtrl="ngModel"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
+
+    <!-- Step Two -->
+    <ng-container *ngIf="steps.step == 2">
+      <ion-row class="animate__animated animate__flipInY animate__slow">
+        <ion-col size="12">
+          <div class="code-container">
+            <div size='12' class="ion-text-center">
+              <h1 class="brand-title">{{'ENTER_CODE_WE_SENT' | translate}}</h1>
+            </div>
+            <div class="code-box">
+              <ion-item lines="none" class="code-box">
+                <ion-input class="vefy-input" (keyup)="digChange(d2)" type='number' #d1 minlength="1" min='0' max='1'
+                  maxlength="1" [(ngModel)]="digitCode[0]"></ion-input>
+                <ion-input class="vefy-input" (keyup)="digChange(d3)" type='number' #d2 minlength="1" min='0' max='1'
+                  maxlength="1" [(ngModel)]="digitCode[1]"></ion-input>
+                <ion-input class="vefy-input" (keyup)="digChange(d4)" type='number' #d3 minlength="1" min='0' max='1'
+                  maxlength="1" [(ngModel)]="digitCode[2]"></ion-input>
+                <ion-input class="vefy-input" (keyup)="digChange('no')" type='number' #d4 minlength="1" min='0' max='1'
+                  maxlength="1" [(ngModel)]="digitCode[3]"></ion-input>
+              </ion-item>
+            </div>
+          </div>
+        </ion-col>
+
+        <!-- <ion-col size="6">
+              <ion-button (click)="verifyEmailBtn()" #verify shape="round" expand="block" color="success">Verify
+              </ion-button>
+            </ion-col>
+            <ion-col size="6">
+              <ion-button (click)="reSendEmail()" [disabled]="formDetails.acc_conformed==true" shape="round" expand="block"
+                color="dark">Re-Send</ion-button>
+            </ion-col> -->
+      </ion-row>
+    </ng-container>
+
+    <ion-row>
+      <ion-col size='12' class="">
+        <ion-button expand="block" class="grd-btn w-100" (click)="goNext()" *ngIf="steps.step == 1"> {{'SIGN_UP'
+          |translate}} </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="steps.step != 2">
+      <ion-col size="12" class="de-flex">
+        <br>
+        <div class="other-container de-flex">
+          <h2 class="gray-txt">{{'OR' | translate}}</h2>
+          <div class="other-details de-flex">
+            <ion-label><a (click)="loginInAs('mobile')"> {{'SIGNIN_WITH_MOBILE' | translate}}</a></ion-label>
+            <ion-label>{{'BY_CREATING_AN_ACCOUNT' | translate}} </ion-label>
+            <ion-label><a (click)="terms()">{{'TERMS_OF_USE' | translate}}</a> </ion-label>
+            <ion-label class="gray">{{'ALREADY_HAVE_ACCOUNT' | translate}} <a (click)="loginInAs('')">{{'LOGIN' |
+                translate}}</a></ion-label>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+
+  </form>
+</ion-content>

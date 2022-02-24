@@ -1,0 +1,90 @@
+<ion-header class='ion-no-border' translucent='true'>
+  <ion-toolbar class='bg-primary'>
+    <ion-buttons slot="start">
+      <ion-button (click)="onDismiss()"  fill="clear">
+        <ion-icon name='chevron-back' color='dark'></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center" color='dark' *ngIf="type == 'recover'"> {{'RECOVER_PASSWORD' | translate}} </ion-title>
+    <ion-title class="ion-text-center" color='dark' *ngIf="type == 'change'"> {{'EDIT_DETAILS' | translate}}  </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class='bg-primary' translucent='true'>
+  <app-custom-loader *ngIf="loading.status" ></app-custom-loader>
+
+  <!-- recover password -->
+  <ng-container *ngIf="type == 'recover'">
+    <form class='' >
+      <ng-container class='set-bg'>
+        <div class="container h-100">
+          <div class="flexed-div">
+            <ion-grid>
+              <ion-row class="">
+                <ion-col size="12" size-sm="6" offset-sm="3">
+                  <ion-item lines="none" class='input-item'>
+                    <ion-input name="emailTxt" placeholder="Email *" [(ngModel)]="formDetails.email"
+                      type="email" ngModel required #emailCtrl="ngModel"></ion-input>
+                    <span class="validity"></span>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+        </div>
+      </ng-container>
+
+      <ion-row>
+        <ion-col size='12' class="ion-padding">
+          <ion-button (click)="sendEmail(form)" class="grd-btn"  expand="block" color="success" [disabled]="!emailCtrl.valid"> SEND EMAIL
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+    </form>
+  </ng-container>
+
+
+  <!-- Change password -->
+  <ng-container *ngIf="type == 'change'">
+    <form>
+      <!-- Step one -->
+      <ng-container class='set-bg'>
+        <div class="">
+          <div class="flexed-div">
+              <ion-row class="">
+                <ion-col size="12">
+                  <div class="de-flex gray justify-text">
+                    <h1>{{'CHANGE_YOUR_PASSWORD' | translate}}</h1>
+                    <p> {{'CHANGE_YOUR_PASSWORD_HINT' | translate}}
+                    </p>
+                  </div>
+                </ion-col> 
+                <ion-col size="12" size-sm="6" offset-sm="3">
+                  <ion-item lines="none" class='input-item'>
+                    <ion-input name="oldPasswordTxt" [placeholder]="'PASSWORD' | translate" minlength="6" maxlength="20" [(ngModel)]="formDetails.old_password"
+                      type="text" ngModel required #oldPasswordTxt="ngModel"></ion-input>
+                    <span class="validity"></span>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" size-sm="6" offset-sm="3">
+                  <ion-item lines="none" class='input-item'>
+                    <ion-input name="newPasswordTxt" [placeholder]="'CONFORM_PASSWORD' | translate" minlength="6" maxlength="20" [(ngModel)]="formDetails.new_password"
+                      type="text" ngModel required #newPasswordTxt="ngModel"></ion-input>
+                    <span class="validity"></span>
+                  </ion-item>
+                </ion-col>
+
+                <ion-col size='12'>
+                  <ion-button class="grd-btn" (click)="changePassword()"  expand="block"> {{'CHANGE_PASSWORD' | translate}}
+                  </ion-button>
+                </ion-col>
+              </ion-row>
+          </div>
+        </div>
+      </ng-container>
+
+    </form>
+  </ng-container>
+
+</ion-content>

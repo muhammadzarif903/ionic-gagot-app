@@ -2,7 +2,19 @@ import {NgModule} from '@angular/core';
 import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 
 const routes: Routes = [
-  {path: '', loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)},
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
+  {
+    path: 'home',  
+    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./authentications/authentications.module').then(m => m.AuthenticationsPageModule)
+  },
   {
     path: 'addProperty',
     loadChildren: () => import('./add-property/add-property.module').then(m => m.AddPropertyModule)
@@ -25,7 +37,7 @@ const routes: Routes = [
   },
   {
     path: 'profile',
-    loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule)
+    loadChildren: () => import('./profile-settings/profile-settings.module').then(m => m.ProfileSettingsPageModule)
   }
 ];
 

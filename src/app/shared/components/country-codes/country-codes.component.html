@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <ion-label class="ion-text-center"> {{'SELECT_COUNTRY' | translate}} </ion-label>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" shape="round">
+        <ion-icon name="close" (click)="dismiss()" color="dark"> </ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-toolbar>
+    <ion-searchbar autofocus='true' autocomplete='true' autocorrect='true' (ionCancel)="closeSearch()"
+      (ionChange)="doSearch($event)">
+    </ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <ion-refresher mode="ios" slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="chevron-down-circle-outline" pullingText="Pull to refresh"
+      refreshingSpinner="circles" refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-row>
+    <ion-col size="12">
+      <ion-radio-group>
+        <ion-item *ngFor="let count of countryCodes" class="box-view flex-all-center plr-5">
+          <ion-avatar>
+            <img [src]="count.flags.png">
+          </ion-avatar>
+          <ion-label color='dark'> <b>{{count.name.common}}</b> </ion-label>
+          <ion-radio slot="end" (click)="setCountryVariables(count)"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-col>
+  </ion-row>
+</ion-content>

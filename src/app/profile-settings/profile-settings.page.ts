@@ -1,14 +1,16 @@
+import { SettingsComponent } from './settings/settings.component';
 import { Component, OnInit } from '@angular/core';
 import { AlertController, ModalController, NavController } from '@ionic/angular';
 import { ResetPassowrdComponent } from '../shared/components/reset-passowrd/reset-passowrd.component';
 
-@Component({
-  selector: 'mx-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss'],
-})
-export class ProfileComponent implements OnInit {
+import { UpdatePersonalProfileComponent } from './update-personal-profile/update-personal-profile.component';
 
+@Component({
+  selector: 'app-profile-settings',
+  templateUrl: './profile-settings.page.html',
+  styleUrls: ['./profile-settings.page.scss'],
+})
+export class ProfileSettingsPage implements OnInit {
   loading = {
     status:false,
     msg:''
@@ -20,7 +22,7 @@ export class ProfileComponent implements OnInit {
   constructor(
     private alertController:AlertController,
     private modalController:ModalController,
-    private navCtrl:NavController, ) {
+    private navCtrl:NavController ) {
     }
 
   ngOnInit() {
@@ -81,6 +83,9 @@ export class ProfileComponent implements OnInit {
     }
   }
 
+  openCamera(){
+    
+  }
 
   // Deleted profile
   async deleteProfile(evnt){
@@ -117,21 +122,25 @@ export class ProfileComponent implements OnInit {
   async deletedProfileStatus(pstatus){
     this.loading.status = true;
     this.loading.msg= 'loading ...';
+    let fromData = {
+      'task': 'updateStatus',
+      'pstatus': pstatus
+    }
   }
 
 
-  // onUpdatePp(){
-  //   this.modalController.create({
-  //     component: UpdatePersonalProfileComponent,
-  //     componentProps: {
-  //     }
-  //   }).then(modal=>{
-  //     modal.present();
-  //     return modal.onDidDismiss();
-  //   }).then((res)=>{
+  onSettings(){
+    this.modalController.create({
+      component: SettingsComponent,
+      componentProps: {
+      }
+    }).then(modal=>{
+      modal.present();
+      return modal.onDidDismiss();
+    }).then((res)=>{
   
-  //   });
-  // }
+    });
+  }
   
   onChangePassword() {
     this.modalController.create({
