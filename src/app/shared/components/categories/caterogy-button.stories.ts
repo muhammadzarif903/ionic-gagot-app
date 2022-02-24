@@ -1,6 +1,6 @@
 import {componentWrapperDecorator, moduleMetadata} from '@storybook/angular';
 import {IonicModule} from '@ionic/angular';
-import {Meta, Story} from '@storybook/angular/types-6-0';
+import {Meta} from '@storybook/angular/types-6-0';
 import {TextComponent} from '../text/text.component';
 import {CheckboxComponent} from '../checkbox/checkbox.component';
 

@@ -1,6 +1,6 @@
-import {Component, EventEmitter, Output, ViewChild} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {IProgressBarStep} from '../shared/components/progress-bar/progress-bar.component';
-import {StateService, StateType} from '../shared/services/state.service';
+import { StateType} from '../shared/services/state.service';
 import {Router} from '@angular/router';
 import {TextType} from '../shared/components/text/text.component';
 import {IProperty} from '../shared/interfaces/property.interface';

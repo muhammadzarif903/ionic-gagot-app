@@ -9,17 +9,28 @@ module.exports = function (config) {
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
-      require('karma-coverage-istanbul-reporter'),
+      require('karma-coverage'),
       require('@angular-devkit/build-angular/plugins/karma'),
       require('karma-junit-reporter'),
     ],
     client: {
+      jasmine: {
+        timeoutInterval: 10000,
+        random: false, // avoid random testing https://stackoverflow.com/questions/51543241/angular-6-unit-tests-an-error-was-thrown-in-afterall-nreferenceerror-cant-fin
+        // you can add configuration options for Jasmine here
+        // the possible options are listed at https://jasmine.github.io/api/edge/Configuration.html
+        // for example, you can disable the random execution with `random: false`
+        // or set a specific seed with `seed: 4321`
+      },
       clearContext: false, // leave Jasmine Spec Runner output visible in browser
     },
-    coverageIstanbulReporter: {
+    jasmineHtmlReporter: {
+      suppressAll: true, // removes the duplicated traces
+    },
+    coverageReporter: {
       dir: require('path').join(__dirname, '../coverage'),
-      reports: ['html', 'lcovonly', 'text-summary'],
-      fixWebpackSourcePaths: true,
+      subdir: '.',
+      reporters: [{type: 'html'}, {type: 'text-summary'}],
     },
     reporters: ['progress', 'kjhtml', 'junit'],
     port: 9876,
@@ -34,5 +45,6 @@ module.exports = function (config) {
       },
     },
     singleRun: false,
+    restartOnFileChange: false
   });
 };

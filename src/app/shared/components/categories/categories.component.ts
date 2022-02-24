@@ -31,7 +31,7 @@ export class CategoriesComponent implements OnInit {
 
   public onCategoryChange($event) {
     this.selected = $event.detail.value;
-    this.onClick.emit($event)
+    this.onClick.emit($event);
   }
 
 }

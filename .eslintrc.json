@@ -1,0 +1,115 @@
+{
+  "root": true,
+  "ignorePatterns": [
+    "projects/**/*"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "*.ts"
+      ],
+      "parserOptions": {
+        "project": [
+          "tsconfig.json"
+        ],
+        "createDefaultProgram": true
+      },
+      "extends": [
+        "prettier",
+        "plugin:@angular-eslint/ng-cli-compat",
+        "plugin:@angular-eslint/ng-cli-compat--formatting-add-on",
+        "plugin:@angular-eslint/template/process-inline-templates"
+      ],
+      "plugins": [
+        "unused-imports",
+        "ban",
+        "deprecation"
+      ],
+      "rules": {
+        "deprecation/deprecation": "warn",
+        "@typescript-eslint/quotes": "off",
+        "no-shadow": "off",
+        "@typescript-eslint/no-shadow": "error",
+        "@angular-eslint/component-selector": "off",
+        "@angular-eslint/no-output-on-prefix": "off",
+        "@angular-eslint/no-output-rename": "off",
+        "@angular-eslint/no-output-native": "off",
+        "@angular-eslint/no-input-rename": "off",
+        "camelcase": "off",
+        "@typescript-eslint/no-unused-vars": "off",
+        "unused-imports/no-unused-imports": "off",
+        "unused-imports/no-unused-vars": [
+          "warn",
+          {
+            "vars": "all",
+            "varsIgnorePattern": "^_",
+            "args": "after-used",
+            "argsIgnorePattern": "^_"
+          }
+        ],
+        "@typescript-eslint/naming-convention": "off",
+        "@typescript-eslint/consistent-type-definitions": "error",
+        "@typescript-eslint/dot-notation": "off",
+        "@typescript-eslint/member-ordering": "off",
+        "@typescript-eslint/no-var-requires": 0,
+        "@angular-eslint/directive-selector": "off",
+        "@typescript-eslint/prefer-for-of": "off",
+        "arrow-parens": [
+          "off",
+          "always"
+        ],
+        "brace-style": [
+          "error",
+          "1tbs"
+        ],
+        "import/order": "off",
+        "max-classes-per-file": [
+          "off",
+          1
+        ],
+        "max-len": [
+          "off",
+          {
+            "code": 120
+          }
+        ],
+        "no-fallthrough": "off",
+        "no-trailing-spaces": "off",
+        "quote-props": [
+          "error",
+          "consistent-as-needed"
+        ],
+        "radix": "off",
+        "no-underscore-dangle": 0,
+        // eslint-plugin-ban
+        "ban/ban": [
+          2,
+          // severity: 0 = off, 1 = warn, 2 = error
+          {
+            "name": "fdescribe",
+            "message": "don't focus tests"
+          },
+          {
+            "name": "fit",
+            "message": "don't focus tests"
+          }
+        ]
+      }
+    },
+    {
+      "files": [
+        "*.html"
+      ],
+      "extends": [
+        "plugin:@angular-eslint/template/recommended"
+      ],
+      "rules": {}
+    }
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2017
+  },
+  "env": {
+    "es6": true
+  }
+}
