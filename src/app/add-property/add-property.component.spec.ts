@@ -1,10 +1,7 @@
-import {ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing';
-import {IonicModule} from '@ionic/angular';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { IonicModule } from '@ionic/angular';
 
-import {AddPropertyComponent} from './add-property.component';
-import {RouterModule} from '@angular/router';
-import {RouterTestingModule} from '@angular/router/testing';
-import {TranslateModule} from '@ngx-translate/core';
+import { AddPropertyComponent } from './add-property.component';
 
 describe('AddListingComponent', () => {
   let component: AddPropertyComponent;
@@ -12,8 +9,8 @@ describe('AddListingComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [AddPropertyComponent],
-      imports: [IonicModule.forRoot(), RouterTestingModule, TranslateModule.forRoot()]
+      declarations: [ AddPropertyComponent ],
+      imports: [IonicModule.forRoot()]
     }).compileComponents();
 
     fixture = TestBed.createComponent(AddPropertyComponent);

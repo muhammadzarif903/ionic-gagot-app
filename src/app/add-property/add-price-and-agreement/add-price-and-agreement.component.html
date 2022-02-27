@@ -1,1 +1,86 @@
-PRICE AND AGREEMENT
+<div class="section1">
+  <mx-text [type]="textType.sectionTitle" [title]="'WHAT_KIND_OF_PLACE_ARE_YOU_LISTING' | translate">
+  </mx-text>
+  <mx-item-selection [values]="items"></mx-item-selection>
+</div>
+
+
+<div class="section1">
+  <mx-text [type]="textType.sectionTitle" [title]="'COST' | translate"></mx-text>
+</div>
+
+<div class="section1">
+  <mx-text [type]="textType.sectionTitle" [title]="'PRICE' | translate"></mx-text>
+  <div class="section1 dropDownDiv">
+    <mx-input class="half-width field" [value]="0" (onChange)="onVideoLinkInput($event)"
+      [placeholder]="'23,123.00' | translate"></mx-input>
+    <mx-dropdown [options]="options" class="field"></mx-dropdown>
+  </div>
+
+
+
+  <mx-text [type]="textType.sectionTitle" [title]="'ARNONA_PRICE' | translate"></mx-text>
+  <div class="section1 dropDownDiv">
+    <mx-input class="half-width field" [value]="0" (onChange)="onVideoLinkInput($event)"
+      [placeholder]="'23,123.00' | translate"></mx-input>
+
+    <mx-dropdown [options]="options" class="field"></mx-dropdown>
+  </div>
+
+
+
+  <mx-text [type]="textType.sectionTitle" [title]="'HOUSE_COMMITTEE_PAY' | translate"></mx-text>
+  <div class="section1 dropDownDiv">
+    <mx-input class="half-width field" [value]="0" (onChange)="onVideoLinkInput($event)"
+      [placeholder]="'23,123.00' | translate"></mx-input>
+    <mx-dropdown [options]="options" class="field"></mx-dropdown>
+  </div>
+
+
+  <hr style="background: black;">
+</div>
+<div class="section1">
+  <mx-text [type]="textType.sectionTitle" [title]="'SUM_EURO_MONTH' | translate"></mx-text>
+</div>
+
+<div class="section3">
+  <mx-text [type]="textType.sectionTitle" [title]="'Agreement Details' | translate"></mx-text>
+</div>
+<div class="section field box-shadow">
+  <div class="section1">
+    <div class="agreementDiv">
+      <mx-text [type]="textType.label" [title]="'AGREEMENT' | translate"></mx-text>
+    </div>
+    <div class="agreementDiv">
+      <mx-text [type]="textType.description" [title]="'LOREM' | translate">
+      </mx-text>
+      <ion-button>{{'ADD' | translate}}</ion-button>
+    </div>
+  </div>
+</div>
+
+<div class="section field box-shadow">
+  <div class="section1">
+    <div class="agreementDiv">
+      <mx-text [type]="textType.label" [title]="'HOUSE_RULES' | translate"></mx-text>
+    </div>
+    <div class="agreementDiv">
+      <mx-text [type]="textType.description" [title]="'LOREM' | translate">
+      </mx-text>
+      <ion-button>{{'ADD' | translate}}</ion-button>
+    </div>
+  </div>
+</div>
+
+<div class="section field box-shadow">
+  <div class="section1">
+    <div class="agreementDiv">
+      <mx-text [type]="textType.label" [title]="'CANCEL_POLICY_RULES' | translate"></mx-text>
+    </div>
+    <div class="agreementDiv">
+      <mx-text [type]="textType.description" [title]="'LOREM' | translate">
+      </mx-text>
+      <ion-button>{{'ADD' | translate}}</ion-button>
+    </div>
+  </div>
+</div>

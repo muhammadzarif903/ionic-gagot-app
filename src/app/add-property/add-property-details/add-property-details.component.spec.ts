@@ -1,9 +1,7 @@
-import {ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing';
-import {IonicModule} from '@ionic/angular';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { IonicModule } from '@ionic/angular';
 
-import {AddPropertyDetailsComponent} from './add-property-details.component';
-import {TranslateModule} from '@ngx-translate/core';
-import {IProperty} from '../../shared/interfaces/property.interface';
+import { AddPropertyDetailsComponent } from './add-property-details.component';
 
 describe('AddPropertyDetailsComponent', () => {
   let component: AddPropertyDetailsComponent;
@@ -11,13 +9,12 @@ describe('AddPropertyDetailsComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [AddPropertyDetailsComponent],
-      imports: [IonicModule.forRoot(), TranslateModule.forRoot()],
+      declarations: [ AddPropertyDetailsComponent ],
+      imports: [IonicModule.forRoot()]
     }).compileComponents();
 
     fixture = TestBed.createComponent(AddPropertyDetailsComponent);
     component = fixture.componentInstance;
-    component.property = {} as IProperty;
     fixture.detectChanges();
   }));
 

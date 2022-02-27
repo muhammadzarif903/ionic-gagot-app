@@ -5,6 +5,7 @@ import {FacilitiesEnum} from '../enums/facilities.enum';
 import {IUser} from './user.interface';
 import {IVisit} from './visit.interface';
 import {KitchenEnum} from '../enums/kitchen.enum';
+import {Additional} from '../enums/bath.enum';
 
 export enum PropertyType {
   Sell = 'sell',
@@ -29,6 +30,7 @@ export interface IPropertyPreview {
 
 
 export interface IProperty extends IPropertyPreview {
+  additional?: Additional[];
   description: string;
   isApproved: boolean;
   authorID: number;

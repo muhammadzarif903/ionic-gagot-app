@@ -1,1 +1,36 @@
-ROOM DETAILS
+<div class="section">
+  <mx-button-list [values]="property.kitchen" [buttons]="kitchenAmenities" [title]="'KITCHEN' | translate"
+    (onClick)="onKitchenChange($event)"></mx-button-list>
+
+  <mx-text [type]="textType.sectionTitle" [title]="'BEDROOM1' | translate">
+  </mx-text>
+  <ion-item class="section field">
+    <ion-label>
+      <mx-text [type]="textType.sectionTitle" [title]="'INCLUDE_BATHROOM' | translate"></mx-text>
+    </ion-label>
+    <ion-toggle [checked]="!!property.lastFloor" (ionChange)="bedroom1($event)"></ion-toggle>
+  </ion-item>
+
+  <mx-upload-media-button [images]="images" [title]="'ADD_PHOTOS_360_PHOTOS' | translate" ></mx-upload-media-button>
+
+  <mx-text [type]="textType.sectionTitle" [title]="'BEDROOM2' | translate">
+  </mx-text>
+  <ion-item class="section field">
+    <ion-label>
+      <mx-text [type]="textType.sectionTitle" [title]="'INCLUDE_BATHROOM' | translate"></mx-text>
+    </ion-label>
+    <ion-toggle [checked]="!!property.lastFloor" (ionChange)="bedroom1($event)"></ion-toggle>
+  </ion-item>
+
+  <mx-upload-media-button [images]="images" [title]="'ADD_PHOTOS_360_PHOTOS' | translate" ></mx-upload-media-button>
+
+
+  <mx-text [type]="textType.sectionTitle" [title]="'BATHROOM1' | translate">
+  </mx-text>
+  <mx-item-selection [values]="items"></mx-item-selection>
+
+  <mx-button-list [values]="property.additional" [buttons]="additional" [title]="'ADDITIONAL_OPTION' | translate"
+    (onClick)="onAdditionalChange($event)"></mx-button-list>
+
+    <mx-upload-media-button [images]="images" [title]="'ADD_PHOTOS_360_PHOTOS' | translate" ></mx-upload-media-button>
+</div>

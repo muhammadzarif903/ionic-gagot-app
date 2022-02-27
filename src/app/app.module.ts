@@ -13,7 +13,9 @@ import {MapModule} from './map/map.module';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
 // AoT requires an exported function for factories
-export const HttpLoaderFactory = (http: HttpClient) => new TranslateHttpLoader(http);
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [AppComponent],

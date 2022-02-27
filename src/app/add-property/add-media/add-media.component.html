@@ -1,1 +1,48 @@
-MEDIA
+<div class="section1">
+  <mx-text [type]="textType.sectionTitle" [title]="'VIDEO_RECORD' | translate">
+  </mx-text>
+  <mx-audio-track [title]="'VOICE_RECORD1' | translate"></mx-audio-track>
+  <ion-button size="large" expand="block">{{'ADD' | translate}}</ion-button>
+</div>
+
+<div class="section1">
+
+  <mx-text [type]="textType.sectionTitle" [title]="'PHOTOS' | translate">
+  </mx-text>
+  <div class="section image-progress-bar box-shadow field">
+    <mx-image [imageLink]="imageLink"></mx-image>
+    <mx-progress class="left-progress-bar " [name]="'PHOTO1' | translate" [percentage]="percentage"></mx-progress>
+  </div>
+</div>
+
+<div class="section1">
+  <mx-text [type]="textType.sectionTitle" [title]="'360_PHOTOS' | translate">
+  </mx-text>
+  <div class="section image-progress-bar box-shadow field">
+    <mx-image [imageLink]="imageLink"></mx-image>
+    <mx-progress class="left-progress-bar " [name]="'PHOTO1' | translate" [percentage]="percentage"></mx-progress>
+  </div>
+  <div class="section image-progress-bar box-shadow field">
+    <mx-image [imageLink]="imageLink"></mx-image>
+    <mx-progress class="left-progress-bar " [name]="'PHOTO1' | translate" [percentage]="percentage"></mx-progress>
+  </div>
+</div>
+
+<div class="section1">
+  <mx-text [type]="textType.sectionTitle" [title]="'PROPERTY_VIDEO_LINK' | translate">
+  </mx-text>
+  <ion-item class="section field">
+    <mx-input class="full-width" [value]="0" (onChange)="onVideoLinkInput($event)"
+      [placeholder]="'www.youtube.com' | translate"></mx-input>
+  </ion-item>
+  <ion-button [disabled]="true" size="large" expand="block">{{'ADD_MEDIA_GALLERY' | translate}}</ion-button>
+</div>
+
+<div class="section1">
+  <mx-text [type]="textType.sectionTitle" [title]="'VIDEO' | translate">
+  </mx-text>
+  <div class="section image-progress-bar box-shadow field">
+    <mx-image [imageLink]="imageLink"></mx-image>
+    <mx-progress class="left-progress-bar " [name]="'VIDEO1' | translate" [percentage]="percentage"></mx-progress>
+  </div>
+</div>

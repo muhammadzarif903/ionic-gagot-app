@@ -1,3 +1,17 @@
-<p>
-  upload-media-button works!
-</p>
+<div class="section2">
+  <mx-text [type]="'sectionTitle'" [title]="title"></mx-text>
+</div>
+<div class="grid">
+  <!-- <div class="upload-Box" *ngFor=" let obj of images">
+    <img [src]="obj">
+  </div> -->
+  <mx-image [imageLink]="obj" *ngFor=" let obj of images"></mx-image>
+  <div class="addDiv" (click)="presentActionSheet()">
+    <div class="upload-Box box-shadow">
+      <ion-icon name="add-outline"></ion-icon>
+    </div>
+    <p>Add photo</p>
+  </div>
+
+
+</div>

@@ -4,6 +4,7 @@ import {Meta, Story} from '@storybook/angular/types-6-0';
 import {TextComponent} from '../text/text.component';
 import {CheckboxComponent} from '../checkbox/checkbox.component';
 import {CategoriesComponent} from './categories.component';
+import * as Category from './caterogy-button.stories';
 import {categories} from './categories.data';
 
 export default {
@@ -37,10 +38,12 @@ const Template: Story<CategoriesComponent> = (args: CategoriesComponent) => ({
 
 export const Many = Template.bind({});
 Many.args = {
-  categories: () => categories.map(obj => ({
+  categories: () => categories.map(obj => {
+    return {
       // ...Category.Default.args,
       ...obj
-    }))
+    };
+  })
 };
 
 Many.args = {

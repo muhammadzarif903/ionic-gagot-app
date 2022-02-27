@@ -1,0 +1,118 @@
+.calendarMainCont {
+    background-color: white;
+    border-radius: 16px;
+    padding: 15px 5px;
+}
+
+.calendar-heading {
+    text-align: center;
+
+    p {
+        margin: 0;
+        color:#8C8C8C;
+    }
+
+    .controlBtns {
+        ion-button {
+            height: 25px;
+
+            ion-icon {
+                font-size: 25px;
+            }
+        }
+    }
+}
+
+.week-heading {
+    width: 100%;
+    ul {
+        display: inline-grid;
+        grid-auto-flow: column;
+        width: 100%;
+        list-style-type: none;
+        padding: 0px;
+
+        li {
+            font-size: 16px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+       
+    }
+}
+
+.day-frame {
+    width: 100%;
+
+    ul {
+        display: inline-grid;
+        grid-template-columns: repeat(7, minmax(40px, 1fr));
+        width: 100%;
+        list-style-type: none;
+        padding: 0px;
+        margin: 10px 0px;
+        border-radius: 10px;
+
+        li {
+            font-size: 13px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+
+            span {
+                display: flex;
+                width: 30px;
+                height: 30px;
+                margin: auto;
+                border-radius: 12px;
+                text-align: center;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.2s ease;
+            }
+
+            &.eventDate {
+                span {
+                    background-color: var(--ion-color-secondary);
+                    color: #fff;
+                }
+            }
+
+            &.selected {
+                span {
+                    // background-color: var(--ion-color-primary) !important;
+                    font-weight: 900;
+                    color:#ffff !important;
+                    background-color: var(--ion-color-primary) !important;
+                    // color: #EA2C01 !important;
+                }
+            }
+            &.current {
+                span {
+                    // background-color: var(--ion-color-primary) !important;
+                    font-weight: 900;
+                    color: #EA2C01 !important;
+                }
+            }
+
+            &.disabled {
+                span {
+                    color: #ffff;
+                    font-weight: 900;
+                    background-color: #FF874F ;
+                }
+            }
+            &.simple {
+                span {
+                    font-weight: 900;
+                }
+            }
+        }
+        li:last-child{
+            span{
+                color: rgb(0, 0, 0) ;
+                background-color: transparent ;
+            }
+        }
+    }
+}

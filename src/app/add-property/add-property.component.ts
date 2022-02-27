@@ -1,6 +1,6 @@
-import {Component, ViewChild} from '@angular/core';
+import {Component, EventEmitter, Output, ViewChild} from '@angular/core';
 import {IProgressBarStep} from '../shared/components/progress-bar/progress-bar.component';
-import { StateType} from '../shared/services/state.service';
+import {StateService, StateType} from '../shared/services/state.service';
 import {Router} from '@angular/router';
 import {TextType} from '../shared/components/text/text.component';
 import {IProperty} from '../shared/interfaces/property.interface';
@@ -71,6 +71,7 @@ export class AddPropertyComponent {
     {path: AddPropertyScreen.priceAndAgreement, active: false, title: 'TITLES.PRICE_AND_AGREEMENT'},
     {path: AddPropertyScreen.openDoorEvent, active: false, title: 'TITLES.OPEN_DOOR_EVENTS'}
   ];
+  activeStep: { path: AddPropertyScreen; active: boolean; title: string; data: IProperty; } | { path: AddPropertyScreen; active: boolean; title: string; data?: undefined; };
 
 
   constructor(private router: Router) {
@@ -93,6 +94,7 @@ export class AddPropertyComponent {
     if (index <= this.routeLinks.length) {
       this.routeLinks[index].active = true;
     }
+    this.activeStep= this.routeLinks[index]
     return this.routeLinks[index];
   }
 
@@ -124,6 +126,7 @@ export class AddPropertyComponent {
     this.steps = this.steps.map((el, index) => {
       el.active = index === routeIndex;
       el.state = index <= routeIndex ? StateType.submitted : StateType.initial;
+      
       return el;
     });
   }

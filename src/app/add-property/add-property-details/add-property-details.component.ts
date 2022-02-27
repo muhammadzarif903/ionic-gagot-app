@@ -12,7 +12,7 @@ import {KitchenEnum} from '../../shared/enums/kitchen.enum';
 })
 export class AddPropertyDetailsComponent implements OnInit {
 
-  @Input() public property: IProperty;
+  @Input() property: IProperty;
 
   public defaultSelectedRadio = "radio_2";
   //Get value on ionChange on IonRadioGroup
@@ -43,7 +43,6 @@ export class AddPropertyDetailsComponent implements OnInit {
   public kitchenAmenities = Object.values(KitchenEnum);
   public safetyAmenitiesList = Object.values(SafetyAmenitiesEnum);
   public facilitiesList = Object.values(FacilitiesEnum);
-
   public dateValue = new Date().getFullYear();
   public years = [];
 

@@ -1,3 +1,20 @@
-<p>
-  calendar works!
-</p>
+<div class="calendarMainCont">
+  <div class="calendar-heading">
+    <p >{{month}}</p>
+    <p >{{year}}</p>
+  </div>
+
+  <div class="week-heading">
+    <ul>
+      <li *ngFor="let day of weekDay">{{ day }}</li>
+    </ul>
+  </div>
+
+  <div class="day-frame">
+    <ul *ngFor="let week of days">
+      <li *ngFor="let day of week" (click)="selectDay(day)"  [ngClass]="checkDate(day)">
+        <span class="pointer" >{{ day != '' ? day.format('D') : '' }}</span>
+      </li>
+    </ul>
+  </div>
+</div>

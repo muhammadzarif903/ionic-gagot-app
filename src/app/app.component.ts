@@ -17,7 +17,6 @@ export class AppComponent {
 
   public switchLang(lang: string) {
     this.translate.use(lang);
-    console.log('aaa');
   }
 
   async initializeApp() {

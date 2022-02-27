@@ -1,3 +1,8 @@
-<p>
-  select-input works!
-</p>
+<mx-text [type]="'sectionTitle'" [title]="title"></mx-text>
+<div class="gridSelection">
+  <div class="box"  *ngFor="let obj of values" (click)="itemClicked(obj)">
+    <img class="icon" *ngIf="isSelected(obj)"  src="../../../../assets/icons/checklist.png">
+    <img class="img" [src]="obj.img">
+    <p>{{obj.name}}</p>
+  </div>
+</div>

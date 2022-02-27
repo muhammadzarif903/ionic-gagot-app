@@ -24,6 +24,10 @@
   width: 100%;
 }
 
+.half-width {
+  width: 45%;
+}
+
 .flex-auto {
   flex: auto;
 }
@@ -41,8 +45,7 @@ mx-input {
   //width: 100%;
 }
 
-ion-title {
-}
+ion-title {}
 
 ion-segment-button {
   text-transform: none;
@@ -63,7 +66,8 @@ ion-segment-button {
   }
 }
 
-textarea, input[type="text"] {
+textarea,
+input[type="text"] {
   font-size: $font-size-normal !important;
 }
 
@@ -101,6 +105,179 @@ ion-textarea {
   padding-top: 0.5rem;
 }
 
+.timeSlots {
+  height: 30px;
+  width: 30px;
+  align-self: center;
+  margin: 5px;
+  border-radius: 15px;
+  background-color: transparent;
+  p {
+    font-size: 10px;
+    text-align: center;
+    color: #969392;
+  }
+}
+
+.selectedTimeSlot {
+  background-color: #ea2c01 !important;
+
+  p {
+    color: #ffffff !important;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 10px;
+  grid-auto-flow: dense;
+  margin-bottom: 1.5rem;
+}
+
+.selectedTimeSlot {
+  background-color: #ea2c01 !important;
+  p {
+    color: #ffffff !important;
+  }
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+  gap: 10px;
+  grid-auto-flow: dense;
+  margin-bottom: 1.5rem;
+}
+
+.gridSelection {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+  grid-auto-flow: dense;
+  margin-bottom: 1.5rem;
+
+  .box {
+    height: 150px;
+    background-color: #EEEEEF;
+    width: 150px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+
+    .icon {
+      position: absolute;
+      top: -6px;
+      left: -6px;
+    }
+
+    .img {
+      height: 80px;
+      margin-top: 25px;
+      width: 80px;
+      object-fit: cover;
+    }
+
+    p {
+      font-weight: 600;
+      color: #888585;
+    }
+  }
+}
+
+.image-progress-bar {
+  display: flex;
+  background-color: #EEEEEF;
+}
+
+.agreementDiv {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+mx-dropdown {
+  width: 45%;
+
+  ion-select {
+    color: #888585;
+  }
+}
+
+.dropdown {
+  width: 100%;
+  justify-content: space-between
+}
+
+.dropDownDiv {
+  display: flex;
+  justify-content: space-between;
+}
+
+.addDiv {
+  text-align: center;
+
+  p {
+    margin: 0;
+    font-weight: 500;
+    color: #BFBFBF;
+    margin-right: 10px;
+  }
+}
+
+.left-progress-bar {
+  width: 95%;
+  align-self: center;
+  margin-left: 10px;
+
+  ion-progress-bar {
+    --progress-background: #ea2c01;
+    --buffer-background: white;
+    height: 10px;
+    border-radius: 19px;
+  }
+
+  ion-row {
+    justify-content: space-between;
+
+    .name {
+      margin: 0;
+      font-weight: 800;
+      color: #888585;
+    }
+
+    .percentage {
+      margin: 0;
+      color: #888585;
+    }
+  }
+}
+
+.upload-Box {
+  background-color: #EEEEEF;
+  height: 100px;
+  width: 100px;
+  border: 2px 3px 10px -5px black;
+  border-radius: 0px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  ion-icon {
+    --ionicon-stroke-width: 65px;
+    font-size: 65px;
+    color: #BFBFBF;
+  }
+
+  img {
+    margin: auto;
+    display: block;
+  }
+}
+
 .section {
   margin: 1rem 0 1rem 0;
   padding: 1rem;
@@ -108,6 +285,56 @@ ion-textarea {
   //border: 1px solid #f1f1f1;
 }
 
+.section1 {
+  padding: 1rem;
+  border-radius: 5px;
+  //border: 1px solid #f1f1f1;
+}
+
+.section2 {
+  margin: 1rem 0 1rem 0;
+  border-radius: 5px;
+  //border: 1px solid #f1f1f1;
+}
+
+.box-shadow {
+  box-shadow: 0px 8px 10px -6px grey;
+}
+
+.section3 {
+  padding: 1rem 1rem 0 1rem;
+  border-radius: 5px;
+  //border: 1px solid #f1f1f1;
+}
+.audioImg{
+  margin: 1rem 0 1rem 0;
+  border-radius: 5px;
+  border: 1px solid #f1f1f1;
+  position: relative;
+  img{
+    margin-left: 1rem;
+  }
+  p{
+    position: absolute;
+    left: 12px;
+    margin: 0;
+    top: 12px;
+    font-weight: 600;
+  }
+  ion-icon{
+    position: absolute;
+    right: 14px;
+    top: 23px;
+    color: #5c5c5c;
+    font-size: 2.2rem;
+    --ionicon-stroke-width: 85px;
+  }
+  .icon{
+    position: absolute;
+    right: 9px;
+    top: 17px;
+  }
+}
 .field {
   padding: 0.6rem;
   border-radius: 5px;

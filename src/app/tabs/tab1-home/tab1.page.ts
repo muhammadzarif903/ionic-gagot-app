@@ -5,7 +5,6 @@ import {Component} from '@angular/core';
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss']
 })
-// eslint-disable-next-line @angular-eslint/component-class-suffix
 export class Tab1Page {
 
   items: any[] = [];
@@ -47,14 +46,14 @@ const images = [
   'mirth-mobile'
 ];
 
-const getImgSrc = () => {
+function getImgSrc() {
   const src = 'https://dummyimage.com/600x400/${Math.round( Math.random() * 99999)}/fff.png';
   rotateImg++;
   if (rotateImg === images.length) {
     rotateImg = 0;
   }
   return src;
-};
+}
 
 let rotateImg = 0;
 
