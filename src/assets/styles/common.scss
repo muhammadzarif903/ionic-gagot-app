@@ -112,6 +112,9 @@ ion-textarea {
   margin: 5px;
   border-radius: 15px;
   background-color: transparent;
+  display: inline-block;
+  vertical-align: middle;
+
   p {
     font-size: 10px;
     text-align: center;
@@ -137,17 +140,16 @@ ion-textarea {
 
 .selectedTimeSlot {
   background-color: #ea2c01 !important;
+
   p {
     color: #ffffff !important;
   }
 }
 
 .grid2 {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
-  gap: 10px;
-  grid-auto-flow: dense;
+  overflow-x: scroll;
   margin-bottom: 1.5rem;
+  white-space: nowrap;
 }
 
 .gridSelection {
@@ -306,22 +308,26 @@ mx-dropdown {
   border-radius: 5px;
   //border: 1px solid #f1f1f1;
 }
-.audioImg{
+
+.audioImg {
   margin: 1rem 0 1rem 0;
   border-radius: 5px;
   border: 1px solid #f1f1f1;
   position: relative;
-  img{
+
+  img {
     margin-left: 1rem;
   }
-  p{
+
+  p {
     position: absolute;
     left: 12px;
     margin: 0;
     top: 12px;
     font-weight: 600;
   }
-  ion-icon{
+
+  ion-icon {
     position: absolute;
     right: 14px;
     top: 23px;
@@ -329,12 +335,14 @@ mx-dropdown {
     font-size: 2.2rem;
     --ionicon-stroke-width: 85px;
   }
-  .icon{
+
+  .icon {
     position: absolute;
     right: 9px;
     top: 17px;
   }
 }
+
 .field {
   padding: 0.6rem;
   border-radius: 5px;

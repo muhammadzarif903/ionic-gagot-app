@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import moment from 'moment';
 import { TextType } from 'src/app/shared/components/text/text.component';
 import { IProperty } from 'src/app/shared/interfaces/property.interface'
 @Component({
@@ -10,7 +11,14 @@ export class AddOpenDoorEventComponent implements OnInit {
   @Input() property: IProperty;
   public textType = TextType;
   constructor() { }
-  startTimeSlot=["8:00","8:30","9:00","9:30","10:00","10:30","11:00","11:30","12:00"]
-  ngOnInit() {}
+  startTimeSlot = []
+  ngOnInit() {
+    for (let hour = 8; hour < 24; hour++) {
+      this.startTimeSlot.push(moment({ hour }).format('HH:mm'));
+      if (hour != 23) {
+        this.startTimeSlot.push(moment({ hour, minute: 30 }).format('HH:mm'));
+      }
+    }
+  }
 
 }

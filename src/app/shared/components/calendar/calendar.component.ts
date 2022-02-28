@@ -28,8 +28,8 @@ export class CalendarComponent implements OnInit {
   current: moment.Moment;
 
   constructor() {
-    var date=new Date();
-    this.current = moment(`${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}`, "DD/MM/YYYY");
+    var date = new Date();
+    this.current = moment(`${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`, "DD/MM/YYYY");
   }
 
   ngOnInit(): void {
@@ -88,6 +88,7 @@ export class CalendarComponent implements OnInit {
 
   checkDate(day) {
     if (day !== '') {
+      console.log(day)
       const now = moment();
       const diff = Math.floor(day.diff(now, 'minutes') / 1440);
       if (this.selectedDate && day.date() === this.selectedDate.date()) {
@@ -98,7 +99,7 @@ export class CalendarComponent implements OnInit {
         return {
           disabled: true
         };
-      }  else if (diff == -1 ) {
+      } else if (diff == -1) {
         return {
           current: true
         };
@@ -108,12 +109,12 @@ export class CalendarComponent implements OnInit {
           simple: true
         };
       }
-    
+
     }
   }
 
   selectDay(day: Moment) {
-    const now = this.current;
+    const now = moment()
     if (day.isAfter(now) || (now.format("DD-MM-yyyy") == day.format("DD-MM-yyyy"))) {
       this.selectedDate = day;
       this.emitSelectedDate(day.date());
@@ -138,7 +139,11 @@ export class CalendarComponent implements OnInit {
   }
 
   prevMonth() {
-    this.currentDate.subtract(1, 'months');
+    var current=this.currentDate
+    current.subtract(1, 'months');
+    if (Number(new Date()) > Number(new Date(current))) {
+      this.currentDate.subtract(1, 'months');
+    }
     this.month = this.currentDate.format('MMMM');
     this.year = this.currentDate.format('YYYY');
     this.renderCalendar();

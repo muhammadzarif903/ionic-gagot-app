@@ -4,12 +4,17 @@
     padding: 15px 5px;
 }
 
+.topBar {
+    display: flex;
+    justify-content: space-between;
+}
+
 .calendar-heading {
     text-align: center;
 
     p {
         margin: 0;
-        color:#8C8C8C;
+        color: #8C8C8C;
     }
 
     .controlBtns {
@@ -25,6 +30,7 @@
 
 .week-heading {
     width: 100%;
+
     ul {
         display: inline-grid;
         grid-auto-flow: column;
@@ -37,7 +43,7 @@
             text-transform: uppercase;
             text-align: center;
         }
-       
+
     }
 }
 
@@ -82,11 +88,12 @@
                 span {
                     // background-color: var(--ion-color-primary) !important;
                     font-weight: 900;
-                    color:#ffff !important;
+                    color: #ffff !important;
                     background-color: var(--ion-color-primary) !important;
                     // color: #EA2C01 !important;
                 }
             }
+
             &.current {
                 span {
                     // background-color: var(--ion-color-primary) !important;
@@ -99,19 +106,21 @@
                 span {
                     color: #ffff;
                     font-weight: 900;
-                    background-color: #FF874F ;
+                    background-color: #FF874F;
                 }
             }
+
             &.simple {
                 span {
                     font-weight: 900;
                 }
             }
         }
-        li:last-child{
-            span{
-                color: rgb(0, 0, 0) ;
-                background-color: transparent ;
+
+        li:last-child {
+            span {
+                color: rgb(0, 0, 0);
+                background-color: transparent;
             }
         }
     }

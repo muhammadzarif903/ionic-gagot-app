@@ -1,15 +1,14 @@
 <div class="calendarMainCont">
+  <div class="topBar">
+    <ion-button fill="clear" (click)="prevMonth()"><ion-icon name="chevron-back-outline"></ion-icon></ion-button>
   <div class="calendar-heading">
     <p >{{month}}</p>
     <p >{{year}}</p>
   </div>
+  <ion-button fill="clear" (click)="nextMonth()"><ion-icon name="chevron-forward-outline"></ion-icon></ion-button>
 
-  <div class="week-heading">
-    <ul>
-      <li *ngFor="let day of weekDay">{{ day }}</li>
-    </ul>
   </div>
-
+  
   <div class="day-frame">
     <ul *ngFor="let week of days">
       <li *ngFor="let day of week" (click)="selectDay(day)"  [ngClass]="checkDate(day)">
