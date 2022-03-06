@@ -29,7 +29,7 @@
 
 .loading{
     position: absolute;
-    color: white;
+    color: $color-white;
     font-weight: 600;
     letter-spacing: 1px;
 }
@@ -42,7 +42,7 @@
     margin: 100px auto;
     animation: sk-rotateplane 1.2s infinite ease-in-out;
     border-radius: 3px;
-    box-shadow: 0px 1px 14px 1px darkgrey;
+    box-shadow: 0px 1px 14px 1px $color-gray-dark;
 }
 
 @-webkit-keyframes sk-rotateplane {

@@ -6,7 +6,6 @@ $border-radius: 6px;
 $transition-selection: all 0.2s ease;
 $button-height: 64px;
 $padding-right-element: 20px;
-$background-color: #f3f3f3;
 
 .flex-row {
   display: flex;
@@ -66,7 +65,7 @@ input[type="text"] {
 }
 
 ion-header {
-  background: white;
+  background: $background-color;
 }
 
 

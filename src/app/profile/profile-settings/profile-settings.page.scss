@@ -44,14 +44,14 @@ ion-list {
     position: absolute !important;
     margin-top: -37px;
     margin-left: 43px;
-    z-index: 10px;
+    z-index: 10;
 
     a {
       ion-icon {
         font-size: 20px !important;
         background: var(--ion-background-color);
         border-radius: 50px;
-        color: white;
+        color: $color-white;
         padding: 5px;
       }
     }
