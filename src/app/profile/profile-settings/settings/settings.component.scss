@@ -1,0 +1,12 @@
+ion-list {
+  --background: none;
+  background: none;
+
+  ion-list-header {
+    --padding-start: 0px;
+    padding: 0 10px;
+    background-color: rgb(0 0 0 / 13%);
+    color: black;
+  }
+}
+

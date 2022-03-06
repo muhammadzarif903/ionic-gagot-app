@@ -9,5 +9,5 @@ export enum NextToEnum {
   Shop = 'Shop',
   Mall = 'Mall',
   Theater = 'Theater',
-  Sea = 'Sea',
+  Sea = 'Sea'
 }

@@ -1,1 +1,25 @@
-ROOM DETAILS
+<div class="section">
+  <mx-button-list
+    [values]="property.kitchen"
+    [buttons]="kitchenAmenities"
+    [title]="'KITCHEN' | translate"
+    (onClick)="onKitchenChange($event)">
+  </mx-button-list>
+</div>
+
+<div class="section">
+  <mx-text [type]="textType.sectionTitle" [title]="'BATHROOM1' | translate"></mx-text>
+
+  <mx-item-selection [values]="items"></mx-item-selection>
+
+  <mx-button-list [values]="property.additionalBath"
+                  [buttons]="additionalBath"
+                  [title]="'ADDITIONAL_OPTION' | translate"
+                  (onClick)="onAdditionalChange($event)">
+  </mx-button-list>
+</div>
+
+<div class="section">
+  <mx-text [type]="textType.sectionTitle" [title]="'ADD_PHOTOS_360_PHOTOS' | translate"></mx-text>
+  <mx-upload-media-button [images]="images"></mx-upload-media-button>
+</div>

@@ -1,3 +1,4 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "compileOnSave": false,
   "compilerOptions": {
@@ -5,47 +6,34 @@
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
-    "module": "es2020",
-    "moduleResolution": "node",
-    "experimentalDecorators": true,
-    "importHelpers": true,
-    "target": "es2017",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2018",
-      "esnext.array",
-      "dom"
-    ],
     "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
     "noUnusedLocals": false,
-    "paths": {
-      "crypto": [
-        "./node_modules/crypto-js"
-      ]
-    },
-    "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": false,
-    // for example try-catch
-    "skipLibCheck": true,
     "resolveJsonModule": true,
     "emitDecoratorMetadata": true,
     "noFallthroughCasesInSwitch": true,
+    "strict": true,
     "noImplicitAny": false,
-    "strict": false,
-    "strictNullChecks": false,
     "stripInternal": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "strictNullChecks": false,
+    "target": "es2015",
+    "module": "es2020",
+    "lib": [
+      "es2018",
+      "dom"
+    ]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
-    "strictTemplates": false,
-    "fullTemplateTypeCheck": false
+    "strictTemplates": true
   },
-  "include": [
-    "src/**/*"
+  "exclude": [
+    "node_modules"
   ]
 }

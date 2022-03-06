@@ -9,10 +9,10 @@
       </ion-back-button>
     </ion-buttons>
 
-    <ion-title>{{'TITLES.ADD_NEW_PROPERTY' | translate}}</ion-title>
+    <ion-title>{{(activeStep || steps[0])?.title | translate}}</ion-title>
 
     <!--NEXT-->
-    <ion-buttons slot="secondary">
+    <ion-buttons slot="end">
       <ion-button (click)="nextPage($event)" color="primary" size="large">
         <ion-icon slot="icon-only" name="arrow-forward-outline"></ion-icon>
       </ion-button>
@@ -22,7 +22,7 @@
 </ion-header>
 
 
-<ion-content padding="true" [fullscreen]="true" [scrollY]="true">
+<ion-content [fullscreen]="true" [scrollY]="true">
   <!--  Progress Bar-->
   <div class="section">
     <mx-progress-bar [steps]="steps"></mx-progress-bar>

@@ -1,0 +1,26 @@
+@import 'common';
+
+ion-progress-bar {
+  --progress-background: var(--ion-color-primary);
+  height: 10px;
+  border-radius: $border-radius;
+}
+
+ion-row {
+  justify-content: space-between;
+  //padding: 0 5px 0 5px;
+  .name {
+    margin: 5px 0 5px 0;
+    font-weight: $font-weight-500;
+    color: var(--ion-text-color);
+  }
+
+  .percentage {
+    margin: 5px 0 5px 0;
+    display: flex;
+    align-items: center;
+    font-family: $font-family;
+    font-size: $font-size-tiny;
+    color: var(--ion-text-color);
+  }
+}

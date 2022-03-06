@@ -4,9 +4,16 @@ import {MapComponent} from './map.component';
 
 const routes: Routes = [
   {
-    path: '', component: MapComponent,
+    path: 'maps',
+    component: MapComponent,
     children: []
-  }];
+  },
+  {
+    path: 'maps',
+    redirectTo: 'maps',
+    pathMatch: 'full'
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

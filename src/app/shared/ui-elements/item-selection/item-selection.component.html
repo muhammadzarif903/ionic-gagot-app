@@ -1,0 +1,14 @@
+<div class="item-selection-container flex-column">
+  <ion-label>
+    <mx-text [type]="'sectionTitle'" [title]="label"></mx-text>
+  </ion-label>
+  <div class="gridSelection">
+    <div class="box box-shadow"
+         [class.selected]="isSelected(obj)"
+         *ngFor="let obj of values" (click)="itemClicked(obj)">
+      <img class="icon" *ngIf="isSelected(obj)" src="{{CHECKBOX_PIC}}" alt="check-image">
+      <img class="img" [src]="obj.img">
+      <p>{{obj.name}}</p>
+    </div>
+  </div>
+</div>

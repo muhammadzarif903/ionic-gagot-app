@@ -24,15 +24,15 @@ import {MapModule} from '../map/map.module';
     AddMediaComponent,
     AddPriceAndAgreementComponent,
     AddOpenDoorEventComponent],
-    imports: [
-        AddPropertyRoutingModule,
-        FormsModule,
-        TranslateModule,
-        IonicModule,
-        CommonModule,
-        SharedModule,
-        MapModule,
-    ]
+  imports: [
+    AddPropertyRoutingModule,
+    FormsModule,
+    TranslateModule,
+    IonicModule,
+    CommonModule,
+    SharedModule,
+    MapModule,
+  ]
 })
 export class AddPropertyModule {
 }

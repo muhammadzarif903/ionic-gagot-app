@@ -1,12 +1,12 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'mx-tab3',
   templateUrl: 'tab3.page.html',
   styleUrls: ['tab3.page.scss']
 })
-// eslint-disable-next-line @angular-eslint/component-class-suffix
 export class Tab3Page {
+
   items: any[] = [];
 
   constructor() {
@@ -56,3 +56,4 @@ const getImgSrc = () => {
 };
 
 let rotateImg = 0;
+

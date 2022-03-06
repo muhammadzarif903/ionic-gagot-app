@@ -1,0 +1,26 @@
+@import "common";
+
+.images-container {
+  overflow-x: scroll;
+  white-space: nowrap;
+  min-height: 8vh;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.add-photo {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  p {
+    font-weight: $font-weight-500;
+    font-size: $font-size-normal;
+    color: var(--ion-color-medium-tint);
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+

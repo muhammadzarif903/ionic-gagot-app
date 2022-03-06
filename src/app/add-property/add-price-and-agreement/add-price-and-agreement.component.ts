@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {IProperty} from 'src/app/shared/interfaces/property.interface'
+import {TextType} from '../../shared/ui-elements/text/text.component';
+import {IMAGE_PATH} from '../../../global';
 
 @Component({
   selector: 'mx-add-price-and-agreement',
@@ -6,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-price-and-agreement.component.scss'],
 })
 export class AddPriceAndAgreementComponent implements OnInit {
+  @Input() property: IProperty;
+  public textType = TextType;
 
-  constructor() { }
+  constructor() {
+  }
 
-  ngOnInit() {}
+  public options = [{name: "Euro", value: "euro"}, {name: "Dollar", value: "dollar"}]
+  public items = [{img: IMAGE_PATH, name: "Sell"}, {img: IMAGE_PATH, name: "Rent"}]
 
+  ngOnInit() {
+  }
+
+  public onCategorySelect($event) {
+    this.property.categoryID = $event;
+  }
+
+  public onVideoLinkInput($event) {
+
+  }
 }

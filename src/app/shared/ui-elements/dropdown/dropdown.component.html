@@ -1,0 +1,13 @@
+<ion-item class="field ion-item-select">
+  <ion-label class="label-nowrap" *ngIf="label">
+    <mx-text [type]="'sectionTitle'" [title]="label"></mx-text>
+  </ion-label>
+  <ion-select
+    ok-text="{{'OK' | translate}}"
+    cancel-text="{{'CANCEL' | translate}}"
+    (ionChange)="onChange.emit($event)"
+    [class.full-width]="!label"
+    class="" [value]="value">
+    <ion-select-option *ngFor="let obj of options" [value]="obj.value">{{obj.name}}</ion-select-option>
+  </ion-select>
+</ion-item>

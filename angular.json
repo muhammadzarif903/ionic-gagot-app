@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "defaultProject": "app",
+  "defaultProject": "mx",
   "newProjectRoot": "projects",
   "projects": {
     "app": {
@@ -14,26 +14,16 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
-            "outputPath": "dist",
+            "outputPath": "www",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              "src/assets",
               {
                 "glob": "**/*",
-                "input": "src/assets/",
-                "ignore": [
-                  "**/*.scss"
-                ],
-                "output": "/assets/"
-              },
-              {
-                "glob": "**/*.svg",
-                "input": "node_modules/ionicons/dist/ionicons/svg",
-                "output": "./svg"
+                "input": "src/assets",
+                "output": "assets"
               },
               {
                 "glob": "**/*.svg",
@@ -44,48 +34,26 @@
             "stylePreprocessorOptions": {
               "includePaths": [
                 "src/assets",
+                "src/theme",
                 "src/assets/styles",
                 "src/global.scss"
               ]
             },
             "styles": [
               "src/theme/variables.scss",
-              "src/global.scss",
-              {
-                "input": "node_modules/@ionic/angular/css/core.css"
-              },
-              {
-                "input": "node_modules/@ionic/angular/css/normalize.css"
-              },
-              {
-                "input": "node_modules/@ionic/angular/css/structure.css"
-              },
-              {
-                "input": "node_modules/@ionic/angular/css/typography.css"
-              },
-              {
-                "input": "node_modules/@ionic/angular/css/display.css"
-              },
-              {
-                "input": "node_modules/@ionic/angular/css/padding.css"
-              },
-              {
-                "input": "node_modules/@ionic/angular/css/float-elements.css"
-              },
-              {
-                "input": "node_modules/@ionic/angular/css/text-alignment.css"
-              },
-              {
-                "input": "node_modules/@ionic/angular/css/text-transformation.css"
-              },
-              {
-                "input": "node_modules/@ionic/angular/css/flex-utils.css"
-              },
-              {
-                "input": "src/theme/variables.css"
-              }
+              "src/theme/common.scss",
+              "src/theme/colors.scss",
+              "src/theme/fonts.scss",
+              "src/global.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "aot": false,
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -95,17 +63,10 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "optimization": {
-                "scripts": true,
-                "styles": {
-                  "minify": true,
-                  "inlineCritical": false
-                },
-                "fonts": true
-              },
+              "optimization": true,
               "outputHashing": "all",
-              "sourceMap": true,
-              "namedChunks": true,
+              "sourceMap": false,
+              "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -113,21 +74,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "1mb",
-                  "maximumError": "2mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 }
               ]
             },
             "ci": {
               "progress": false
-            },
-            "hmr": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.hmr.ts"
-                }
-              ]
             }
           }
         },
@@ -140,11 +93,8 @@
             "production": {
               "browserTarget": "app:build:production"
             },
-            "hmr": {
-              "hmr": true,
-              "browserTarget": "gagot-app:build:hmr"
-            },
             "ci": {
+              "progress": false
             }
           }
         },
@@ -161,17 +111,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "stylePreprocessorOptions": {
-              "includePaths": [
-                "src/assets",
-                "src/assets/styles",
-                "src/global.scss"
-              ]
-            },
-            "styles": [
-              "src/theme/variables.scss",
-              "src/global.scss"
-            ],
+            "styles": [],
             "scripts": [],
             "assets": [
               {
@@ -183,11 +123,6 @@
                 "glob": "**/*",
                 "input": "src/assets",
                 "output": "/assets"
-              },
-              {
-                "glob": "**/*.svg",
-                "input": "node_modules/ionicons/dist/ionicons/svg",
-                "output": "./svg"
               }
             ]
           },
@@ -259,6 +194,19 @@
     },
     "@ionic/angular-toolkit:page": {
       "styleext": "scss"
+    }
+  },
+  "storybook": {
+    "builder": "@storybook/angular:start-storybook",
+    "options": {
+      "browserTarget": "angular-cli:build",
+      "port": 6006
+    }
+  },
+  "build-storybook": {
+    "builder": "@storybook/angular:build-storybook",
+    "options": {
+      "browserTarget": "angular-cli:build"
     }
   }
 }

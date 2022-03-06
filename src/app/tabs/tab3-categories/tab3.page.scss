@@ -1,4 +1,3 @@
-@import "colors";
 
 .slides-horizontal {
   height: 200px;
@@ -15,7 +14,7 @@
     font-size: 2.0em;
     width: 100%;
     font-weight: bold;
-    color: $color-white;
+    color: var(--ion-color-tertiary);
   }
 
   .card-subtitle {
@@ -23,6 +22,6 @@
     position: absolute;
     top: 52%;
     width: 100%;
-    color: $color-white;
+    color: var(--ion-color-tertiary);
   }
 }

@@ -1,0 +1,10 @@
+<div class="images-container">
+  <mx-image [data]="obj" *ngFor=" let obj of images;index as i; last as isLast"></mx-image>
+  <div class="add-photo" (click)="presentActionSheet()">
+    <div class="upload-box box-shadow">
+      <ion-icon name="add-outline"></ion-icon>
+    </div>
+    <p>{{'ADD_PHOTO' | translate}}</p>
+  </div>
+</div>
+
