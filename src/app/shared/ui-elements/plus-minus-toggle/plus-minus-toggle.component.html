@@ -1,0 +1,8 @@
+<ion-item class="field ion-item-fab-buttons full-width">
+  <ion-label>
+    <mx-text [type]="TextType.button" [title]="title"></mx-text>
+  </ion-label>
+  <ion-fab-button (click)="onMinusClick()" size="small">-</ion-fab-button>
+  <div class="number-value">{{value}}</div>
+  <ion-fab-button (click)="onPlusClick()" size="small">+</ion-fab-button>
+</ion-item>

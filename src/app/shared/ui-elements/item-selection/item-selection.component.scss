@@ -1,0 +1,47 @@
+@import "common";
+
+.item-selection-container {
+  ion-label {
+    min-height: 40px;
+  }
+}
+
+.gridSelection {
+  display: flex;
+  justify-content: space-around;
+
+  .box {
+    height: 11vh;
+    background-color: $background-color;
+    width: 15vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: $border-radius;
+    transition: $transition-selection;
+
+    &.selected {
+      box-shadow: none;
+    }
+
+    .icon {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+    }
+
+    .img {
+      object-fit: cover;
+      height: 50%;
+      margin-top: 22px;
+      width: 60%;
+      border-radius: $border-radius;
+    }
+
+    p {
+      font-weight: 600;
+      color: #888585;
+    }
+  }
+}

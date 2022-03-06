@@ -1,0 +1,71 @@
+@import "common";
+
+.categories-container {
+  ion-label {
+    min-height: 40px;
+  }
+}
+
+
+ion-segment {
+  display: flex;
+  //justify-content: space-evenly;
+  &.scrollHorizontal {
+    overflow-x: scroll;
+  }
+
+  ion-segment-button {
+    margin: 0.2em;
+    text-transform: none;
+    display: grid;
+    flex-direction: column;
+    border-radius: $border-radius;
+    background: $background-color;
+
+    //background: white !important;
+
+    &.category-button {
+      width: 6.5rem;
+      min-width: 6.5rem;
+      max-width: 8rem;
+      max-height: 6.5rem;
+      min-height: 6.5rem;
+      border-radius: $border-radius;
+
+      mx-checkbox {
+        position: absolute;
+        right: -10px;
+        top: 0;
+      }
+    }
+
+    .category-icon-text-wrapper {
+      //align-items: center;
+      padding: 0.5rem;
+      margin: 0.1rem;
+      width: 3rem;
+      max-height: 4.4rem;
+      min-height: 4.4rem;
+      border-radius: 5px;
+      justify-content: flex-start;
+      //box-shadow: $color-shadow;
+
+      mx-text {
+        display: flex;
+        align-self: center;
+        text-align: center;
+        justify-content: center;
+        max-width: 4.5rem;
+      }
+    }
+
+    mx-checkbox {
+      height: 0;
+      text-align: right;
+      z-index: 1;
+      margin-right: 0.1rem;
+      grid-area: 1 / 1;
+    }
+
+  }
+}

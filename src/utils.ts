@@ -1,6 +1,9 @@
 export class Utils {
 
   static addRemoveArrayItem(items, item): any[] {
+    if(!items?.length){
+      items=[];
+    }
     const found = items.findIndex(el => el === item);
     if (found >= 0) {
       items.splice(found, 1);

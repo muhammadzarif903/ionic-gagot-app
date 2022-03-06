@@ -4,7 +4,5 @@ export enum FacilitiesEnum {
   Sauna = 'Sauna',
   FitnessCenter = 'FitnessCenter',
   Lawn = 'Lawn',
-  TennisCourt = 'TennisCourt',
-  Jacuzzi = 'Jacuzzi',
-  TennisCourts = 'TennisCourts',
+  TennisCourt = 'TennisCourt'
 }

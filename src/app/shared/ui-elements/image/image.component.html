@@ -1,0 +1,6 @@
+<div class="mx-image flex-column">
+  <div class="images-container box-shadow">
+    <img [src]="data.path">
+  </div>
+  <ion-progress-bar class="progress-bar-inside-image" *ngIf="data.isLoading" value="{{11/100}}"></ion-progress-bar>
+</div>

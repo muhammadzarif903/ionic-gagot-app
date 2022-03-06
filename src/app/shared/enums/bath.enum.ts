@@ -1,7 +1,7 @@
 export enum BathEnum {
-  cabin = 'cabin',
-  bath = 'bath',
-  jacuzzi = 'jacuzzi',
-  washbasins = 'washbasins',
-  toilet = 'toilet',
+  BathCabin = 'BathCabin',
+  Bath = 'Bath',
+  Jacuzzi = 'Jacuzzi',
+  Washbasins = 'Washbasins',
+  Toilet = 'Toilet',
 }

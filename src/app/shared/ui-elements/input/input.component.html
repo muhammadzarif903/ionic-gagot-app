@@ -1,0 +1,33 @@
+<ion-item class="field input-field">
+  <ion-label position="fixed" *ngIf="label">
+    <mx-text [type]="'sectionTitle'" [title]="label"></mx-text>
+  </ion-label>
+  <ion-input
+    [autocomplete]="autocomplete"
+    [autocorrect]="autocorrect"
+    [clearInput]="clearInput"
+    [clearOnEdit]="clearOnEdit"
+    [max]="max"
+    [min]="min"
+    [maxlength]="maxlength"
+    [minlength]="minlength"
+    [readonly]="readonly"
+    [disabled]="disabled"
+    [multiple]="multiple"
+    [spellcheck]="spellcheck"
+    [size]="size"
+    [step]="step"
+    [required]="required"
+    [color]="color"
+    [placeholder]="placeholder | translate"
+    [value]="value || ''"
+    [type]="type"
+    (ionBlur)="onBlurEvent($event)"
+    (ionChange)="onChangeEvent($event)"
+    (ionFocus)="onFocusEvent($event)"
+    (ionInput)="onInputEvent($event)">
+  </ion-input>
+  <ion-icon *ngIf="icon" [name]="icon" color="primary" slot="end" align-self-center></ion-icon>
+</ion-item>
+
+

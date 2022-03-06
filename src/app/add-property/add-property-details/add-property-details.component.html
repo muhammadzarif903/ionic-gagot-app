@@ -2,34 +2,28 @@
   <mx-text [type]="textType.sectionTitle"
            [title]="'TITLES.DETAILS' | translate">
   </mx-text>
+
   <!--  Square¬-->
-  <ion-item class="section field">
-    <ion-label position="fixed">
-      <mx-text
-        [type]="textType.sectionTitle" [title]="'SQUARE_AREA' | translate"></mx-text>
-    </ion-label>
-    <mx-input
-      class="full-width"
-      [value]="0"
-      (onChange)="onSquareAreaInput($event)"
-      [placeholder]="'PLACEHOLDERS.ENTER_VALUE_IN' | translate : {value: '(meter/feets)'}"></mx-input>
-  </ion-item>
+  <mx-input
+    class="full-width"
+    [value]="0"
+    [type]="inputType.numberType"
+    [min]="0"
+    [max]="10"
+    [label]="'SQUARE_AREA' | translate"
+    (onChange)="onSquareAreaInput($event)"
+    [placeholder]="'PLACEHOLDERS.ENTER_VALUE_IN' | translate : {value: '(meter/feets)'}"></mx-input>
 
   <!--  Year Build-->
-  <ion-item class="section field">
-    <ion-label>
-      <mx-text [type]="textType.sectionTitle" [title]="'YEAR_BUILD' | translate"></mx-text>
-    </ion-label>
-    <ion-select
-      ok-text="Okay" cancel-text="Nah"
-      class="year"
-      [value]="dateValue" (ionChange)="onYearBuildSelect($event)">
-      <ion-select-option *ngFor="let year of years" [value]="year">{{year}}</ion-select-option>
-    </ion-select>
-  </ion-item>
+  <mx-dropdown
+    [label]="'YEAR_BUILD' | translate"
+    [value]="dateValue"
+    (onChange)="onYearBuildSelect($event)"
+    [options]="years">
+  </mx-dropdown>
   <!--  New Construction-->
-  <ion-item class="flex-column field flex-row ion-align-items-center full-width">
-    <ion-label>
+  <ion-item class="field ion-item-radio-group flex-column flex-row ion-align-items-center full-width">
+    <ion-label class="label-nowrap">
       <mx-text [type]="textType.sectionTitle" [title]="'NEW_CONSTRUCTION' | translate"></mx-text>
     </ion-label>
     <ion-list class="flex-auto mx-checkboxes">
@@ -55,7 +49,7 @@
     </ion-list>
   </ion-item>
   <!--    ON THE LAND-->
-  <ion-item class="section field">
+  <ion-item class="field ion-item-toggle">
     <ion-label>
       <mx-text [type]="textType.sectionTitle" [title]="'ON_THE_LAND' | translate"></mx-text>
     </ion-label>
@@ -63,7 +57,7 @@
   </ion-item>
 
   <!--   LAST FLOOR-->
-  <ion-item class="section field">
+  <ion-item class="field ion-item-toggle">
     <ion-label>
       <mx-text [type]="textType.sectionTitle" [title]="'LAST_FLOOR' | translate"></mx-text>
     </ion-label>
@@ -72,25 +66,14 @@
       (ionChange)="onLastFloor($event)"></ion-toggle>
   </ion-item>
 
-  <!--  FLOOR-->
-  <ion-item class="section field" *ngIf="!property.lastFloor">
-    <ion-label position="fixed">
-      <mx-text
-        [type]="textType.sectionTitle" [title]="'SQUARE_AREA' | translate"></mx-text>
-    </ion-label>
-    <mx-input
-      class="full-width"
-      [value]="property.floor"
-      (onChange)="onFloorChange($event)"
-      [placeholder]="'FLOOR' | translate"></mx-input>
-  </ion-item>
+  <mx-input
+    *ngIf="!property.lastFloor"
+    class="full-width"
+    [label]="'FLOOR' | translate"
+    [value]="property.floor"
+    (onChange)="onFloorChange($event)"
+    [placeholder]="'FLOOR' | translate"></mx-input>
 
-  <!--  Description-->
-  <ion-item>
-    <mx-text [type]="textType.sectionTitle"
-             [title]="'DESCRIPTION' | translate">
-    </mx-text>
-  </ion-item>
   <mx-textarea
     [value]="property.description"
     (onChange)="onDescriptionInput($event)"
@@ -103,33 +86,27 @@
            [title]="'TITLES.ROOMS' | translate">
   </mx-text>
   <!--  BEDROOMS-->
-  <ion-item class="section field">
-    <mx-plus-minus-toggle class="full-width"
-                          (onChange)="onBedroomsChange($event)"
-                          [value]="property.floor"
-                          [max]="10"
-                          [title]="'BEDROOMS' | translate">
-    </mx-plus-minus-toggle>
-  </ion-item>
+  <mx-plus-minus-toggle class="full-width"
+                        (onChange)="onBedroomsChange($event)"
+                        [value]="property.floor"
+                        [max]="10"
+                        [title]="'BEDROOMS' | translate">
+  </mx-plus-minus-toggle>
 
   <!--  BATHROOMS-->
-  <ion-item class="section field">
-    <mx-plus-minus-toggle class="full-width"
-                          (onChange)="onBathroomsChange($event)"
-                          [value]="property.floor"
-                          [max]="5"
-                          [title]="'BATHROOMS' | translate">
-    </mx-plus-minus-toggle>
-  </ion-item>
+  <mx-plus-minus-toggle class="full-width"
+                        (onChange)="onBathroomsChange($event)"
+                        [value]="property.floor"
+                        [max]="5"
+                        [title]="'BATHROOMS' | translate">
+  </mx-plus-minus-toggle>
   <!--  BALCONIES -->
-  <ion-item class="section field">
-    <mx-plus-minus-toggle class="full-width"
-                          (onChange)="onBalconiesChange($event)"
-                          [value]="property.floor"
-                          [max]="3"
-                          [title]="'BALCONIES' | translate">
-    </mx-plus-minus-toggle>
-  </ion-item>
+  <mx-plus-minus-toggle class="full-width"
+                        (onChange)="onBalconiesChange($event)"
+                        [value]="property.floor"
+                        [max]="3"
+                        [title]="'BALCONIES' | translate">
+  </mx-plus-minus-toggle>
 </div>
 
 <!--KITCHEN AMENITIES-->
@@ -168,4 +145,3 @@
     [title]="'SAFETY_AMENITIES' | translate"
     (onClick)="onSafetyAmenitiesClick($event)"></mx-button-list>
 </div>
-

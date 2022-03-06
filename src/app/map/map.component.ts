@@ -18,6 +18,7 @@ const openCycleMapUrl = 'http://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png'
 })
 export class MapComponent implements AfterViewInit {
   private map: L.Map;
+
   @ViewChild('mapRef', {static: false}) mapRef: ElementRef;
 
   constructor(private zone: NgZone) {
@@ -30,12 +31,24 @@ export class MapComponent implements AfterViewInit {
   private initMap(): void {
     const cities = L.marker([39.61, -105.02]).bindPopup('This is Littleton, CO.');
 
-    const grayscale = L.tileLayer(openStreetMapUrl, {id: 'mapRef', tileSize: 512, zoomOffset: -1, attribution: ''});
-    const streets = L.tileLayer(openStreetMapUrl, {id: 'mapRef', tileSize: 512, zoomOffset: -1, attribution: ''});
+    const grayscale = L.tileLayer(openStreetMapUrl,
+      {
+        id: 'mapRef',
+        tileSize: 512,
+        zoomOffset: -1,
+        attribution: ''
+      });
+    const streets = L.tileLayer(openStreetMapUrl,
+      {
+        id: 'mapRef',
+        tileSize: 512,
+        zoomOffset: -1,
+        attribution: ''
+      });
     this.map = L.map('mapRef', {
       zoomControl: true,
       center: [39.8282, -98.5795],
-      zoom: 5,
+      zoom: 2,
       layers: [grayscale, streets]
     });
     const baseMaps = {
@@ -46,6 +59,10 @@ export class MapComponent implements AfterViewInit {
       Cities: cities
     };
     L.control.layers(baseMaps, overlayMaps).addTo(this.map);
-    this.map.invalidateSize();
+    this.map.whenReady(() => {
+      setTimeout(() => {
+        this.map.invalidateSize();
+      }, 100);
+    });
   }
 }

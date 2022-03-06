@@ -1,0 +1,8 @@
+<mx-text [type]="type" [color]="'primary'" [title]='title'>
+</mx-text>
+<div class="grid">
+  <div class="timeSlots" (click)="selectTime(slot)" [class.selectedTimeSlot]="selectedTime === slot"
+       *ngFor="let slot of timeSlots">
+    <p>{{slot}}</p>
+  </div>
+</div>

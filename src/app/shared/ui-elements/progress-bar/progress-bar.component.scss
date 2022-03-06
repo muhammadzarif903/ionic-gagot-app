@@ -1,0 +1,119 @@
+@import "./src/global";
+
+.progress-bar-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  align-itrems: center;
+
+  &.bottom {
+    flex-direction: column-reverse;
+    height: 0;
+  }
+
+  &.left {
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-itrems: normal;
+  }
+
+  &.right {
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    align-itrems: normal;
+  }
+
+  .progress-bar-line-and-steps-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+
+    .progress-bar-step-container {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      height: 0rem;
+      z-index: 1;
+      align-items: center;
+
+      &.left {
+        flex-direction: column;
+        align-itrems: revert;
+      }
+
+      &.right {
+        flex-direction: column;
+        align-itrems: flex-end;
+      }
+
+      .progress-bar-step {
+        border: 0.1rem;
+        border-style: solid;
+        border-color: var(--ion-color-tertiary);
+        background: white;
+        border-radius: 100%;
+        width: 2rem;
+        height: 2rem;
+
+        &.left,
+        &.right {
+          margin: 1rem;
+        }
+
+        &.visible {
+          visibility: visible;
+        }
+
+        &.selected {
+          color: #2dc86b;
+          border-color: #2dc86b;
+        }
+
+        &.disabled {
+        }
+      }
+    }
+
+    .progress-line {
+      display: flex;
+      width: 99%;
+      align-self: center;
+      height: 0;
+
+      .progress-bar-line {
+        height: 0.6em;
+        align-self: center;
+        box-shadow: var(--box-shadow);
+
+      }
+    }
+  }
+
+  .progress-bar-step-title {
+    padding-top: 2rem;
+    font-size: 0.8rem;
+    font-weight: normal;
+    align-self: center;
+    color: var(--ion-color-tertiary);
+    &.top {
+      align-self: center;
+    }
+
+    &.left {
+      align-self: flex-start;
+    }
+
+    &.right {
+      align-self: flex-end;
+    }
+
+    &.bottom {
+
+    }
+  }
+
+}
+

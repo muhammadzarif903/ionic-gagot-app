@@ -1,0 +1,13 @@
+<div class="audioImg">
+  <p>{{title}}</p>
+  <img class="icon"
+       alt="pause"
+       *ngIf="track"
+       (click)="toogle()"
+       src="{{PAUSE_PIC}}">
+  <!-- <ion-icon *ngIf="track" (click)="toogle()" name="pause-outline"></ion-icon> -->
+  <ion-icon name="play-outline" *ngIf="!track" (click)="toogle()"></ion-icon>
+  <img
+    alt="static"
+    src="{{STATIC_PIC}}">
+</div>

@@ -1,10 +1,10 @@
-import {Component, ViewChild} from '@angular/core';
-import {IProgressBarStep} from '../shared/components/progress-bar/progress-bar.component';
-import { StateType} from '../shared/services/state.service';
+import {Component, EventEmitter, Output, ViewChild} from '@angular/core';
+import {StateService, StateType} from '../shared/services/state.service';
 import {Router} from '@angular/router';
-import {TextType} from '../shared/components/text/text.component';
 import {IProperty} from '../shared/interfaces/property.interface';
 import {IonDatetime} from '@ionic/angular';
+import {IProgressBarStep} from '../shared/ui-elements/progress-bar/progress-bar.component';
+import {TextType} from '../shared/ui-elements/text/text.component';
 
 export enum AddPropertyScreen {
   location = 'location',
@@ -64,13 +64,29 @@ export class AddPropertyComponent {
   public steps: IProgressBarStep[] = [];
   public textType = TextType;
   public routeLinks = [
-    {path: AddPropertyScreen.location, active: true, title: 'TITLES.LOCATION', data: this.property},
+    {
+      path: AddPropertyScreen.location,
+      active: true,
+      title: 'TITLES.LOCATION',
+      data: this.property
+    },
     {path: AddPropertyScreen.propertyDetails, active: false, title: 'TITLES.PROPERTY_DETAILS'},
-    {path: AddPropertyScreen.roomDetails, active: false, title: 'TITLES.ROOM_DETAILS'},
+    // {path: AddPropertyScreen.roomDetails, active: false, title: 'TITLES.ROOM_DETAILS'},
     {path: AddPropertyScreen.media, active: false, title: 'TITLES.MEDIA'},
     {path: AddPropertyScreen.priceAndAgreement, active: false, title: 'TITLES.PRICE_AND_AGREEMENT'},
     {path: AddPropertyScreen.openDoorEvent, active: false, title: 'TITLES.OPEN_DOOR_EVENTS'}
   ];
+  activeStep: {
+    path: AddPropertyScreen;
+    active: boolean;
+    title: string;
+    data: IProperty;
+  } | {
+    path: AddPropertyScreen;
+    active: boolean;
+    title: string;
+    data?: undefined;
+  };
 
 
   constructor(private router: Router) {
@@ -93,6 +109,7 @@ export class AddPropertyComponent {
     if (index <= this.routeLinks.length) {
       this.routeLinks[index].active = true;
     }
+    this.activeStep = this.routeLinks[index]
     return this.routeLinks[index];
   }
 
@@ -124,6 +141,7 @@ export class AddPropertyComponent {
     this.steps = this.steps.map((el, index) => {
       el.active = index === routeIndex;
       el.state = index <= routeIndex ? StateType.submitted : StateType.initial;
+
       return el;
     });
   }

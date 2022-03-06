@@ -1,0 +1,126 @@
+@import 'common';
+
+.calendarMainCont {
+  background-color: white;
+  border-radius: $border-radius;
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.calendar-heading {
+  text-align: center;
+
+  p {
+    margin: 0;
+    color: var(--ion-text-color);
+  }
+
+  .controlBtns {
+    ion-button {
+      height: 25px;
+
+      ion-icon {
+        font-size: $font-size-20;
+      }
+    }
+  }
+}
+
+.week-heading {
+  width: 100%;
+
+  ul {
+    display: inline-grid;
+    grid-auto-flow: column;
+    width: 100%;
+    list-style-type: none;
+    padding: 0;
+
+    li {
+      font-size: $font-size-normal;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+  }
+}
+
+.day-frame {
+  width: 100%;
+
+  ul {
+    display: inline-grid;
+    grid-template-columns: repeat(7, minmax(40px, 1fr));
+    width: 100%;
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+    border-radius: $border-radius;
+
+    li {
+      font-size: $font-size-normal;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+
+      span {
+        display: flex;
+        padding: 0.4rem;
+        min-width: 2rem;
+        margin: auto;
+        border-radius: $border-radius;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        transition: $transition-selection;
+      }
+
+      &.eventDate {
+        span {
+          background-color: var(--ion-color-secondary);
+          color: #fff;
+        }
+      }
+
+      &.selected {
+        span {
+          font-weight: $font-weight-500;
+          color: #ffff !important;
+          background-color: var(--ion-color-primary) !important;
+        }
+      }
+
+      &.current {
+        span {
+          // background-color: var(--ion-color-primary) !important;
+          font-weight: $font-weight-500;
+          color: var(--ion-color-primary) !important;
+        }
+      }
+
+      &.disabled {
+        span {
+          color: var(--ion-text-color) !important;
+          font-weight: $font-weight-400;
+          background-color: var(--ion-color-danger);
+        }
+      }
+
+      &.simple {
+        span {
+          font-weight: $font-weight-500;
+        }
+      }
+    }
+
+    li:last-child {
+      span {
+        color: rgb(0, 0, 0);
+        background-color: transparent;
+      }
+    }
+  }
+}

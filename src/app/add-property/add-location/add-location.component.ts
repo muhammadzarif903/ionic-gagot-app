@@ -1,9 +1,9 @@
-import {Component, OnInit} from '@angular/core';
-import {format, parseISO} from 'date-fns';
-import {TextType} from '../../shared/components/text/text.component';
+import {Component, Input, OnInit} from '@angular/core';
 import {IProperty} from '../../shared/interfaces/property.interface';
 import {Utils} from '../../../utils';
 import {NextToEnum} from '../../shared/enums/nexto.num';
+import {TextType} from '../../shared/ui-elements/text/text.component';
+import moment from 'moment';
 
 @Component({
   selector: 'mx-add-location',
@@ -12,10 +12,9 @@ import {NextToEnum} from '../../shared/enums/nexto.num';
 })
 export class AddLocationComponent implements OnInit {
 
-  public property: IProperty;
+  @Input() property: IProperty;
   public textType = TextType;
   public nextToList = Object.values(NextToEnum);
-
   constructor() {
   }
 
@@ -48,7 +47,7 @@ export class AddLocationComponent implements OnInit {
   }
 
   formatDate(value: string) {
-    return format(parseISO(value), 'MMM dd yyyy');
+    return moment(value).format('MMM dd yyyy');
   }
 
 }

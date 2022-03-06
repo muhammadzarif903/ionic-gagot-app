@@ -1,0 +1,37 @@
+@import "common";
+
+.mx-image {
+  width: 90%;
+  align-items: center;
+
+  .images-container {
+    background-color: var(--ion-background-color);
+    height: 6rem;
+    width: 6rem;
+    border: 2px 3px 10px -5px black;
+    border-radius: 0 $border-radius;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: 10px;
+
+    ion-icon {
+      --ionicon-stroke-width: 65px;
+      font-size: 65px;
+      color: var(--ion-color-light);
+    }
+
+    img {
+      margin: auto;
+      display: block;
+    }
+  }
+
+  .progress-bar-inside-image {
+    --progress-background: var(--ion-color-primary);
+    height: 5px;
+    border-radius: $border-radius;
+  }
+
+}

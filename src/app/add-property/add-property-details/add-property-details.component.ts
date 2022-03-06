@@ -1,9 +1,10 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {IProperty} from '../../shared/interfaces/property.interface';
-import {TextType} from '../../shared/components/text/text.component';
 import {CommonAmenitiesEnum, SafetyAmenitiesEnum} from '../../shared/enums/amenities.enum';
 import {FacilitiesEnum} from '../../shared/enums/facilities.enum';
 import {KitchenEnum} from '../../shared/enums/kitchen.enum';
+import {TextType} from '../../shared/ui-elements/text/text.component';
+import {InputType} from '../../shared/ui-elements/input/input.component';
 
 @Component({
   selector: 'mx-add-property-details',
@@ -12,7 +13,7 @@ import {KitchenEnum} from '../../shared/enums/kitchen.enum';
 })
 export class AddPropertyDetailsComponent implements OnInit {
 
-  @Input() public property: IProperty;
+  @Input() property: IProperty;
 
   public defaultSelectedRadio = "radio_2";
   //Get value on ionChange on IonRadioGroup
@@ -43,11 +44,11 @@ export class AddPropertyDetailsComponent implements OnInit {
   public kitchenAmenities = Object.values(KitchenEnum);
   public safetyAmenitiesList = Object.values(SafetyAmenitiesEnum);
   public facilitiesList = Object.values(FacilitiesEnum);
-
   public dateValue = new Date().getFullYear();
   public years = [];
 
   public textType = TextType;
+  public inputType = InputType;
 
   constructor() {
   }
@@ -65,7 +66,8 @@ export class AddPropertyDetailsComponent implements OnInit {
     const res = [];
     const currentYear = new Date().getFullYear() + 5;
     for (let i = 0; i < 70; i++) {
-      res.push(currentYear - i);
+      const valName = currentYear - i;
+      res.push({value: valName, name: valName});
     }
     this.years = res;
   }

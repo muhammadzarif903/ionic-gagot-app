@@ -1,20 +1,19 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'mx-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss']
 })
-// eslint-disable-next-line @angular-eslint/component-class-suffix
 export class Tab1Page {
 
   items: any[] = [];
 
   constructor() {
-    this.generateItems();
+    this.generateHouses();
   }
 
-  generateItems() {
+  private generateHouses() {
     for (let i = 0; i < 1000; i++) {
       this.items.push({
         name: i + ' - ' + images[rotateImg],
@@ -57,5 +56,4 @@ const getImgSrc = () => {
 };
 
 let rotateImg = 0;
-
 

@@ -1,0 +1,24 @@
+<div>
+  <ion-label>
+    <mx-text [type]="textType" [title]="title"></mx-text>
+  </ion-label>
+  <div class="button-list flex-wrap ion-padding-vertical">
+    <ion-button *ngFor="let obj of previewButtons"
+                (click)="onButtonClick(obj)"
+                [color]="isSelected(obj) ? 'primary' : 'light'">
+      {{obj | translate}}
+    </ion-button>
+  </div>
+  <ion-button
+    (click)="onOtherClick()"
+    *ngIf="preview"
+    expand="block"
+    size="large"
+    fill="outline">
+    <ion-icon slot="start" name="{{showMore ? 'remove-outline': 'add'}}"></ion-icon>
+    <ion-label>{{showMore ? 'HIDE' : 'OTHER' | translate}}
+      {{buttons?.length - previewButtons?.length || ''}}
+    </ion-label>
+    <ion-icon slot="end" name="start"></ion-icon>
+  </ion-button>
+</div>

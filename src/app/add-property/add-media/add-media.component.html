@@ -1,1 +1,37 @@
-MEDIA
+<div class="section">
+  <mx-text [type]="textType.sectionTitle" [title]="'VIDEO_RECORD' | translate">
+  </mx-text>
+  <mx-audio-track [title]="'VOICE_RECORD1' | translate"></mx-audio-track>
+  <ion-button size="large" expand="block">{{'ADD' | translate}}</ion-button>
+</div>
+
+<div class="section">
+  <mx-text [type]="textType.sectionTitle" [title]="'PHOTOS' | translate"></mx-text>
+  <mx-text [type]="textType.sectionTitle"></mx-text>
+  <mx-upload-media-button [images]="images"></mx-upload-media-button>
+</div>
+
+<div class="section">
+  <mx-text [type]="textType.sectionTitle" [title]="'360_PHOTOS' | translate"></mx-text>
+  <div class="section image-progress-bar box-shadow">
+    <mx-image [data]="images[0]"></mx-image>
+    <mx-progress class="left-progress-bar" [name]="'PHOTO' | translate" [percentage]="percentage"></mx-progress>
+  </div>
+</div>
+
+<div class="section1">
+  <mx-text [type]="textType.sectionTitle" [title]="'PROPERTY_VIDEO_LINK' | translate"></mx-text>
+  <mx-input class="full-width"
+            [value]="''"
+            (onChange)="onVideoLinkInput($event)"
+            [placeholder]="'YOUTUBE' | translate"></mx-input>
+  <ion-button [disabled]="true" size="large" expand="block">{{'ADD_MEDIA_FROM_GALLERY' | translate}}</ion-button>
+</div>
+
+<div class="section1">
+  <mx-text [type]="textType.sectionTitle" [title]="'VIDEO' | translate"></mx-text>
+  <div class="section image-progress-bar box-shadow">
+    <mx-image [data]="images[0]"></mx-image>
+    <mx-progress class="left-progress-bar" [name]="'VIDEO1' | translate" [percentage]="percentage"></mx-progress>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="categories-container flex-column">
+  <ion-label *ngIf="label">
+    <mx-text [type]="'sectionTitle'" [title]="label"></mx-text>
+  </ion-label>
+  <ion-segment
+    color="secondary"
+    (ionChange)="onCategoryChange($event)"
+    class="categories-list flex-wrap"
+    [class.scrollHorizontal]="inRow"
+    [class.flex-row]="inRow">
+    <ion-segment-button
+      class="category-button"
+      *ngFor="let category of categories" value="{{category.title}}">
+      <mx-checkbox
+        *ngIf="category.title === selected"
+        [size]="'medium'" [background]="Color.primary"
+        [color]="Color.light"></mx-checkbox>
+      <ion-icon
+        [size]="'large'"
+        [name]="category.icon">
+      </ion-icon>
+      <ion-label text-wrap>
+        <mx-text [type]="TextType.button" [title]="category.title | translate"></mx-text>
+      </ion-label>
+    </ion-segment-button>
+  </ion-segment>
+</div>
