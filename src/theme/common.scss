@@ -2,7 +2,7 @@
 @import "fonts";
 
 
-$border-radius: 10px;
+$border-radius: 6px;
 $transition-selection: all 0.2s ease;
 $button-height: 64px;
 $padding-right-element: 20px;
@@ -180,6 +180,9 @@ ion-textarea {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+  mx-text {
+    flex: 1;
+  }
 }
 
 mx-dropdown {

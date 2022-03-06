@@ -11,7 +11,13 @@
     <mx-text [type]="textType.sectionTitle" [title]="'PRICE' | translate"></mx-text>
   </ion-label>
   <div class="dropDownDiv">
-    <mx-input class="half-width" [value]="0" (onChange)="onVideoLinkInput($event)"
+    <!-- TODO  MIN MAX inputs not working -> need to check-->
+    <mx-input class="half-width"
+              [type]="inputType.numberType"
+              [value]="0"
+              [min]="1"
+              [max]="20"
+              (onChange)="onVideoLinkInput($event)"
               [placeholder]="'23,123.00' | translate"></mx-input>
     <mx-dropdown
       [value]="options[0].value"
@@ -22,7 +28,11 @@
     <mx-text [type]="textType.sectionTitle" [title]="'ARNONA_PRICE' | translate"></mx-text>
   </ion-label>
   <div class="dropDownDiv">
-    <mx-input class="half-width" [value]="0" (onChange)="onVideoLinkInput($event)"
+    <!-- TODO  MIN MAX inputs not working -> need to check-->
+    <mx-input class="half-width"
+              [type]="inputType.numberType"
+              [value]="0"
+              (onChange)="onVideoLinkInput($event)"
               [placeholder]="'23,123.00' | translate"></mx-input>
 
     <mx-dropdown
@@ -30,12 +40,15 @@
       [options]="options"></mx-dropdown>
   </div>
 
-
   <ion-label>
     <mx-text [type]="textType.sectionTitle" [title]="'HOUSE_COMMITTEE_PAY' | translate"></mx-text>
   </ion-label>
   <div class="dropDownDiv">
-    <mx-input class="half-width" [value]="0" (onChange)="onVideoLinkInput($event)"
+    <!-- TODO  MIN MAX inputs not working -> need to check-->
+    <mx-input class="half-width"
+              [type]="inputType.numberType"
+              [value]="0"
+              (onChange)="onVideoLinkInput($event)"
               [placeholder]="'23,123.00' | translate"></mx-input>
     <mx-dropdown
       [value]="options[0].value"
@@ -46,45 +59,40 @@
 </div>
 
 
-<div class="section">
-  <mx-text [type]="textType.sectionTitle" [title]="'AGREEMENT_DETAILS' | translate"></mx-text>
-</div>
+<mx-text class="section" [type]="textType.sectionTitle" [title]="'AGREEMENT_DETAILS' | translate"></mx-text>
 
+<!--TODO create component-->
 <div class="section2 box-shadow">
-  <div>
-    <div class="agreementDiv">
-      <mx-text [type]="textType.label" [title]="'AGREEMENT' | translate"></mx-text>
-    </div>
-    <div class="agreementDiv">
-      <mx-text [type]="textType.description" [title]="'LOREM' | translate">
-      </mx-text>
-      <ion-button>{{'ADD' | translate}}</ion-button>
-    </div>
+  <div class="agreementDiv">
+    <mx-text [type]="textType.label" [title]="'AGREEMENT' | translate"></mx-text>
+  </div>
+  <div class="agreementDiv">
+    <mx-text [type]="textType.description" [title]="'LOREM' | translate">
+    </mx-text>
+    <ion-button>{{'ADD' | translate}}</ion-button>
   </div>
 </div>
 
+<!--TODO create component-->
 <div class="section2 box-shadow">
-  <div>
-    <div class="agreementDiv">
-      <mx-text [type]="textType.label" [title]="'HOUSE_RULES' | translate"></mx-text>
-    </div>
-    <div class="agreementDiv">
-      <mx-text [type]="textType.description" [title]="'LOREM' | translate">
-      </mx-text>
-      <ion-button>{{'ADD' | translate}}</ion-button>
-    </div>
+  <div class="agreementDiv">
+    <mx-text [type]="textType.label" [title]="'HOUSE_RULES' | translate"></mx-text>
+  </div>
+  <div class="agreementDiv">
+    <mx-text [type]="textType.description" [title]="'LOREM' | translate">
+    </mx-text>
+    <ion-button>{{'ADD' | translate}}</ion-button>
   </div>
 </div>
 
+<!--TODO create component-->
 <div class="section2 box-shadow">
-  <div>
-    <div class="agreementDiv">
-      <mx-text [type]="textType.label" [title]="'CANCEL_POLICY_RULES' | translate"></mx-text>
-    </div>
-    <div class="agreementDiv">
-      <mx-text [type]="textType.description" [title]="'LOREM' | translate">
-      </mx-text>
-      <ion-button>{{'ADD' | translate}}</ion-button>
-    </div>
+  <div class="agreementDiv">
+    <mx-text [type]="textType.label" [title]="'CANCEL_POLICY_RULES' | translate"></mx-text>
+  </div>
+  <div class="agreementDiv">
+    <mx-text [type]="textType.description" [title]="'LOREM' | translate">
+    </mx-text>
+    <ion-button>{{'ADD' | translate}}</ion-button>
   </div>
 </div>

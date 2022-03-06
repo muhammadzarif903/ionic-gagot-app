@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {IProperty} from 'src/app/shared/interfaces/property.interface'
 import {TextType} from '../../shared/ui-elements/text/text.component';
 import {IMAGE_PATH} from '../../../global';
+import {InputType} from '../../shared/ui-elements/input/input.component';
 
 @Component({
   selector: 'mx-add-price-and-agreement',
@@ -10,7 +11,9 @@ import {IMAGE_PATH} from '../../../global';
 })
 export class AddPriceAndAgreementComponent implements OnInit {
   @Input() property: IProperty;
+
   public textType = TextType;
+  public inputType = InputType;
 
   constructor() {
   }
