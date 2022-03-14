@@ -2,11 +2,11 @@ import { ModalController } from '@ionic/angular';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-reset-passowrd',
-  templateUrl: './reset-passowrd.component.html',
-  styleUrls: ['./reset-passowrd.component.scss'],
+  selector: 'mx-reset-password',
+  templateUrl: './reset-pass.component.html',
+  styleUrls: ['./reset-pass.component.scss'],
 })
-export class ResetPassowrdComponent implements OnInit {
+export class ResetPassComponent implements OnInit {
   @Input() type = 'change';
   loading = {
     status:false,
@@ -54,11 +54,11 @@ export class ResetPassowrdComponent implements OnInit {
         cpassword: this.formDetails.new_password,
         password: this.formDetails.new_password
       }
-  
+
     } else {
     }
 
-    
+
   }
 
 }

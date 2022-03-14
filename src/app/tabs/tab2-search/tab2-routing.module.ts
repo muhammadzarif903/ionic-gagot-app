@@ -4,17 +4,11 @@ import {Tab2Page} from './tab2.page';
 
 const routes: Routes = [
   {
-    path: 'search',
-    component: Tab2Page,
-    children: [{
-      path: 'filters',
-      loadChildren: () =>
-        import('../../filters/filters.module')
-          .then(m => m.FiltersModule)
-    }]
+    path: '',
+    loadChildren: () => import('../../filters/filters.module').then(m => m.FiltersModule)
   }, {
     path: '',
-    redirectTo: '/search/filters',
+    redirectTo: '',
     pathMatch: 'full'
   }
 ];
@@ -25,3 +19,4 @@ const routes: Routes = [
 })
 export class Tab2PageRoutingModule {
 }
+

@@ -1,12 +1,12 @@
 import { SettingsComponent } from './settings/settings.component';
 import { Component, OnInit } from '@angular/core';
 import { AlertController, ModalController, NavController } from '@ionic/angular';
-import { ResetPassowrdComponent } from '../shared/components/reset-passowrd/reset-passowrd.component';
 
 import { UpdatePersonalProfileComponent } from './update-personal-profile/update-personal-profile.component';
+import {ResetPassComponent} from '../../shared/ui-elements/reset-password/reset-pass.component';
 
 @Component({
-  selector: 'app-profile-settings',
+  selector: 'mx-profile-settings',
   templateUrl: './profile-settings.page.html',
   styleUrls: ['./profile-settings.page.scss'],
 })
@@ -33,11 +33,11 @@ export class ProfileSettingsPage implements OnInit {
   refresh(){
     this.ionViewWillEnter();
   }
-  
+
   // Pause Profile
   async changePause(evnt){
     console.log('evnet',evnt.detail.checked);
-    
+
     if(evnt.detail.checked) {
       const alert = await this.alertController.create({
         header: "PAUSE PROFILE",
@@ -50,7 +50,7 @@ export class ProfileSettingsPage implements OnInit {
             handler:()=>{
               this.isPause = false;
             }
-          }, 
+          },
           {
             text: 'Confirm',
             id: 'confirm-button',
@@ -84,7 +84,7 @@ export class ProfileSettingsPage implements OnInit {
   }
 
   openCamera(){
-    
+
   }
 
   // Deleted profile
@@ -101,7 +101,7 @@ export class ProfileSettingsPage implements OnInit {
             handler:()=>{
               this.isDeleted = false;
             }
-          }, 
+          },
           {
             text: 'Confirm',
             id: 'confirm-button',
@@ -138,13 +138,13 @@ export class ProfileSettingsPage implements OnInit {
       modal.present();
       return modal.onDidDismiss();
     }).then((res)=>{
-  
+
     });
   }
-  
+
   onChangePassword() {
     this.modalController.create({
-      component: ResetPassowrdComponent,
+      component: ResetPassComponent,
       componentProps: {
         type: 'change'
       }
@@ -152,7 +152,7 @@ export class ProfileSettingsPage implements OnInit {
       modal.present();
       return modal.onDidDismiss();
     }).then((res)=>{
-  
+
     });
   }
 

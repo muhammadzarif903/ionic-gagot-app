@@ -13,7 +13,7 @@ import {CommonModule} from '@angular/common';
 import {TranslateModule} from '@ngx-translate/core';
 import {PlusMinusToggleComponent} from './ui-elements/plus-minus-toggle/plus-minus-toggle.component';
 import {ButtonListComponent} from './ui-elements/button-list/button-list.component';
-import {ResetPassowrdComponent} from './ui-elements/reset-passowrd/reset-passowrd.component';
+import {ResetPassComponent} from './ui-elements/reset-password/reset-pass.component';
 import {ProfileIconComponent} from './ui-elements/profile-icon/profile-icon.component';
 import {PropertiesComponent} from './components/properties/properties.component';
 import {AudioTrackComponent} from './ui-elements/audio-track/audio-track.component';
@@ -38,7 +38,7 @@ import {UploadMediaButtonComponent} from './ui-elements/upload-media-button/uplo
     CategoriesComponent,
     CheckboxComponent,
     CustomLoaderComponent,
-    ResetPassowrdComponent,
+    ResetPassComponent,
     CountryCodesComponent,
     ProfileIconComponent,
     AudioTrackComponent,
@@ -61,7 +61,7 @@ import {UploadMediaButtonComponent} from './ui-elements/upload-media-button/uplo
     CategoriesComponent,
     CheckboxComponent,
     CustomLoaderComponent,
-    ResetPassowrdComponent,
+    ResetPassComponent,
     CountryCodesComponent,
     ProfileIconComponent,
     AudioTrackComponent,
@@ -92,7 +92,7 @@ import {UploadMediaButtonComponent} from './ui-elements/upload-media-button/uplo
     CategoriesComponent,
     CheckboxComponent,
     CustomLoaderComponent,
-    ResetPassowrdComponent,
+    ResetPassComponent,
     CountryCodesComponent,
     ProfileIconComponent,
     AudioTrackComponent,

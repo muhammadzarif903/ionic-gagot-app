@@ -19,6 +19,9 @@ import {SettingsComponent} from './settings/settings.component';
     SharedModule,
     TranslateModule
   ],
+  exports: [
+    ProfileSettingsPage
+  ],
   declarations: [ProfileSettingsPage, UpdatePersonalProfileComponent, SettingsComponent]
 })
 export class ProfileSettingsPageModule {
