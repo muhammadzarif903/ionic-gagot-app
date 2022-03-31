@@ -1,16 +1,16 @@
 import {RouterModule, Routes} from '@angular/router';
 import {NgModule} from '@angular/core';
 import {MapComponent} from './map.component';
+import {AddPropertyComponent} from '../add-property/add-property.component';
 
 const routes: Routes = [
   {
-    path: 'maps',
+    path: '',
     component: MapComponent,
-    children: []
   },
   {
-    path: 'maps',
-    redirectTo: 'maps',
+    path: '',
+    redirectTo: '',
     pathMatch: 'full'
   },
 ];
@@ -21,3 +21,5 @@ const routes: Routes = [
 })
 export class MapRoutingModule {
 }
+
+

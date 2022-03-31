@@ -6,6 +6,7 @@ import {IUser} from './user.interface';
 import {IVisit} from './visit.interface';
 import {KitchenEnum} from '../enums/kitchen.enum';
 import {BathEnum} from '../enums/bath.enum';
+import {CategoryEnum} from '../enums/categoryEnum';
 
 export enum PropertyType {
   Sell = 'sell',
@@ -14,11 +15,12 @@ export enum PropertyType {
 
 export interface IPropertyPreview {
   title: string;
-  floors: number;
   bedroom: number;
   bathroom: number;
   square: number;
   type: PropertyType;
+  createdAt?: Date;
+  updatedAt?: Date;
   price: number;
   place: string;
   photoURLs?: string;
@@ -34,7 +36,9 @@ export interface IProperty extends IPropertyPreview {
   description: string;
   isApproved: boolean;
   authorID: number;
-  categoryID: number;
+  category: CategoryEnum;
+  priceUp: boolean,
+  priceDown: boolean,
   geoHash: string;
   newConstruction: boolean;
   lastFloor: boolean;

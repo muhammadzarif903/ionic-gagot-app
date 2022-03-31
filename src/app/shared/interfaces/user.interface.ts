@@ -1,13 +1,15 @@
 import { RoleEnum } from "../enums";
+import {MeasurementEnum} from '../enums/measurement.enum';
+import {CurrencyEnum} from '../enums/currency.enum';
 
 export interface IUser {
   appIdentifier: string;
-  id: string;
-  userID: string;
+  id: number;
   role: RoleEnum;
-  createdAt: string;
-  created_at: string;
-  updatedAt: string;
+  measurement: MeasurementEnum;
+  currency: CurrencyEnum;
+  createdAt: any;
+  updatedAt: any;
   email: string;
   firstName: string;
   lastName: string;
@@ -21,6 +23,7 @@ export interface IUser {
   phone: string;
   location: any;
   notifications: boolean;
+  detectLanguage: boolean;
   isOnline: boolean;
   lastOnlineTimestamp: string;
 }

@@ -1,4 +1,4 @@
 export enum MeasurementEnum {
-  meter = 'meter',
-  feet = 'feet',
+  meter = 'METERS',
+  feet = 'FEETS',
 }

@@ -1,0 +1,100 @@
+<ion-header [translucent]="true" collapse="fade">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" shape="round" (click)="dismiss()">
+        <ion-icon color="dark" name='arrow-back'></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">{{ pageDetails.pageName }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list lines="full">
+
+    <ion-item>
+      <ion-label position="floating">
+        <h2>{{'COUNTRY_OR_REGION' | translate}}</h2>
+      </ion-label>
+      <ion-select [interfaceOptions]="countryAndRegionOptions"
+                  value="israel"
+                  interface="action-sheet">
+        <ion-select-option value="israel">Israel</ion-select-option>
+        <ion-select-option value="usa">USA</ion-select-option>
+        <ion-select-option value="france">France</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <h2>{{'AUTO_DETECT_LANGUAGE' | translate}}</h2>
+      </ion-label>
+      <ion-toggle slot="end"
+                  (ionChange)="userData.detectLanguage = !userData.detectLanguage"
+                  [checked]="userData.detectLanguage">
+      </ion-toggle>
+    </ion-item>
+
+    <ion-item button class="box-view" *ngIf="!userData.detectLanguage">
+      <ion-label color="medium">
+        <h4>{{'TRANSLATION' | translate}}</h4>
+      </ion-label>
+      <ion-select value="eng">
+        <ion-select-option value="eng">English</ion-select-option>
+        <ion-select-option value="ur">Urdu</ion-select-option>
+        <ion-select-option value="ar">Arabic</ion-select-option>
+        <ion-select-option value="german">German</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item button class="box-view">
+      <ion-label color="medium">
+        <h4>{{'CURRENCY' | translate}}</h4>
+      </ion-label>
+      <ion-select [value]="userData.currency">
+        <ion-select-option [value]="currencyEnum.ILS">{{'NIS' | translate}}</ion-select-option>
+        <ion-select-option [value]="currencyEnum.USD">{{'USD' | translate}}</ion-select-option>
+        <ion-select-option [value]="currencyEnum.EUR">{{'EURO' | translate}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item button class="box-view">
+      <ion-label color="medium">
+        <h4>{{'SQUARE_UNITS' | translate}}</h4>
+      </ion-label>
+      <ion-select [value]="userData.measurement">
+        <ion-select-option [value]="measurementEnum.meter">{{'METERS' | translate}}</ion-select-option>
+        <ion-select-option [value]="measurementEnum.feet">{{'FEET' | translate}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <h2>{{'NOTIFICATIONS' | translate}}</h2>
+        <p color="light">{{customNotificationsOptions.subHeader}}</p>
+      </ion-label>
+      <ion-toggle slot="end"
+                  (ionChange)="userData.notifications = !userData.notifications"
+                  [checked]="userData.notifications"></ion-toggle>
+    </ion-item>
+
+    <ion-item [disabled]="!userData.notifications">
+      <ion-label position="floating">
+        <h2>
+          {{'ADVANCED_NOTIFICATIONS' | translate}}
+        </h2>
+      </ion-label>
+      <ion-select
+        multiple="true"
+        interface="action-sheet"
+        [value]="['appupdates','newposts']"
+        [interfaceOptions]="customNotificationsOptions">
+        <ion-select-option value="appupdates">App updates</ion-select-option>
+        <ion-select-option value="newposts">New posts</ion-select-option>
+        <ion-select-option value="visits">Visits</ion-select-option>
+        <ion-select-option value="prices">Price changes</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+  </ion-list>
+</ion-content>

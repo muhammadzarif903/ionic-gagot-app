@@ -2,10 +2,11 @@ import {
   Component,
   NgZone,
   AfterViewInit,
-  ViewChild, ElementRef
+  ViewChild, ElementRef, Input
 } from '@angular/core';
 
 import * as L from 'leaflet';
+import {ModalController} from '@ionic/angular';
 
 
 const openStreetMapUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
@@ -17,11 +18,24 @@ const openCycleMapUrl = 'http://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png'
   styleUrls: ['./map.component.scss'],
 })
 export class MapComponent implements AfterViewInit {
-  private map: L.Map;
+
+  @Input() params: {
+    fullScreen: boolean
+  };
 
   @ViewChild('mapRef', {static: false}) mapRef: ElementRef;
 
-  constructor(private zone: NgZone) {
+  private map: L.Map;
+
+  constructor(private zone: NgZone,
+              private modalCtrl: ModalController) {
+  }
+
+  ngOnInit() {
+  }
+
+  public dismiss() {
+    this.modalCtrl.dismiss();
   }
 
   ngAfterViewInit(): void {

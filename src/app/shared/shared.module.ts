@@ -9,11 +9,10 @@ import {CheckboxComponent} from './ui-elements/checkbox/checkbox.component';
 import {CategoriesComponent} from './ui-elements/categories/categories.component';
 import {InputTextAreaComponent} from './ui-elements/input-textarea/input-textarea.component';
 import {InputComponent} from './ui-elements/input/input.component';
-import {CommonModule} from '@angular/common';
+import {CommonModule, DatePipe} from '@angular/common';
 import {TranslateModule} from '@ngx-translate/core';
 import {PlusMinusToggleComponent} from './ui-elements/plus-minus-toggle/plus-minus-toggle.component';
 import {ButtonListComponent} from './ui-elements/button-list/button-list.component';
-import {ResetPassComponent} from './ui-elements/reset-password/reset-pass.component';
 import {ProfileIconComponent} from './ui-elements/profile-icon/profile-icon.component';
 import {PropertiesComponent} from './components/properties/properties.component';
 import {AudioTrackComponent} from './ui-elements/audio-track/audio-track.component';
@@ -25,6 +24,12 @@ import {ImageComponent} from './ui-elements/image/image.component';
 import {SelectInputComponent} from './ui-elements/select-input/select-input.component';
 import {ItemSelectionComponent} from './ui-elements/item-selection/item-selection.component';
 import {UploadMediaButtonComponent} from './ui-elements/upload-media-button/upload-media-button.component';
+import {ScrollingModule} from '@angular/cdk/scrolling';
+import {LocalizedDatePipe} from './pipes/localized-date.pipe';
+import {RadioButtonComponent} from './ui-elements/radio-button/radio-button.component';
+import {IdentityRevealedValidatorDirective} from './pipes/identify-revealed.directive';
+import {UserAgreementComponent} from './components/user-agreement/user-agreement.component';
+import {MessagesComponent} from './components/messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +43,6 @@ import {UploadMediaButtonComponent} from './ui-elements/upload-media-button/uplo
     CategoriesComponent,
     CheckboxComponent,
     CustomLoaderComponent,
-    ResetPassComponent,
     CountryCodesComponent,
     ProfileIconComponent,
     AudioTrackComponent,
@@ -49,35 +53,19 @@ import {UploadMediaButtonComponent} from './ui-elements/upload-media-button/uplo
     ImageComponent,
     SelectInputComponent,
     ItemSelectionComponent,
-    UploadMediaButtonComponent],
-  entryComponents: [
-    PropertiesComponent,
-    ProgressBarComponent,
-    TextComponent,
-    InputComponent,
-    PlusMinusToggleComponent,
-    InputTextAreaComponent,
-    ButtonListComponent,
-    CategoriesComponent,
-    CheckboxComponent,
-    CustomLoaderComponent,
-    ResetPassComponent,
-    CountryCodesComponent,
-    ProfileIconComponent,
-    AudioTrackComponent,
-    SetTimeComponent,
-    CalendarComponent,
-    DropdownComponent,
-    ProgressComponent,
-    ImageComponent,
-    SelectInputComponent,
-    ItemSelectionComponent,
-    UploadMediaButtonComponent],
+    UploadMediaButtonComponent,
+    LocalizedDatePipe,
+    RadioButtonComponent,
+    IdentityRevealedValidatorDirective,
+    UserAgreementComponent,
+    MessagesComponent
+  ],
   imports: [
     IonicModule,
     CommonModule,
     TranslateModule,
-    FormsModule
+    FormsModule,
+    ScrollingModule
   ],
   providers: [],
   bootstrap: [],
@@ -92,7 +80,6 @@ import {UploadMediaButtonComponent} from './ui-elements/upload-media-button/uplo
     CategoriesComponent,
     CheckboxComponent,
     CustomLoaderComponent,
-    ResetPassComponent,
     CountryCodesComponent,
     ProfileIconComponent,
     AudioTrackComponent,
@@ -103,7 +90,10 @@ import {UploadMediaButtonComponent} from './ui-elements/upload-media-button/uplo
     ImageComponent,
     SelectInputComponent,
     ItemSelectionComponent,
-    UploadMediaButtonComponent
+    UploadMediaButtonComponent,
+    RadioButtonComponent,
+    UserAgreementComponent,
+    MessagesComponent
   ]
 })
 export class SharedModule {

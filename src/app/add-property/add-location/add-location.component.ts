@@ -22,7 +22,7 @@ export class AddLocationComponent implements OnInit {
   }
 
   public onCategorySelect($event) {
-    this.property.categoryID = $event;
+    this.property.category = $event;
   }
 
   public onAddressInput($event) {

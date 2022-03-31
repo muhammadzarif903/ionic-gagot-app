@@ -131,7 +131,7 @@ export class AuthorizationComponent implements OnInit {
   }
 
   async doLogin(f: NgForm) {
-    this.navCtrl.navigateRoot(['home']);
+    this.navCtrl.navigateRoot(['home/list']);
   }
 
 

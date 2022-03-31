@@ -10,6 +10,12 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {SharedModule} from './shared/shared.module';
+import {DatePipe, registerLocaleData} from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+import localeEn from '@angular/common/locales/en';
+import localeHe from '@angular/common/locales/he';
+import localeRu from '@angular/common/locales/ru';
+import localeHeExtra from '@angular/common/locales/extra/he';
 
 const createTranslateLoader = (http: HttpClient) => {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -33,8 +39,16 @@ const createTranslateLoader = (http: HttpClient) => {
         deps: [HttpClient]
       }
     })],
-  providers: [{provide: RouteReuseStrategy, useClass: IonicRouteStrategy}],
+  providers: [{provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
+    DatePipe],
   bootstrap: [AppComponent],
 })
 export class AppModule {
+
+  constructor() {
+    registerLocaleData(localeEn, 'en');
+    registerLocaleData(localeFr, 'fr');
+    registerLocaleData(localeRu, 'ru');
+    registerLocaleData(localeHe, 'he', localeHeExtra);
+  }
 }

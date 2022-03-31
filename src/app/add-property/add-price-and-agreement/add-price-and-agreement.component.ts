@@ -25,7 +25,7 @@ export class AddPriceAndAgreementComponent implements OnInit {
   }
 
   public onCategorySelect($event) {
-    this.property.categoryID = $event;
+    this.property.category = $event;
   }
 
   public onVideoLinkInput($event) {

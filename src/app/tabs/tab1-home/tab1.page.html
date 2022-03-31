@@ -1,8 +1,5 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title class="ion-text-center">
-      {{'TAB1_TITLE' | translate}}
-    </ion-title>
     <ion-buttons slot="start">
       <!--  add listing-->
       <ion-button
@@ -12,7 +9,8 @@
         <ion-icon slot="icon-only" name="add-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-buttons slot="secondary">
+    <!--list sort by-->
+    <ion-buttons slot="primary">
       <!-- open map-->
       <ion-button
         color="primary"
@@ -23,13 +21,14 @@
       <!-- change grid-->
       <ion-button
         color="primary"
+        (click)="showChangeGrid()"
         size="large">
-        <ion-icon slot="icon-only" name="grid-outline"></ion-icon>
+        <ion-icon slot="icon-only" name="grid-outline">
+
+        </ion-icon>
       </ion-button>
-    </ion-buttons>
-    <!--list sort by-->
-    <ion-buttons slot="primary">
       <ion-button
+        (click)="showSortModel()"
         color="primary"
         size="large">
         <ion-icon slot="icon-only" name="reorder-four-outline"></ion-icon>
@@ -41,3 +40,96 @@
 <ion-content [fullscreen]="true">
   <ion-router-outlet></ion-router-outlet>
 </ion-content>
+
+
+<ion-modal [isOpen]="isGridOpen"
+           [swipeToClose]="true"
+           [backdropDismiss]="true"
+           [breakpoints]="[0.1, 0.5, 1]"
+           [initialBreakpoint]="0.5"
+           [keyboardClose]="true">
+  <ng-template>
+    <ion-row class="flex-row ion-justify-content-end">
+      <ion-button
+        (click)="closeModal()" fill="clear">
+        <ion-icon name="close-outline" size="large" color="dark"></ion-icon>
+      </ion-button>
+    </ion-row>
+    <ion-list class="full-width" lines="full">
+      <ion-radio-group value="biff">
+        <ion-list-header>
+          <ion-label class="ion-text-center">
+            <ion-title>{{'VIEW' | translate}}</ion-title>
+          </ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>{{'IMAGE_CARDS' | translate}}</ion-label>
+          <ion-radio slot="start" value="biff"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>{{'IMAGE_LIST' | translate}}</ion-label>
+          <ion-radio slot="start" value="griff"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>{{'LIST' | translate}}</ion-label>
+          <ion-radio slot="start" value="buford"></ion-radio>
+        </ion-item>
+
+      </ion-radio-group>
+    </ion-list>
+  </ng-template>
+</ion-modal>
+
+
+<ion-modal [isOpen]="isSortOpen"
+           [breakpoints]="[0.1, 0.5, 1]"
+           [initialBreakpoint]="0.5"
+           [swipeToClose]="true"
+           [backdropDismiss]="true"
+           [keyboardClose]="true">
+  <ng-template>
+    <ion-row class="flex-row ion-justify-content-end">
+      <ion-button
+        (click)="closeModal()" fill="clear">
+        <ion-icon name="close-outline" size="large" color="dark"></ion-icon>
+      </ion-button>
+    </ion-row>
+    <ion-list class="full-width" lines="full">
+      <ion-radio-group value="biff">
+        <ion-list-header>
+          <ion-label class="ion-text-center">
+            <ion-title>{{'SORT' | translate}}</ion-title>
+          </ion-label>
+        </ion-list-header>
+
+        <ion-item>
+          <ion-label>{{'NEWEST' | translate}}</ion-label>
+          <ion-radio slot="start" value="biff"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>{{'OLDEST' | translate}}</ion-label>
+          <ion-radio slot="start" value="griff"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>{{'LOWEST' | translate}}</ion-label>
+          <ion-radio slot="start" value="buford"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>{{'HIGHEST' | translate}}</ion-label>
+          <ion-radio slot="start" value="buford"></ion-radio>
+        </ion-item>
+
+        <!--          <ion-item>-->
+        <!--            <ion-label>{{'NEAREST' | translate}}</ion-label>-->
+        <!--            <ion-radio slot="start" value="buford"></ion-radio>-->
+        <!--          </ion-item>-->
+
+
+      </ion-radio-group>
+    </ion-list>
+  </ng-template>
+</ion-modal>

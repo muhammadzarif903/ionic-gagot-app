@@ -1,0 +1,72 @@
+<ion-header [translucent]="true" collapse="fade">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" shape="round" (click)="onDismiss()">
+        <ion-icon color="dark" name='arrow-back'></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">{{ 'ACCOUNT_DETAILS' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form #userForm="ngForm" appIdentityRevealed>
+    <ion-list lines="full">
+      <ion-item>
+        <ion-label position="fixed">{{'FIRST_NAME' | translate}}</ion-label>
+        <ion-input name="firstName"
+                   [value]="userData.firstName"
+                   type="text">
+        </ion-input>
+        <span class="validity"></span>
+      </ion-item>
+      <ion-item>
+        <ion-label position="fixed">{{'LAST_NAME' | translate}}</ion-label>
+        <ion-input name="lastName"
+                   [value]="userData.lastName"
+                   type="text">
+        </ion-input>
+        <span class="validity"></span>
+      </ion-item>
+      <ion-item>
+        <ion-label position="fixed">{{'MOBILE_PHONE' | translate}}</ion-label>
+        <ion-input name="mobile"
+                   minlength="10"
+                   maxlength="10"
+                   required
+                   [value]="userData.mobile"
+                   type="tel">
+        </ion-input>
+        <span class="validity"></span>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="fixed">{{'EMAIL' | translate}}</ion-label>
+        <ion-input name="email"
+                   required
+                   [value]="userData.email"
+                   type="email">
+        </ion-input>
+        <span class="validity"></span>
+      </ion-item>
+
+      <ion-item button detail
+                *ngIf="userData.email" (click)="changePassword()">
+        <ion-icon name="lock-open" color="medium" slot="start"></ion-icon>
+        <ion-label color="dark">
+          <h2>
+            {{'CHANGE_PASSWORD' | translate}}
+          </h2>
+          <p>{{'EMAIL_ADDRESS_SHOULD_BE_VERIFIED' | translate}}</p>
+        </ion-label>
+      </ion-item>
+
+    </ion-list>
+  </form>
+  <div class="section">
+    <ion-button
+      [disabled]="userForm.errors?.['identityRevealed'] && (userForm.touched || userForm.dirty)"
+      expand="block" fill="outline" size="large">{{'SAVE_CHANGES' | translate}}</ion-button>
+  </div>
+
+</ion-content>

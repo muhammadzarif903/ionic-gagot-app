@@ -1,0 +1,57 @@
+<ion-header [translucent]="true" collapse="fade">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" shape="round" (click)="dismiss()">
+        <ion-icon color="dark" name='arrow-back'></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center"> {{'CHANGE_PASSWORD' | translate}} </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <app-custom-loader *ngIf="loading.status"></app-custom-loader>
+
+  <ng-container>
+
+    <form>
+      <!-- Step one -->
+      <ng-container class='set-bg'>
+        <div class="ion-margin">
+          <div class="de-flex gray justify-text">
+            <p> {{'CHANGE_YOUR_PASSWORD_HINT' | translate}}</p>
+          </div>
+        </div>
+        <ion-list lines="full">
+          <ion-item class='input-item'>
+            <ion-input name="oldPasswordTxt"
+                       [placeholder]="'OLD_PASSWORD' | translate"
+                       [value]="formDetails.old_password"
+                       required
+                       minlength="6"
+                       maxlength="20"
+                       type="password">
+            </ion-input>
+            <span class="validity"></span>
+          </ion-item>
+          <ion-item class='input-item'>
+            <ion-input name="newPasswordTxt"
+                       [placeholder]="'NEW_PASSWORD' | translate"
+                       [value]="formDetails.new_password"
+                       required
+                       minlength="6"
+                       maxlength="20"
+                       type="password">
+            </ion-input>
+            <span class="validity"></span>
+          </ion-item>
+        </ion-list>
+
+        <div class="section">
+          <ion-button expand="block" fill="outline" size="large">{{'SAVE_CHANGES' | translate}}</ion-button>
+        </div>
+      </ng-container>
+    </form>
+  </ng-container>
+
+</ion-content>

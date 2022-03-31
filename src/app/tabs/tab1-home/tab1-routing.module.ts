@@ -6,28 +6,17 @@ import {PropertiesComponent} from '../../shared/components/properties/properties
 const routes: Routes = [
   {
     path: '',
-    component: Tab1Page,
-    children: [
-      {
-        path: '',
-        redirectTo: 'list',
-        component: PropertiesComponent,
-        pathMatch: 'full'
-      },
-      {
-        path: 'addProperty',
-        loadChildren: () => import('../../add-property/add-property.module').then(m => m.AddPropertyModule)
-      }, {
-        path: '',
-        redirectTo: 'list',
-        pathMatch: 'full'
-      }]
+    redirectTo: 'list',
+    pathMatch: 'full'
   },
   {
     path: '',
-    redirectTo: '',
-    pathMatch: 'full'
-  },
+    component: Tab1Page,
+    children: [{
+      path: 'list',
+      component: PropertiesComponent
+    }]
+  }
 ];
 
 @NgModule({

@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { ProfileSettingsPage } from './profile-settings.page';
+import { UserAgreementComponent } from './user-agreement.component';
 
-describe('ProfileSettingsPage', () => {
-  let component: ProfileSettingsPage;
-  let fixture: ComponentFixture<ProfileSettingsPage>;
+describe('UserAgreementComponent', () => {
+  let component: UserAgreementComponent;
+  let fixture: ComponentFixture<UserAgreementComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProfileSettingsPage ],
+      declarations: [ UserAgreementComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ProfileSettingsPage);
+    fixture = TestBed.createComponent(UserAgreementComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

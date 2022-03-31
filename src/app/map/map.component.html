@@ -1,1 +1,16 @@
-<div id="mapRef" class="map"></div>
+<ion-header [translucent]="true" collapse="fade">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" shape="round" (click)="dismiss()">
+        <ion-icon color="dark" name='arrow-back'></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center"> {{'MAP' | translate}} </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="mapRef" class="map"
+       [class.fullScreen]="params.fullScreen">
+  </div>
+</ion-content>

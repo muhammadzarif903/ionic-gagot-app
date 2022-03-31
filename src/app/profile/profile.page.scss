@@ -1,4 +1,4 @@
-@import 'common.scss';
+@import 'src/theme/common';
 
 
 //ion-list {
@@ -9,9 +9,9 @@
 .box {
   padding: 0 10px;
   margin: 10px 0;
-  --background: none;
-  border-radius: $border-radius;
-  box-shadow: 5px 5px 8px var(--ion-color-shade), -3px -3px 10px var(--ion-color-shade);
+  //--background: none;
+  //border-radius: $border-radius;
+  //box-shadow: 5px 5px 8px var(--ion-color-shade), -3px -3px 10px var(--ion-color-shade);
 }
 
 .container {
@@ -36,15 +36,22 @@
   }
 }
 
+ion-avatar {
+  height: 10vh;
+  width: 10vh;
+  opacity: 0.3;
+}
 .profile-box {
-  padding: 25px 10px 25px 10px;
+  padding: 10px;
   height: auto !important;
+  display: flex;
 
   .cameraIcon {
     position: absolute !important;
-    margin-top: -37px;
-    margin-left: 43px;
+    bottom: 15px;
+    left: 80px;
     z-index: 10;
+    border-radius: 50px;
 
     a {
       ion-icon {
@@ -56,4 +63,10 @@
       }
     }
   }
+}
+
+ion-button[shape=circle] {
+  --border-radius: 50%;
+  width: 50px;
+  height: 50px;
 }

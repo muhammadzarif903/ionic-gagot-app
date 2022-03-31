@@ -4,7 +4,7 @@ import {RouterModule, Routes} from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('../../profile/profile-settings/profile-settings.module').then(m => m.ProfileSettingsPageModule)
+    loadChildren: () => import('../../profile/profile.module').then(m => m.ProfileSettingsPageModule)
   },
   {
     path: '',
