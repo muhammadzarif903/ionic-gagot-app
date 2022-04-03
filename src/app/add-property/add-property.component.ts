@@ -61,7 +61,7 @@ export class AddPropertyComponent {
     open_doors: null,
     delete: false
   };
-  private rootRoute = '/addProperty';
+  private rootRoute = '/new';
   public steps: IProgressBarStep[] = [];
   public textType = TextType;
   public routeLinks = [

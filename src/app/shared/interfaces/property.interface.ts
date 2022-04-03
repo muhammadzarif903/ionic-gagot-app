@@ -14,6 +14,7 @@ export enum PropertyType {
 }
 
 export interface IPropertyPreview {
+  id?: number;
   title: string;
   bedroom: number;
   bathroom: number;

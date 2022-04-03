@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
+import {PropertyDetailsComponent} from './shared/components/properties/property-details/property-details.component';
 
 const routes: Routes = [
   {
@@ -15,8 +16,12 @@ const routes: Routes = [
     loadChildren: () => import('./map/map.module').then(m => m.MapModule)
   },
   {
-    path: 'addProperty',
+    path: 'new',
     loadChildren: () => import('./add-property/add-property.module').then(m => m.AddPropertyModule)
+  },
+  {
+    path: 'details',
+    component: PropertyDetailsComponent
   },
   {
     path: '',
