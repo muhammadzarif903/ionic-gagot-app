@@ -19,24 +19,18 @@ const openCycleMapUrl = 'http://{s}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png'
 })
 export class MapComponent implements AfterViewInit {
 
-  @Input() params: {
-    fullScreen: boolean
-  };
+  @Input() fullScreen = true;
 
   @ViewChild('mapRef', {static: false}) mapRef: ElementRef;
 
   private map: L.Map;
 
-  constructor(private zone: NgZone,
-              private modalCtrl: ModalController) {
+  constructor(private zone: NgZone) {
   }
 
   ngOnInit() {
   }
 
-  public dismiss() {
-    this.modalCtrl.dismiss();
-  }
 
   ngAfterViewInit(): void {
     this.initMap();
@@ -61,8 +55,9 @@ export class MapComponent implements AfterViewInit {
       });
     this.map = L.map('mapRef', {
       zoomControl: true,
-      center: [39.8282, -98.5795],
-      zoom: 2,
+      center: [31.0461,34.8516],
+      zoom: 10,
+      minZoom: 10,
       layers: [grayscale, streets]
     });
     const baseMaps = {
