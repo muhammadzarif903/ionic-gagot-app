@@ -28,7 +28,10 @@ export class AddPriceAndAgreementComponent implements OnInit {
     this.property.category = $event;
   }
 
-  public onVideoLinkInput($event) {
+  public onCurrencyChange($event) {
 
+  }
+
+  public onVideoLinkInput($event) {
   }
 }

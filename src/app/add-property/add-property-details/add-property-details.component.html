@@ -7,7 +7,7 @@
   <mx-input
     class="full-width"
     [value]="0"
-    [type]="inputType.numberType"
+    [type]="inputType.number"
     [min]="0"
     [max]="10"
     [label]="'SQUARE_AREA' | translate"
@@ -112,7 +112,7 @@
 <!--KITCHEN AMENITIES-->
 <div class="section">
   <mx-button-list
-    [values]="property.kitchen"
+    [selected]="property.kitchen"
     [buttons]="kitchenAmenities"
     [title]="'KITCHEN' | translate"
     (onClick)="onKitchenChange($event)"></mx-button-list>
@@ -121,7 +121,7 @@
 <!--AMENITIES-->
 <div class="section">
   <mx-button-list
-    [values]="property.amenities"
+    [selected]="property.amenities"
     [buttons]="amenities"
     [preview]="true"
     [title]="'AMENITIES' | translate"
@@ -130,7 +130,7 @@
 
 <div class="section">
   <mx-button-list
-    [values]="property.facilities"
+    [selected]="property.facilities"
     [buttons]="facilitiesList"
     [preview]="true"
     [title]="'FACILITIES' | translate"
@@ -140,7 +140,7 @@
 <!--SAFETY AMENITIES-->
 <div class="section">
   <mx-button-list
-    [values]="property.safetyAmenities"
+    [selected]="property.safetyAmenities"
     [buttons]="safetyAmenitiesList"
     [title]="'SAFETY_AMENITIES' | translate"
     (onClick)="onSafetyAmenitiesClick($event)"></mx-button-list>

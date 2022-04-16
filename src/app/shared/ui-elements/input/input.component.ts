@@ -6,7 +6,7 @@ export enum InputType {
   datetime = 'datetime-local',
   email = 'email',
   month = 'month',
-  numberType = 'number',
+  number = 'number',
   password = 'password',
   search = 'search',
   tel = 'tel',

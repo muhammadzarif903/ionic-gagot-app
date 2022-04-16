@@ -4,6 +4,150 @@
   </ion-toolbar>
 </ion-header>
 
-<p>
-  search-filters works!
-</p>
+
+<ion-content [fullscreen]="true" [scrollY]="true">
+
+  <!-- CATEGORIES -->
+  <div class="section">
+    <mx-categories
+      [selected]="filterObj.category"
+      [label]="'TITLES.CATEGORIES' | translate"
+      class="ion-padding-vertical"
+      (onClick)="onCategorySelect($event)">
+    </mx-categories>
+  </div>
+  <!--  SELL | RENT -->
+  <mx-item-selection
+    [selected]="filterObj.state"
+    (onClick)="onStateSelect($event)"
+    [values]="items"></mx-item-selection>
+
+  <div class="section">
+    <mx-text [type]="'sectionTitle'" [title]="'COST' | translate"></mx-text>
+    <ion-label>
+      <mx-text [type]="'sectionTitle'" [title]="'PRICE' | translate"></mx-text>
+    </ion-label>
+    <div class="dropDownDiv">
+      <!-- TODO  MIN MAX inputs not working -> need to check-->
+      <mx-input class="half-width"
+                [type]="InputType.number"
+                [value]="filterObj.minPrice"
+                [min]="0"
+                [max]="filterObj.maxPrice"
+                (onChange)="onMinMaxPriceChange($event,filterObj.maxPrice)"
+                [placeholder]="'0' | translate"></mx-input>
+      <mx-input class="half-width"
+                [type]="InputType.number"
+                [min]="filterObj.minPrice"
+                [value]="filterObj.maxPrice"
+                (onChange)="onMinMaxPriceChange(filterObj.minPrice,$event)"
+                [placeholder]="'23,123.00' | translate"></mx-input>
+    </div>
+
+    <ion-label>
+      <mx-text [type]="'sectionTitle'" [title]="'SQUARE_AREA' | translate"></mx-text>
+    </ion-label>
+    <div class="dropDownDiv">
+      <!-- TODO  MIN MAX inputs not working -> need to check-->
+      <mx-input class="half-width"
+                [type]="InputType.number"
+                [value]="filterObj.minSquare"
+                [min]="0"
+                [max]="filterObj.maxSquare"
+                (onChange)="onMinMaxSquareChange($event,filterObj.maxSquare)"
+                [placeholder]="'0' | translate"></mx-input>
+      <mx-input class="half-width"
+                [type]="InputType.number"
+                [value]="filterObj.maxSquare"
+                [min]="filterObj.minSquare"
+                (onChange)="onMinMaxSquareChange(filterObj.minSquare,$event)"
+                [placeholder]="'23,123.00' | translate"></mx-input>
+    </div>
+
+    <mx-plus-minus-toggle class="full-width"
+                          (onChange)="onBedroomsChange($event)"
+                          [value]="filterObj.floor"
+                          [max]="10"
+                          [title]="'BEDROOMS' | translate">
+    </mx-plus-minus-toggle>
+
+    <mx-plus-minus-toggle class="full-width"
+                          (onChange)="onBathroomsChange($event)"
+                          [value]="filterObj.bathrooms"
+                          [max]="5"
+                          [title]="'BATHROOMS' | translate">
+    </mx-plus-minus-toggle>
+
+    <!--  Year Build-->
+    <mx-dropdown
+      [label]="'YEAR_BUILD' | translate"
+      [value]="dateValue"
+      (onChange)="onYearBuildSelect($event)"
+      [options]="years">
+    </mx-dropdown>
+    <!--  New Construction-->
+    <ion-item class="field ion-item-radio-group flex-column flex-row ion-align-items-center full-width">
+      <ion-label class="label-nowrap">
+        <mx-text [type]="'sectionTitle'" [title]="'NEW_CONSTRUCTION' | translate"></mx-text>
+      </ion-label>
+      <ion-list class="flex-auto mx-checkboxes">
+        <ion-radio-group allow-empty-selection="false"
+                         class="flex-auto flex-1"
+                         name="radio-group"
+                         [value]="filterObj.newConstruction"
+                         (ionChange)="onNewConstructionSelect($event)"
+                         #radioGroup>
+          <ion-row class="flex-auto ion-float-right">
+            <ion-item *ngFor="let item of radio_list"
+                      (ionFocus)="radioFocus()"
+                      (ionBlur)="radioBlur()">
+              <ion-label class="mx-label">{{item.text | translate}}</ion-label>
+              <ion-radio [name]="item.name"
+                         [value]="item.value"
+                         checked="{{item.checked}}"
+                         color="{{item.color}}"
+                         disabled="{{item.disabled}}">
+              </ion-radio>
+            </ion-item>
+          </ion-row>
+        </ion-radio-group>
+      </ion-list>
+    </ion-item>
+    <!--    ON THE LAND-->
+    <ion-item class="field ion-item-toggle">
+      <ion-label>
+        <mx-text [type]="'sectionTitle'" [title]="'ON_THE_LAND' | translate"></mx-text>
+      </ion-label>
+      <ion-toggle [value]="filterObj.onTheLand"></ion-toggle>
+    </ion-item>
+  </div>
+
+  <div class="section">
+    <mx-button-list
+      [selected]="filterObj.amenities"
+      [buttons]="amenities"
+      [preview]="true"
+      [title]="'AMENITIES' | translate"
+      (onClick)="onAmenitiesClick($event)"></mx-button-list>
+  </div>
+
+  <div class="section">
+    <mx-button-list
+      [selected]="filterObj.facilities"
+      [buttons]="facilitiesList"
+      [preview]="true"
+      [title]="'FACILITIES' | translate"
+      (onClick)="onFacilitiesClick($event)"></mx-button-list>
+  </div>
+
+  <div class="section">
+    <mx-button-list
+      [selected]="filterObj.safetyAmenities"
+      [buttons]="safetyAmenitiesList"
+      [title]="'SAFETY_AMENITIES' | translate"
+      (onClick)="onSafetyAmenitiesClick($event)"></mx-button-list>
+  </div>
+
+</ion-content>
+
+

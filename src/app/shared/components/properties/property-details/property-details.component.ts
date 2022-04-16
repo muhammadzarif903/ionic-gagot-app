@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Subscriber} from 'rxjs';
+import {IProperty} from '../../../interfaces/property.interface';
 
 @Component({
   selector: 'mx-property-details',
@@ -7,8 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PropertyDetailsComponent implements OnInit {
 
-  constructor() { }
 
-  ngOnInit() {}
+  public house$: Subscriber<IProperty>
+
+
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    // private service: PropertyService
+  ) {
+  }
+
+  ngOnInit() {
+    const houseId = this.route.snapshot.paramMap.get('id');
+    console.log(houseId);
+    // this.house$ = this.service.getHouse(houseId);
+  }
 
 }

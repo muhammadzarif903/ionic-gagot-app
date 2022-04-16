@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange, SimpleChanges} from '@angular/core';
 import {Utils} from '../../../../utils';
 import {CHECKBOX_PIC} from '../../../../global';
+import {PropertyState} from '../../enums/propertyState';
 
 @Component({
   selector: 'mx-item-selection',
@@ -10,11 +11,11 @@ import {CHECKBOX_PIC} from '../../../../global';
 export class ItemSelectionComponent implements OnInit {
 
   @Input() label: string;
-  @Input() values: any[];
+  @Input() values: PropertyState[];
   @Input() preview = false;
+  @Input() selected: PropertyState[];
   @Output() onClick: EventEmitter<any> = new EventEmitter<any>();
 
-  selected: any[];
   initialButtons: string[] = [];
   previewNumber = 3;
   public showMore = false;
@@ -28,7 +29,6 @@ export class ItemSelectionComponent implements OnInit {
   }
 
   itemClicked(item) {
-    console.log(this.selected);
     this.selected = Utils.addRemoveArrayItem(this.selected, item);
     this.onClick.emit(this.selected);
   }
@@ -40,7 +40,7 @@ export class ItemSelectionComponent implements OnInit {
   }
 
 
-  public isSelected(value: string): boolean {
+  public isSelected(value: PropertyState): boolean {
     return this.selected?.includes(value);
   }
 

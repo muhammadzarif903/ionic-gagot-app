@@ -13,11 +13,11 @@
   <div class="dropDownDiv">
     <!-- TODO  MIN MAX inputs not working -> need to check-->
     <mx-input class="half-width"
-              [type]="inputType.numberType"
+              [type]="inputType.number"
               [value]="0"
               [min]="1"
               [max]="20"
-              (onChange)="onVideoLinkInput($event)"
+              (onChange)="onCurrencyChange($event)"
               [placeholder]="'23,123.00' | translate"></mx-input>
     <mx-dropdown
       [value]="options[0].value"
@@ -30,7 +30,7 @@
   <div class="dropDownDiv">
     <!-- TODO  MIN MAX inputs not working -> need to check-->
     <mx-input class="half-width"
-              [type]="inputType.numberType"
+              [type]="inputType.number"
               [value]="0"
               (onChange)="onVideoLinkInput($event)"
               [placeholder]="'23,123.00' | translate"></mx-input>
@@ -46,7 +46,7 @@
   <div class="dropDownDiv">
     <!-- TODO  MIN MAX inputs not working -> need to check-->
     <mx-input class="half-width"
-              [type]="inputType.numberType"
+              [type]="inputType.number"
               [value]="0"
               (onChange)="onVideoLinkInput($event)"
               [placeholder]="'23,123.00' | translate"></mx-input>

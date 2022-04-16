@@ -38,7 +38,7 @@ TextWithIcon.args = {
 export const NumberMinMax = Template.bind({});
 NumberMinMax.args = {
   value: 1,
-  type: InputType.numberType,
+  type: InputType.number,
   min: 0,
   max: 3
 };

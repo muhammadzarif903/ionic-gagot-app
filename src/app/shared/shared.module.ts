@@ -30,6 +30,7 @@ import {RadioButtonComponent} from './ui-elements/radio-button/radio-button.comp
 import {IdentityRevealedValidatorDirective} from './pipes/identify-revealed.directive';
 import {UserAgreementComponent} from './components/user-agreement/user-agreement.component';
 import {MessagesComponent} from './components/messages/messages.component';
+import {PropertyDetailsComponent} from './components/properties/property-details/property-details.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import {MessagesComponent} from './components/messages/messages.component';
     RadioButtonComponent,
     IdentityRevealedValidatorDirective,
     UserAgreementComponent,
-    MessagesComponent
+    MessagesComponent,
+    PropertyDetailsComponent
   ],
   imports: [
     IonicModule,
@@ -93,7 +95,8 @@ import {MessagesComponent} from './components/messages/messages.component';
     UploadMediaButtonComponent,
     RadioButtonComponent,
     UserAgreementComponent,
-    MessagesComponent
+    MessagesComponent,
+    PropertyDetailsComponent
   ]
 })
 export class SharedModule {

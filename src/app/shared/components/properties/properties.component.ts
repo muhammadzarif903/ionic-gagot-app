@@ -10,7 +10,7 @@ import {CurrencyEnum} from '../../enums/currency.enum';
 import {RoleEnum} from '../../enums';
 import {ModalController} from '@ionic/angular';
 import {NextToEnum} from '../../enums/nexto.num';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 export enum PropertiesModalType {
   renting = 'RENTING',
@@ -53,7 +53,7 @@ export class PropertiesComponent implements OnInit {
   };
   public property: IProperty = {
     authorID: 0,
-    id: 222,
+    id: null,
     category: CategoryEnum.Land,
     description: '',
     facilities: [],
@@ -82,7 +82,13 @@ export class PropertiesComponent implements OnInit {
     square: 231
   }
 
-  constructor(private modalCtrl: ModalController, private router: Router) {
+  constructor(private modalCtrl: ModalController,
+              private router: Router,
+              private route: ActivatedRoute) {
+  }
+
+
+  public ngOnInit() {
   }
 
   public dismiss() {
@@ -91,6 +97,7 @@ export class PropertiesComponent implements OnInit {
 
   public items = [{
     ...this.property,
+    id: 1,
     img: IMAGE_PATH,
     name: BathEnum.BathCabin
   }, {
@@ -135,12 +142,10 @@ export class PropertiesComponent implements OnInit {
       name: BathEnum.Washbasins
     }];
 
-  ngOnInit() {
-  }
 
-  public showDetails(item: IProperty) {
-    var myurl = `/details/${item.id}`;
-    this.router.navigateByUrl(myurl);
+  public goToPropertyDetails(item: IProperty) {
+    const id = item ? item.id : null;
+    this.router.navigate(['/details', {id: id}]);
   }
 
 }

@@ -11,7 +11,7 @@ export class ButtonListComponent implements OnInit, OnChanges {
 
   @Input() title: string;
   @Input() buttons: string[];
-  @Input() values: string[];
+  @Input() selected: string[];
   @Input() preview = false;
   @Output() onClick: EventEmitter<any> = new EventEmitter<any>();
 
@@ -36,8 +36,8 @@ export class ButtonListComponent implements OnInit, OnChanges {
 
 
   public onButtonClick($event) {
-    this.values = Utils.addRemoveArrayItem(this.values, $event);
-    this.onClick.emit(this.values);
+    this.selected = Utils.addRemoveArrayItem(this.selected, $event);
+    this.onClick.emit(this.selected);
   }
 
   public onOtherClick() {
@@ -45,7 +45,7 @@ export class ButtonListComponent implements OnInit, OnChanges {
   }
 
   public isSelected(value: string): boolean {
-    return this.values?.includes(value);
+    return this.selected?.includes(value);
   }
 
   private setPreviewButtons() {

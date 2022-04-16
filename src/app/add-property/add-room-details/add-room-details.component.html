@@ -1,6 +1,6 @@
 <div class="section">
   <mx-button-list
-    [values]="property.kitchen"
+    [selected]="property.kitchen"
     [buttons]="kitchenAmenities"
     [title]="'KITCHEN' | translate"
     (onClick)="onKitchenChange($event)">
@@ -12,7 +12,7 @@
 
   <mx-item-selection [values]="items"></mx-item-selection>
 
-  <mx-button-list [values]="property.additionalBath"
+  <mx-button-list [selected]="property.additionalBath"
                   [buttons]="additionalBath"
                   [title]="'ADDITIONAL_OPTION' | translate"
                   (onClick)="onAdditionalChange($event)">
