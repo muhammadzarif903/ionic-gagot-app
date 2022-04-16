@@ -27,4 +27,8 @@ export class PropertyDetailsComponent implements OnInit {
     // this.house$ = this.service.getHouse(houseId);
   }
 
+  public detailsTabChanged($event) {
+
+  }
+
 }

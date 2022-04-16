@@ -5,6 +5,7 @@ import {IProperty} from '../shared/interfaces/property.interface';
 import {IonDatetime} from '@ionic/angular';
 import {IProgressBarStep} from '../shared/ui-elements/progress-bar/progress-bar.component';
 import {TextType} from '../shared/ui-elements/text/text.component';
+import {NavigationService} from '../shared/services/navigation.service';
 
 export enum AddPropertyScreen {
   location = 'location',
@@ -90,7 +91,8 @@ export class AddPropertyComponent {
   };
 
 
-  constructor(private router: Router) {
+  constructor(private navigationService: NavigationService) {
+    this.navigationService.setRouteLinks(this.routeLinks);
     this.steps = this.routeLinks.map(obj => ({
       title: obj?.title,
       active: obj?.active,
@@ -98,31 +100,14 @@ export class AddPropertyComponent {
     }));
   }
 
-  private getActiveRoute(): number {
-    return this.routeLinks.findIndex((el) => el.active) || 0;
-  }
-
-  private activateRoute(next?: boolean): any {
-    let index = this.getActiveRoute();
-    index += next ? 1 : -1;
-    index = index < 0 ? undefined : index;
-    this.routeLinks.forEach(el => el.active = false);
-    if (index <= this.routeLinks.length) {
-      this.routeLinks[index].active = true;
-    }
-    this.activeStep = this.routeLinks[index]
-    return this.routeLinks[index];
-  }
-
   public previousPage() {
-    const route = this.activateRoute();
-    this.navigate(route);
+    this.navigationService.back(this.rootRoute);
     this.updateStep();
   }
 
   public nextPage($event) {
-    const route = this.activateRoute(true);
-    this.navigate(route);
+    this.activeStep = this.navigationService.activateRoute($event);
+    this.navigationService.navigate(`${this.rootRoute}/${this.activeStep?.path}`);
     this.updateStep();
   }
 
@@ -131,18 +116,11 @@ export class AddPropertyComponent {
   }
 
 
-  private navigate(route) {
-    if (route) {
-      this.router.navigate([`${this.rootRoute}/${route?.path}`]);
-    }
-  }
-
   private updateStep() {
-    const routeIndex = this.getActiveRoute();
+    const routeIndex = this.navigationService.getActiveRoute();
     this.steps = this.steps.map((el, index) => {
       el.active = index === routeIndex;
       el.state = index <= routeIndex ? StateType.submitted : StateType.initial;
-
       return el;
     });
   }

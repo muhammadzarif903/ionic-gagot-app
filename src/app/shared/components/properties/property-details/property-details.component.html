@@ -1,3 +1,28 @@
-<p>
-  property-details works!
-</p>
+<ion-header [translucent]="true" collapse="fade">
+  <ion-toolbar>
+    <!--BACK-->
+    <ion-buttons slot="start">
+      <ion-back-button (click)="previousPage()"
+                       [text]="''"
+                       color="primary"
+                       [icon]="'chevron-back-outline'">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">{{ 'DETAILS' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <!-- Default Segment -->
+  <ion-segment scrollable color="secondary" (ionChange)="detailsTabChanged($event)">
+    <ion-segment-button value="DETAILS">
+      <ion-label>{{'DETAILS' | translate}}</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="LOCATION">
+      <ion-label>{{'LOCATION' | translate}}</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="AGREEMENT">
+      <ion-label>{{'AGREEMENT' | translate}}</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+</ion-content>

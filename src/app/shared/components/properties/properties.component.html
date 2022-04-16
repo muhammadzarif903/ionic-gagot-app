@@ -27,7 +27,7 @@
 <ng-template #imageList let-item="item">
   <ion-card-content class="ion-no-margin ion-no-padding">
     <img class="image-cover" [src]="item.img"/>
-    <div class="flex-column space-between flex-auto" [ngStyle]="{'min-height':'24vh'}">
+    <div class="flex-column space-between flex-auto" [ngStyle]="{'min-height':'15vh'}">
       <ion-row class="category ion-row">
         <ng-container [ngTemplateOutlet]="category" [ngTemplateOutletContext]="{item: item}"></ng-container>
         <ng-container [ngTemplateOutlet]="price" [ngTemplateOutletContext]="{item: item,pushEnd: true}"></ng-container>
@@ -83,16 +83,18 @@
 <!--DETAILS LIST-->
 <ng-template #details let-item="item">
   <ion-card-content class="ion-no-margin ion-no-padding">
-    <ion-row class="ion-no-margin ion-no-padding">
+    <ion-row class="height-3vh">
       <ng-container [ngTemplateOutlet]="address" [ngTemplateOutletContext]="{item: item}"></ng-container>
       <ng-container
         *ngIf="item.floor"
         [ngTemplateOutlet]="floor" [ngTemplateOutletContext]="{item: item}"></ng-container>
     </ion-row>
-    <ion-row>
+    <ion-row class="height-3vh">
       <ng-container [ngTemplateOutlet]="bedrooms" [ngTemplateOutletContext]="{item: item}"></ng-container>
       <ng-container [ngTemplateOutlet]="bathrooms" [ngTemplateOutletContext]="{item: item}"></ng-container>
       <ng-container [ngTemplateOutlet]="square" [ngTemplateOutletContext]="{item: item}"></ng-container>
+    </ion-row>
+    <ion-row class="height-3vh ion-margin-bottom">
       <ng-container [ngTemplateOutlet]="nextTo" [ngTemplateOutletContext]="{item: item}"></ng-container>
     </ion-row>
   </ion-card-content>
