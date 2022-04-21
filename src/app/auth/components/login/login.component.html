@@ -1,0 +1,82 @@
+<ion-content>
+  <ion-grid class="ion-padding">
+    <ion-row *ngIf="loginType == 1" class="top-padding">
+      <ion-col size="12" class="ion-align-self-start ion-padding-top">
+        <ion-img class="image-css" src="../../../../assets/images/home_key_icon 1.png"></ion-img>
+      </ion-col>
+      <ion-col class="ion-padding-top" size="12">
+        <ion-text class="SFPROM20">{{ 'Login_to_Account' | translate }}</ion-text>
+      </ion-col>
+      <ion-col class="ion-padding-top" size="12">
+        <ion-item class="ion-no-padding input-border">
+          <ion-select interface="popover" placeholder="Country Code" [(ngModel)]="selectedCountryCode">
+            <ion-select-option value="+33">
+              <ion-avatar>
+                <img src="assets/flag/FRANCE.png" />
+              </ion-avatar>
+
+              +33
+            </ion-select-option>
+            <ion-select-option value="+1">
+              <ion-img src="assets/flag/USA.png"></ion-img>
+              +1
+            </ion-select-option>
+            <ion-select-option value="+972">
+              <ion-img src="assets/flag/ISRAEL.jpeg"></ion-img>
+              +972
+            </ion-select-option>
+          </ion-select>
+          <ion-input type="tel" [(ngModel)]="phoneNumber" placeholder="XXXX XXX XXX"></ion-input>
+        </ion-item>
+      </ion-col>
+
+      <ion-col size="12" class="ion-text-center ion-padding-top">
+        <ion-button class="btn-css" routerLink="/auth/otp">{{'Sign_In' | translate}}</ion-button>
+      </ion-col>
+
+      <ion-col size="12" class="ion-text-center SFPROM15 ion-padding-top"> {{'OR' | translate}} </ion-col>
+      <ion-col size="12" class="ion-text-center ion-padding-top">
+        <a (click)="loginType = 2" class="SFPROB13">{{'Sign_in_with_Email' | translate}}</a>
+      </ion-col>
+      <ion-col size="12" class="ion-text-center SFPROB13">
+        {{'Don’t_have_an_Account?' | translate}} <a routerLink="/auth/sign-up">{{'Create_Account' | translate}}</a>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="loginType == 2" class="top-padding">
+      <ion-col size="12" class="ion-align-self-start ion-padding-top">
+        <ion-img class="image-css" src="../../../../assets/images/home_key_icon 1.png"></ion-img>
+      </ion-col>
+      <ion-col class="ion-padding-top" size="12">
+        <ion-text class="SFPROM20">{{'Login_to_Account' | translate}}</ion-text>
+      </ion-col>
+      <ion-col class="ion-padding-top" size="12">
+        <ion-item class="ion-no-padding input-border">
+          <!-- <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>E-mail</mat-label>
+            <input matInput placeholder="Enter E-mail Address">
+          </mat-form-field> -->
+          <ion-input placeholder="Enter E-mail Address"></ion-input>
+        </ion-item>
+      </ion-col>
+
+      <ion-col class="ion-padding-top" size="12">
+        <ion-item class="ion-no-padding input-border">
+          <ion-input placeholder="Enter Password" [type]="showPassword ? 'text' : 'password'"></ion-input>
+          <ion-icon *ngIf="!showPassword" slot="end" name="eye-outline" (click)="toggleShow()"></ion-icon>
+          <ion-icon *ngIf="showPassword" slot="end" name="eye-off-outline" (click)="toggleShow()"></ion-icon>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12" class="ion-text-center ion-padding-top">
+        <ion-button class="btn-css" routerLink="/tabs">{{'Sign_In' | translate}}</ion-button>
+      </ion-col>
+
+      <ion-col size="12" class="ion-text-center SFPROM15 ion-padding-top"> {{'OR' | translate}} </ion-col>
+      <ion-col size="12" class="ion-text-center ion-padding-top">
+        <a (click)="loginType = 1" class="SFPROB13">{{'Sign_in_with_Phone_Number' | translate}}</a>
+      </ion-col>
+      <ion-col size="12" class="ion-text-center SFPROB13">
+       {{'Don’t_have_an_Account?' | translate}} <a routerLink="/auth/sign-up">{{'Create_Account' | translate}}</a>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

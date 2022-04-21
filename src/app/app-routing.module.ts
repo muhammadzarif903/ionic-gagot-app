@@ -5,7 +5,7 @@ import {PropertyDetailsComponent} from './shared/components/properties/property-
 const routes: Routes = [
   {
     path: 'auth',
-    loadChildren: () => import('./authorization/authorization.module').then(m => m.AuthorizationModule)
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthPageModule)
   },
   {
     path: 'tabs',
@@ -25,7 +25,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'tabs',
+    redirectTo: 'auth',
     pathMatch: 'full'
   }
 ];

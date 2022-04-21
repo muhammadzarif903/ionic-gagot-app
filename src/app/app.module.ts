@@ -16,6 +16,7 @@ import localeEn from '@angular/common/locales/en';
 import localeHe from '@angular/common/locales/he';
 import localeRu from '@angular/common/locales/ru';
 import localeHeExtra from '@angular/common/locales/extra/he';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const createTranslateLoader = (http: HttpClient) => {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -38,7 +39,8 @@ const createTranslateLoader = (http: HttpClient) => {
         useFactory: (createTranslateLoader),
         deps: [HttpClient]
       }
-    })],
+    }),
+    BrowserAnimationsModule],
   providers: [{provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
     DatePipe],
   bootstrap: [AppComponent],

@@ -1,0 +1,33 @@
+::ng-deep .native-input {
+  padding-left: 10px !important;
+}
+.input-border {
+  border: 1px solid #000000;
+  border-radius: 10px;
+}
+
+.image-css {
+  height: 61px;
+}
+
+.font-color {
+  color: #fe3d3b;
+}
+
+.btn-css {
+  width: 223px;
+  height: 39px;
+  --background: #fe3d3b;
+  border-radius: 10px;
+}
+
+ion-item-divider {
+  min-height: 0.5px;
+}
+
+.upload_button {
+  display: inline-block;
+}
+#upload_button input[type="file"] {
+  display: none;
+}

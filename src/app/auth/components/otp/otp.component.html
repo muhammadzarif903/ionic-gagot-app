@@ -1,0 +1,124 @@
+<ion-content>
+  <ion-grid *ngIf="screenType == 1" class="ion-padding">
+    <ion-row>
+      <ion-col size="12" class="top-padding">
+        <ion-text class="SFPROM20">{{'Verify_your_Phone_Number' | translate}}</ion-text> <br />
+        <ion-text class="SFPROM11">{{'*We_will_send_you_SMS-with_verification_code.' | translate}}</ion-text>
+      </ion-col>
+
+      <ion-col class="top-padding" size="12">
+        <ion-item class="ion-no-padding input-border">
+          <ion-select class="ion-padding" placeholder="Select One" [(ngModel)]="selectedCountryCode">
+            <ion-select-option [value]="'FRANCE'">
+              <ion-content>
+                <ion-row>
+                  <ion-col>
+                    <ion-img src="assets/flag/FRANCE.png"></ion-img>
+                  </ion-col>
+                  <ion-col> France </ion-col>
+                </ion-row>
+              </ion-content>
+            </ion-select-option>
+            <ion-select-option [value]="'USA'">
+              <ion-img src="assets/flag/USA.png"></ion-img>
+              USA
+            </ion-select-option>
+            <ion-select-option [value]="'ISRAEL'">
+              <ion-img src="assets/flag/ISRAEL.jpeg"></ion-img>
+              Israel
+            </ion-select-option>
+          </ion-select>
+          <ion-input placeholder="XXXX XXX XXX"></ion-input>
+        </ion-item>
+      </ion-col>
+
+      <ion-col class="top-padding" size="12">
+        <ion-img
+          (click)="screenType = 2"
+          class="image-css ion-text-center"
+          src="assets/images/arrow-right.png"
+        ></ion-img>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid *ngIf="screenType == 2" class="ion-padding">
+    <ion-row class="top-padding">
+      <ion-col size="12">
+        <ion-text class="SFPROM20">{{'Verify_your_Phone_Number' | translate}}</ion-text>
+      </ion-col>
+      <ion-col class="top-padding" size="2">
+        <ion-input
+          class="input-border"
+          style="padding-left: 10px !important"
+          #otp1
+          required="true"
+          maxLength="1"
+          (keyup)="otpController($event, otp2, '')"
+        >
+        </ion-input>
+      </ion-col>
+      <ion-col class="top-padding" size="2">
+        <ion-input
+          class="input-border"
+          style="padding-left: 10px !important"
+          #otp2
+          required="true"
+          maxLength="1"
+          (keyup)="otpController($event, otp3, otp1)"
+        >
+        </ion-input>
+      </ion-col>
+      <ion-col class="top-padding" size="2">
+        <ion-input
+          class="input-border"
+          style="padding-left: 10px !important"
+          #otp3
+          required="true"
+          maxLength="1"
+          (keyup)="otpController($event, otp4, otp2)"
+        >
+        </ion-input>
+      </ion-col>
+
+      <ion-col class="top-padding" size="2">
+        <ion-input
+          class="input-border"
+          style="padding-left: 10px !important"
+          #otp4
+          required="true"
+          maxLength="1"
+          (keyup)="otpController($event, otp5, otp3)"
+        >
+        </ion-input>
+      </ion-col>
+
+      <ion-col class="top-padding" size="2">
+        <ion-input
+          class="input-border"
+          style="padding-left: 10px !important"
+          #otp5
+          required="true"
+          maxLength="1"
+          (keyup)="otpController($event, otp6, otp4)"
+        >
+        </ion-input>
+      </ion-col>
+
+      <ion-col class="top-padding" size="2">
+        <ion-input
+          class="input-border"
+          style="padding-left: 10px !important"
+          #otp6
+          required="true"
+          maxLength="1"
+          (keyup)="otpController($event, '', otp5)"
+        >
+        </ion-input>
+      </ion-col>
+
+      <ion-col size="12" class="ion-text-center ion-padding-top">
+        <ion-button class="btn-css" routerLink="/tabs">{{'Submit' | translate}}</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
