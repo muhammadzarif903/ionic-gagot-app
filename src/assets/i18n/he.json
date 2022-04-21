@@ -198,5 +198,21 @@
   "Sign_up_with_E-mail_Address": "Sign up with E-mail Address",
   "Already_have_an_Account?": "Already have an Account?",
   "Login": "Login",
-  "Sign_Up": "Sign Up"
+  "Sign_Up": "Sign Up",
+  "Country":"Country",
+  "Enter-E-mail-Address":"Enter E-mail Address",
+  "Enter-Password":"Enter Password",
+  "Enter-Name":"Enter Name",
+  "is-required":"is required",
+  "Name":"Name",
+  "Please-enter-a-valid-email-address":"Please enter a valid email address",
+"Enter-Phone-Number":"Enter Phone Number",
+"Phone-Number":"Phone Number",
+"Create-Password":"Create Password",
+"Password":"Password",
+"Confirm-Password":"Confirm Password",
+"Enter-Company-ID":"Enter Company ID",
+"Company-ID":"Company ID",
+"Enter-Office-Address":"Enter Office Address",
+"Office-Address":"Office Address"
 }

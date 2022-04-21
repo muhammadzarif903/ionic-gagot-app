@@ -3,7 +3,7 @@
     <ion-row class="ion-padding-top">
       <ion-col size="12" class="ion-padding-top ion-text-center">
         <ion-text class="SFPROM20">
-          <u> {{ 'Create_an_Account' | translate }}</u></ion-text
+          <u> {{ "Create_an_Account" | translate }}</u></ion-text
         >
       </ion-col>
     </ion-row>
@@ -12,14 +12,27 @@
       <ion-col class="ion-text-center" size="12">
         <div id="upload_button">
           <label>
-            <ion-icon style="font-size: 100px; color: #dbdbdb" name="person-circle-outline"></ion-icon>
+            <ion-icon
+              style="font-size: 100px; color: #dbdbdb"
+              name="person-circle-outline"
+            ></ion-icon>
             <img
-              style="margin-left: -40px; margin-bottom: 10px; z-index: 1; position: relative"
+              style="
+                margin-left: -40px;
+                margin-bottom: 10px;
+                z-index: 1;
+                position: relative;
+              "
               src="assets/images/camera-icon.png"
               class="mr-2"
               alt=""
             />
-            <input (change)="imagepload($event)" id="file" type="file" class="form-control" />
+            <input
+              (change)="imagepload($event)"
+              id="file"
+              type="file"
+              class="form-control"
+            />
           </label>
         </div>
       </ion-col>
@@ -30,114 +43,325 @@
       </ion-col>
 
       <ion-col size="12">
-        <ion-segment value="{{ selectedTab }}" (ionChange)="segmentChanged($event)">
+        <ion-segment
+          value="{{ selectedTab }}"
+          (ionChange)="segmentChanged($event)"
+        >
           <ion-segment-button value="1">
-            <ion-label class="SFPROM15 font-color">{{ 'Basic_Info' | translate }}</ion-label>
+            <ion-label class="SFPROM15 font-color">{{
+              "Basic_Info" | translate
+            }}</ion-label>
           </ion-segment-button>
           <ion-segment-button value="2">
-            <ion-label class="SFPROM15 font-color">{{ 'Agent_Info' | translate }}</ion-label>
+            <ion-label class="SFPROM15 font-color">{{
+              "Agent_Info" | translate
+            }}</ion-label>
           </ion-segment-button>
         </ion-segment>
       </ion-col>
-
-      <ng-template [ngIf]="selectedTab == 1">
-        <ion-col class="ion-padding-top" size="12">
-          <ion-item class="ion-no-padding input-border">
-            <ion-input placeholder="Enter Name"></ion-input>
-          </ion-item>
-        </ion-col>
-
-        <ion-col class="ion-padding-top" size="12">
-          <ion-item class="ion-no-padding input-border">
-            <ion-input placeholder="Enter E-mail Address"></ion-input>
-          </ion-item>
-        </ion-col>
-
-        <ion-col class="ion-padding-top" size="12">
-          <ion-item class="ion-no-padding input-border">
-            <ion-input placeholder="Enter Phone Number"></ion-input>
-          </ion-item>
-        </ion-col>
-
-        <ion-col class="ion-padding-top" size="12">
-          <ion-item class="ion-no-padding input-border">
-            <ion-input placeholder="Create Password" [type]="showPassword ? 'text' : 'password'"></ion-input>
-            <ion-icon *ngIf="!showPassword" slot="end" name="eye-outline" (click)="toggleShow()"></ion-icon>
-            <ion-icon *ngIf="showPassword" slot="end" name="eye-off-outline" (click)="toggleShow()"></ion-icon>
-          </ion-item>
-        </ion-col>
-
-        <ion-col class="ion-padding-top" size="12">
-          <ion-item class="ion-no-padding input-border">
-            <ion-input placeholder="Confirm Password" [type]="showConfirmPassword ? 'text' : 'password'"></ion-input>
-            <ion-icon
-              *ngIf="!showConfirmPassword"
-              slot="end"
-              name="eye-outline"
-              (click)="toggleShowConfirmPass()"
-            ></ion-icon>
-            <ion-icon
-              *ngIf="showConfirmPassword"
-              slot="end"
-              name="eye-off-outline"
-              (click)="toggleShowConfirmPass()"
-            ></ion-icon>
-          </ion-item>
-        </ion-col>
-
-        <ion-col class="ion-padding-top" size="12">
-          <ion-img
-            (click)="selectedTab = 2"
-            class="image-css ion-text-center"
-            src="assets/images/arrow-right.png"
-          ></ion-img>
-        </ion-col>
-
-        <ion-col size="12" class="ion-text-center SFPROM15 ion-padding-top">
-          {{ 'OR' | translate }}
-        </ion-col>
-        <ion-col *ngIf="signUpType == 1" size="12" class="ion-text-center ion-padding-top">
-          <a (click)="signUpType = 2" class="SFPROB13">{{ 'Sign_up_with_Phone_Number' | translate }}</a>
-        </ion-col>
-
-        <ion-col *ngIf="signUpType == 2" size="12" class="ion-text-center ion-padding-top">
-          <a (click)="signUpType = 1" class="SFPROB13">{{ 'Sign_up_with_E-mail_Address' | translate }}</a>
-        </ion-col>
-
-        <ion-col routerLink="/auth/login" size="12" class="ion-text-center ion-padding-bottom SFPROB13">
-          {{ 'Already_have_an_Account?' | translate }} <a>{{ 'Login' | translate }}</a>
-        </ion-col>
-      </ng-template>
-      <ng-template [ngIf]="selectedTab == 2">
-        <ion-col class="ion-padding-top" size="12">
-          <ion-item class="ion-no-padding input-border">
-            <ion-input placeholder="Enter Company ID"></ion-input>
-          </ion-item>
-        </ion-col>
-
-        <ion-col class="ion-padding-top" size="12">
-          <ion-item class="ion-no-padding input-border">
-            <ion-input placeholder="Enter Office Address"></ion-input>
-          </ion-item>
-        </ion-col>
-        <ion-col size="12" class="ion-text-center ion-padding-top">
-          <ion-button routerLink="/auth/otp" class="btn-css">{{ 'Sign_Up' | translate }}</ion-button>
-        </ion-col>
-
-        <ion-col size="12" class="ion-text-center SFPROM15 ion-padding-top">
-          {{ 'OR' | translate }}
-        </ion-col>
-        <ion-col *ngIf="signUpType == 1" size="12" class="ion-text-center ion-padding-top">
-          <a (click)="signUpType = 2" class="SFPROB13">{{ 'Sign_up_with_Phone_Number' | translate }}</a>
-        </ion-col>
-
-        <ion-col *ngIf="signUpType == 2" size="12" class="ion-text-center ion-padding-top">
-          <a (click)="signUpType = 1" class="SFPROB13">{{ 'Sign_up_with_E-mail_Address' | translate }}</a>
-        </ion-col>
-        <ion-col routerLink="/auth/login" size="12" class="ion-text-center ion-padding-bottom SFPROB13">
-          {{ 'Already_have_an_Account?' | translate }} <a>{{ 'Login' | translate }}</a>
-        </ion-col>
-      </ng-template>
     </ion-row>
+
+    <ng-template [ngIf]="selectedTab == 1">
+      <form [formGroup]="registrationForm">
+        <ion-row>
+          <ion-col size="12" size-md="4" offset-md="4">
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>{{ "Enter-Name" | translate }}</mat-label>
+              <input
+                matInput
+                formControlName="name"
+                placeholder="{{ 'Enter-Name' | translate }}"
+              />
+
+              <mat-error
+                *ngIf="registrationForm.controls['name'].hasError('required')"
+              >
+                {{ "Name" | translate }} {{ "is-required" | translate }}
+              </mat-error>
+            </mat-form-field>
+          </ion-col>
+
+          <ion-col size="12" size-md="4" offset-md="4">
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>{{ "Enter-E-mail-Address" | translate }}</mat-label>
+              <input
+                matInput
+                formControlName="email"
+                placeholder="{{ 'Enter-E-mail-Address' | translate }}"
+              />
+
+              <mat-error
+                *ngIf="
+                  registrationForm.controls['email'].hasError('email') &&
+                  !registrationForm.controls['email'].hasError('required')
+                "
+              >
+                {{ "Please-enter-a-valid-email-address" | translate }}
+              </mat-error>
+              <mat-error
+                *ngIf="registrationForm.controls['email'].hasError('required')"
+              >
+                {{ "Email" | translate }} {{ "is-required" | translate }}
+              </mat-error>
+            </mat-form-field>
+          </ion-col>
+
+          <ion-col size="4" size-md="1" offset-md="4">
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>{{ "Country" | translate }}</mat-label>
+              <mat-select
+                [(ngModel)]="selectedCountryCode"
+                [ngModelOptions]="{ standalone: true }"
+              >
+                <mat-option
+                  *ngFor="let contry of contryCode"
+                  [value]="contry.code"
+                >
+                  <img height="10px" [src]="contry.img" alt="" />
+                  &nbsp;
+                  {{ contry.code }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </ion-col>
+
+          <ion-col size="8" size-md="3">
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>{{ "Enter-Phone-Number" | translate }}</mat-label>
+              <input
+                type="password"
+                formControlName="phoneNumber"
+                (keypress)="numberOnly($event)"
+                maxlength="10"
+                matInput
+                placeholder="XXXX XXX XXX"
+              />
+              <mat-error
+                *ngIf="
+                  registrationForm.controls['phoneNumber'].hasError('required')
+                "
+              >
+                {{ "Phone-Number" | translate }} {{ "is-required" | translate }}
+              </mat-error>
+            </mat-form-field>
+          </ion-col>
+
+          <ion-col size="12" size-md="4" offset-md="4">
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>{{ "Create-Password" | translate }}</mat-label>
+              <input
+                formControlName="password"
+                placeholder="{{ 'Create-Password' | translate }}"
+                [type]="showPassword ? 'text' : 'password'"
+                matInput
+              />
+
+              <mat-icon *ngIf="!showPassword" (click)="toggleShow()" matSuffix
+                >visibility</mat-icon
+              >
+              <mat-icon *ngIf="showPassword" (click)="toggleShow()" matSuffix
+                >visibility_off</mat-icon
+              >
+
+              <mat-error
+                *ngIf="
+                  registrationForm.controls['password'].hasError('required')
+                "
+              >
+                {{ "Password" | translate }} {{ "is-required" | translate }}
+              </mat-error>
+            </mat-form-field>
+          </ion-col>
+
+          <ion-col size="12" size-md="4" offset-md="4">
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>{{ "Confirm-Password" | translate }}</mat-label>
+              <input
+                formControlName="confirm_password"
+                placeholder="{{ 'Confirm-Password' | translate }}"
+                [type]="showConfirmPassword ? 'text' : 'password'"
+                matInput
+              />
+
+              <mat-icon
+                *ngIf="!showConfirmPassword"
+                (click)="toggleShowConfirmPass()"
+                matSuffix
+                >visibility</mat-icon
+              >
+              <mat-icon
+                *ngIf="showConfirmPassword"
+                (click)="toggleShowConfirmPass()"
+                matSuffix
+                >visibility_off</mat-icon
+              >
+
+              <mat-error
+                *ngIf="
+                  registrationForm.controls['confirm_password'].hasError(
+                    'required'
+                  )
+                "
+              >
+                {{ "Confirm-Password" | translate }}
+                {{ "is-required" | translate }}
+              </mat-error>
+            </mat-form-field>
+          </ion-col>
+
+          <ion-col
+            class="ion-padding-top ion-text-center"
+            size="12"
+            size-md="4"
+            offset-md="4"
+          >
+            <ion-button
+              (click)="selectedTab = 2"
+              class="btn-css ion-text-center"
+              >Next</ion-button
+            >
+          </ion-col>
+
+          <ion-col
+            size="12"
+            size-md="4"
+            offset-md="4"
+            class="ion-text-center SFPROM15 ion-padding-top"
+          >
+            {{ "OR" | translate }}
+          </ion-col>
+          <ion-col
+            *ngIf="signUpType == 1"
+            size="12"
+            size-md="4"
+            offset-md="4"
+            class="ion-text-center ion-padding-top"
+          >
+            <a (click)="signUpType = 2" class="SFPROB13">{{
+              "Sign_up_with_Phone_Number" | translate
+            }}</a>
+          </ion-col>
+
+          <ion-col
+            *ngIf="signUpType == 2"
+            size="12"
+            size-md="4"
+            offset-md="4"
+            class="ion-text-center ion-padding-top"
+          >
+            <a (click)="signUpType = 1" class="SFPROB13">{{
+              "Sign_up_with_E-mail_Address" | translate
+            }}</a>
+          </ion-col>
+
+          <ion-col
+            routerLink="/auth/login"
+            size="12"
+            size-md="4"
+            offset-md="4"
+            class="ion-text-center ion-padding-bottom SFPROB13"
+          >
+            {{ "Already_have_an_Account?" | translate }}
+            <a>{{ "Login" | translate }}</a>
+          </ion-col>
+        </ion-row>
+      </form>
+    </ng-template>
+    <ng-template [ngIf]="selectedTab == 2">
+      <form [formGroup]="registrationForm">
+        <ion-row>
+          <ion-col size="12" size-md="4" offset-md="4">
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>{{ "Enter-Company-ID" | translate }}</mat-label>
+              <input
+                matInput
+                formControlName="companyId"
+                placeholder="{{ 'Enter-Company-ID' | translate }}"
+              />
+
+              <mat-error
+                *ngIf="
+                  registrationForm.controls['companyId'].hasError('required')
+                "
+              >
+                {{ "Company-ID" | translate }} {{ "is-required" | translate }}
+              </mat-error>
+            </mat-form-field>
+          </ion-col>
+
+          <ion-col size="12" size-md="4" offset-md="4">
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>{{ "Enter-Office-Address" | translate }}</mat-label>
+              <input
+                matInput
+                formControlName="address"
+                placeholder="{{ 'Enter-Office-Address' | translate }}"
+              />
+
+              <mat-error
+                *ngIf="
+                  registrationForm.controls['address'].hasError('required')
+                "
+              >
+                {{ "Office-Address" | translate }}
+                {{ "is-required" | translate }}
+              </mat-error>
+            </mat-form-field>
+          </ion-col>
+          <ion-col
+            size="12"
+            size-md="4"
+            offset-md="4"
+            class="ion-text-center ion-padding-top"
+          >
+            <ion-button routerLink="/auth/otp" class="btn-css">{{
+              "Sign_Up" | translate
+            }}</ion-button>
+          </ion-col>
+
+          <ion-col
+            size="12"
+            size-md="4"
+            offset-md="4"
+            class="ion-text-center SFPROM15 ion-padding-top"
+          >
+            {{ "OR" | translate }}
+          </ion-col>
+          <ion-col
+            *ngIf="signUpType == 1"
+            size="12"
+            size-md="4"
+            offset-md="4"
+            class="ion-text-center ion-padding-top"
+          >
+            <a (click)="signUpType = 2" class="SFPROB13">{{
+              "Sign_up_with_Phone_Number" | translate
+            }}</a>
+          </ion-col>
+
+          <ion-col
+            *ngIf="signUpType == 2"
+            size="12"
+            size-md="4"
+            offset-md="4"
+            class="ion-text-center ion-padding-top"
+          >
+            <a (click)="signUpType = 1" class="SFPROB13">{{
+              "Sign_up_with_E-mail_Address" | translate
+            }}</a>
+          </ion-col>
+          <ion-col
+            routerLink="/auth/login"
+            size="12"
+            size-md="4"
+            offset-md="4"
+            class="ion-text-center ion-padding-bottom SFPROB13"
+          >
+            {{ "Already_have_an_Account?" | translate }}
+            <a>{{ "Login" | translate }}</a>
+          </ion-col>
+        </ion-row>
+      </form>
+    </ng-template>
   </ion-grid>
 </ion-content>

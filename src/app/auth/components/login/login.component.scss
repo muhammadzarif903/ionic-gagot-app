@@ -1,6 +1,5 @@
 .image-css {
   height: 56px;
-  width: 57px;
 }
 
 .input-border {
@@ -26,4 +25,8 @@ a {
 
 ::ng-deep .native-input {
   padding-left: 10px !important;
+}
+
+.full-width {
+  width: 100%;
 }

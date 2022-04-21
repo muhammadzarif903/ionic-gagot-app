@@ -12,10 +12,19 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { OtpComponent } from './components/otp/otp.component';
 
-import {TranslateModule} from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-  imports: [CommonModule, FormsModule, IonicModule, AuthPageRoutingModule, MatInputModule, TranslateModule ],
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    AuthPageRoutingModule,
+    MatInputModule,
+    TranslateModule,
+    SharedModule,
+  ],
   declarations: [AuthPage, LoginComponent, SignupComponent, OtpComponent],
 })
 export class AuthPageModule {}
