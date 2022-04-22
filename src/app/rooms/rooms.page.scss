@@ -1,0 +1,118 @@
+.head-content{
+  height: 172px;
+  background: #F5F5F5;
+  box-shadow: 0px 1px 24px lightgrey;
+}
+.close-icon{
+  width: 55px;
+  height: 55px;
+  border-radius: 27px;
+  font-size: 31px;
+  padding: 13px 13px;
+  box-shadow: 2px 13px 14px -6px grey;
+  color: #9B9C9D;
+  margin-bottom: 0px;
+  margin-top: 32px;
+  position: absolute;
+  margin-left: 29px;
+}
+.title-text{
+  margin-left: 212px;
+  margin-top: 2px;
+  padding-top: 33px;
+  font-size: 35px;
+  width: 131px;
+  color: gray;
+  position: absolute;
+}
+.share-btn{
+  width: 55px;
+    height: 55px;
+    border-radius: 27px;
+    font-size: 31px;
+    margin-left: 519px;
+    padding: 13px 13px;
+    box-shadow: 2px 13px 14px -6px grey;
+    color: #9B9C9D;
+    margin-bottom: 0px;
+    margin-top: 24px;
+    position: absolute;
+}
+.heart-icon{
+  width: 55px;
+  height: 55px;
+  border-radius: 27px;
+  font-size: 31px;
+  margin-left: 433px;
+  padding: 13px 13px;
+  box-shadow: 2px 13px 14px -6px grey;
+  color: #9B9C9D;
+  margin-bottom: 0px;
+  margin-top: 26px;
+  position: absolute;
+
+}
+.location-button{
+  position: absolute;
+  margin-top: 116px;
+  height: 55px;
+  width: 150px;
+  font-size: 22px;
+  color: gray;
+  margin-left: 156px;
+  background: #EEEEEF;
+}
+.main-button{
+  position: absolute;
+  margin-top: 116px;
+  height: 55px;
+  font-size: 22px;
+  color: gray;
+  border-radius: 16px;
+  width: 154px;
+  background: #EEEEEF;
+}
+.room-button{
+  position: absolute;
+  margin-top: 116px;
+  height: 55px;
+  font-size: 22px;
+  color: white;
+  margin-left: 306px;
+  width: 150px;
+  background: #F7360A
+  
+}
+.agreement-button{
+  margin-left: 456px;
+  position: absolute;
+  margin-top: 116px;
+  height: 55px;
+  width: 150px;
+  font-size: 22px;
+  color: gray;
+  border-bottom-right-radius: 16px;
+  border-top-right-radius: 16px;
+  background: #EEEEEF;
+}
+  img{
+    height: 110px;
+    width: 100%;
+  }
+  button{
+    margin: 5px;
+    background: red;
+    height: 22px;
+    width: 81px;
+    border-radius: 12px;
+    color: white;
+    font-size: 8px;
+  }
+  .button-color{
+    margin: 5px;
+    background: lightgray;
+    height: 20px;
+    width: 69px;
+    border-radius: 12px;
+    color: white;
+  }

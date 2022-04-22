@@ -1,7 +1,336 @@
-<ion-header [translucent]="true">
+<ion-header>
+  <ion-grid>
+    <ion-row>
+  <ion-col>
+    <ion-card>X</ion-card>
+  </ion-col>
+    <ion-title>Details</ion-title>
+    <ion-col class="favorite-icon">
+      <ion-card><ion-icon name="heart-outline"></ion-icon></ion-card>
+    </ion-col>
+    <ion-col class="share-icon">
+      <ion-card><ion-icon name="arrow-redo-outline"></ion-icon></ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-header>
+
+
+<ion-content>
+  <div class="main-content">
+  <!-- <ion-segment (ionChange)="segmentChanged($event)" mode="ios" [(ngModel)]="segmentvalue">
+    <ion-segment-button value="tab1" checked layout="icon-end" routerLink="/main">
+      <ion-label>Main</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="tab2" layout="icon-end" routerLink="/location">
+      <ion-label>Location</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="tab3" layout="icon-end" routerLink="/rooms">
+      <ion-label>Rooms</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="tab4" layout="icon-end" routerLink="/agreement">
+      <ion-label>Agreement</ion-label>
+    </ion-segment-button>
+  </ion-segment> -->
+
+  <ion-button color="red" class="main-btn" routerLink="/main">Main</ion-button>
+  <ion-button color="white" routerLink="/location">Location</ion-button>
+  <ion-button color="white" routerLink="/rooms">Rooms</ion-button>
+  <ion-button color="white" routerLink="/agreement">Agreement</ion-button>
+  <div>
+    <ion-card class="back"><ion-icon name="chevron-back-outline"></ion-icon></ion-card>
+    <ion-card class="forward"><ion-icon name="chevron-forward-outline"></ion-icon></ion-card>
+    <img src="../../../assets/images/img.png" alt="">
+  </div>
+  <ion-segment (ionChange)="segmentChanged($event)" mode="ios" [(ngModel)]="segmentvalue">
+  <ion-segment-button value="tab1" layout="icon-end" (click)="showNextTab(1)" id="change">
+    <ion-label>Photos</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="tab2" layout="icon-end">
+    <ion-label>Videos</ion-label>
+  </ion-segment-button>
+</ion-segment>
+<ion-grid>
+  <ion-row class="first-row">
+    <ion-col class="text">
+      Agreement
+    </ion-col>
+    <ion-col class="col-price">
+      Buy & Rent
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <ion-icon name="bed-outline"></ion-icon>
+    </ion-col>
+    <ion-col class="col-position">
+      Bedrooms
+    </ion-col>
+    <ion-col class="col-position2">
+      3
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <ion-icon name="cart-outline"></ion-icon>
+    </ion-col>
+    <ion-col class="col-position">
+      Bathrooms
+    </ion-col>
+    <ion-col class="col-position2">
+      2
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <ion-icon name="film-outline"></ion-icon>
+    </ion-col>
+    <ion-col class="col-position">
+      Floor
+    </ion-col>
+    <ion-col class="col-position2">
+      5
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <ion-icon name="home-outline"></ion-icon>
+    </ion-col>
+    <ion-col class="col-position">
+      Sqaure
+    </ion-col>
+    <ion-col class="col-position2">
+      230 sqm
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <ion-icon name="pricetag-outline"></ion-icon>
+    </ion-col>
+    <ion-col class="col-position">
+      Price
+    </ion-col>
+    <ion-col class="col-position2">
+      $2 000 000
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <ion-icon name="pricetag-outline"></ion-icon>
+    </ion-col>
+    <ion-col class="col-position3">
+      <b>Arnona</b>
+    </ion-col>
+    <ion-col  class="col-position4">
+       $200
+    </ion-col>
+  </ion-row>
+  <h6>Current Status</h6>
+  <ion-row>
+    <ion-col>
+      Status:
+    </ion-col>
+    <ion-col>
+      <ion-button color="red" shape="round" class="btn-color">Open</ion-button>
+    </ion-col>
+  </ion-row>
+  <h6>Open Doors</h6>
+  <hr style="width: 327px;">
+  <ion-row style="margin-top: 18px;">
+    <ion-col style="color: black;font-size: 20px;">
+       Mon
+    </ion-col>
+    <ion-col style="color: black;font-size: 20px;">
+      20 january
+    </ion-col>
+    <ion-col style="color: black;font-size: 20px;margin-right: -52px;">
+      18:00
+    </ion-col>
+    <ion-col>
+      <input type="radio" name="radio" value="value" style="height:24px; width:33px; vertical-align: middle;">
+    </ion-col>
+    <ion-col>
+      <ion-button color="green" shape="round" class="button-style">Enroll</ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col style="color: black;font-size: 20px;">
+      Wed
+    </ion-col>
+    <ion-col style="color: black;font-size: 20px;">
+      22 january
+    </ion-col>
+    <ion-col style="color: black;font-size: 20px; margin-right: -52px;">
+      18:00
+    </ion-col>
+    <ion-col>
+      <input type="radio" name="radio" value="value" style="height:24px; width:33px; vertical-align: middle;">
+    </ion-col>
+    <ion-col>
+      <ion-button color="green" shape="round" class="button-style">Enroll</ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col style="color: black;font-size: 20px;">
+         Thu
+    </ion-col>
+    <ion-col style="color: black;font-size: 20px;">
+      24 january
+    </ion-col>
+    <ion-col style="color: black;font-size: 20px;margin-right: -52px;">
+      9:00
+    </ion-col>
+    <ion-col>
+      <input type="radio" name="radio" value="value" style="height:24px; width:33px; vertical-align: middle;">
+    </ion-col>
+    <ion-col>
+      <ion-button color="green" shape="round" class="button-style">Enroll</ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col style="color: black;font-size: 20px;">
+        Fri
+    </ion-col>
+    <ion-col style="color: black;font-size: 20px;">
+      26 january
+    </ion-col>
+    <ion-col style="color: black;font-size: 20px;margin-right: -52px;">
+      10:00
+    </ion-col>
+    <ion-col>
+      <input type="radio" name="radio" value="value" style="height:24px; width:33px; vertical-align: middle;">
+    </ion-col>
+    <ion-col>
+      <ion-button color="green" shape="round" class="button-style">Enroll</ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col style="color: black;font-size: 20px;">
+        Sat
+    </ion-col>
+    <ion-col style="color: black;font-size: 20px;">
+      27 january
+    </ion-col>
+    <ion-col style="color: black;font-size: 20px; margin-right: -52px;">
+      20:00
+    </ion-col>
+    <ion-col>
+      <input type="radio" name="radio" value="value" style="height:24px; width:33px; vertical-align: middle;">
+    </ion-col>
+    <ion-col>
+      <ion-button color="green" shape="round" class="button-style">Enroll</ion-button>
+    </ion-col>
+  </ion-row>
+  <hr style="width: 327px;">
+  <ion-row>
+    <ion-col>
+      Published from date
+    </ion-col>
+    <ion-col>
+      07.02,2020
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <h5>Published by:</h5>
+    </ion-col>
+    <ion-col>
+      <div class="container">
+        <div class="round">
+          <input type="checkbox" id="checkbox" />
+          <label for="checkbox" style="margin-top: 18px;
+          margin-left: 54px;"></label>
+        </div>
+      </div>
+      <p style="position: absolute;
+      margin-left: 89px;
+      margin-top: 2px;">Private</p>
+    </ion-col>
+    <ion-col>
+      <div class="container">
+        <div class="round">
+          <input type="checkbox" id="checkbox" />
+          <label for="checkbox" style="margin-top: 18px;"></label>
+        </div>
+      </div>
+      <p style="position: absolute;
+      margin-left: 33px;
+      margin-top: 2px;">Agent</p>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+<b style="color: gray;">Contacts</b>
+<br><br>
+Name of the owner: Sigmund Blanda
+<br><br>
+Phone:773.851.2323
+<br><br><br>
+    <b style="color: gray;">Reviews</b>
+    <br>
+    <input type="text" placeholder="Enter your review" class="input-text">
+  </div>
+</ion-content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <!--  add listing-->
+       add listing
       <ion-button
         size="large"
         color="primary"
@@ -9,16 +338,16 @@
         <ion-icon slot="icon-only" name="add-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <!--list sort by-->
+    list sort by
     <ion-buttons slot="primary">
-      <!-- open map-->
+      open map
       <ion-button
         color="primary"
         size="large"
         [routerLink]="['/map']">
         <ion-icon slot="icon-only" name="map-outline"></ion-icon>
       </ion-button>
-      <!-- change grid-->
+      change grid
       <ion-button
         color="primary"
         (click)="showChangeGrid()"
@@ -123,13 +452,13 @@
           <ion-radio slot="start" value="HIGHEST"></ion-radio>
         </ion-item>
 
-        <!--          <ion-item>-->
-        <!--            <ion-label>{{'NEAREST' | translate}}</ion-label>-->
-        <!--            <ion-radio slot="start" value="buford"></ion-radio>-->
-        <!--          </ion-item>-->
+                 <ion-item>
+                   <ion-label>{{'NEAREST' | translate}}</ion-label>
+                   <ion-radio slot="start" value="buford"></ion-radio>
+                 </ion-item>
 
 
       </ion-radio-group>
     </ion-list>
   </ng-template>
-</ion-modal>
+</ion-modal> -->

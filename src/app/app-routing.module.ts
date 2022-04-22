@@ -27,7 +27,25 @@ const routes: Routes = [
     path: '',
     redirectTo: 'tabs',
     pathMatch: 'full'
+  },
+ 
+  {
+    path: 'location',
+    loadChildren: () => import('./location/location.module').then( m => m.LocationPageModule)
+  },
+  {
+    path: 'rooms',
+    loadChildren: () => import('./rooms/rooms.module').then( m => m.RoomsPageModule)
+  },
+  {
+    path: 'agreement',
+    loadChildren: () => import('./agreement/agreement.module').then( m => m.AgreementPageModule)
+  },  {
+    path: 'main',
+    loadChildren: () => import('./main/main.module').then( m => m.MainPageModule)
   }
+
+
 ];
 
 @NgModule({
